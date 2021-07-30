@@ -1,0 +1,21 @@
+.primary-button {
+  background-color: #B00D15;
+  color: white;
+  padding: 12px;
+  height: 46px;
+  width: 181px;
+  border-radius: 90px;
+  margin-left: 1rem;
+}
+
+.primary-button:hover {
+  box-shadow: 5px 5px 20px #B00D15ac;
+}
+
+.primary-button p {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.125rem;
+  width: 100%;
+  text-align: center;
+}
