@@ -3,7 +3,7 @@ import React from 'react';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import './styles.css';
 
-import LogoFatec from '../../assets/logo.svg';
+import { Logo } from '../../assets/icons/icons';
 
 
 export const Header = () => {
@@ -11,7 +11,7 @@ export const Header = () => {
     <header className="header-container">
       <div className="header-content grid">
         <div className="home-icon">
-          <img src={LogoFatec} alt="Fatec Santana de Parnaíba" />
+          <img src={Logo} alt="Fatec Santana de Parnaíba" />
         </div>
 
         <nav>
