@@ -1,0 +1,19 @@
+.section-title {
+  text-align: center;
+}
+
+.section-title .title {
+  font-size: 3.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--title-color);
+}
+
+.section-title .subtitle {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
