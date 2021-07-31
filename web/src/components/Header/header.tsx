@@ -17,32 +17,32 @@ export const Header = () => {
         <nav>
           <ul>
             <li>
-              <a className='link' href="/">
+              <a className='link header-link' href="/">
                 <p>Sobre</p>
               </a>
             </li>
             <li>
-              <a className='link' href="/">
+              <a className='link header-link' href="/">
                 <p>Cursos</p>
               </a>
             </li>
             <li>
-              <a className='link' href="/">
+              <a className='link header-link' href="/">
                 <p>Departamentos</p>
               </a>
             </li>
             <li>
-              <a className='link' href="/">
+              <a className='link header-link' href="/">
                 <p>Noticias</p>
               </a>
             </li>
             <li>
-              <a className='link' href="/">
+              <a className='link header-link' href="/">
                 <p>Aluno</p>
               </a>
             </li>
             <li>
-              <a className='link' href="/">
+              <a className='link header-link' href="/">
                 <p>Professor</p>
               </a>
             </li>

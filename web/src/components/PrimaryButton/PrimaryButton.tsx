@@ -6,13 +6,14 @@ import './styles.css';
 interface PrimaryButtonProps {
   title: string;
   to: string;
+  containerStyle?: any;
 }
 
 export const PrimaryButton = (props: PrimaryButtonProps) => {
-  const { title, to } = props;
+  const { title, to, containerStyle } = props;
   return (
     <Link to={to} className='link'>
-      <div className='primary-button'>
+      <div className='primary-button' style={containerStyle}>
         <p>{title}</p>
       </div>
     </Link>

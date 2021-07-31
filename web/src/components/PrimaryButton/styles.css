@@ -1,5 +1,5 @@
 .primary-button {
-  background-color: #B00D15;
+  background-color: var(--primary-color);
   color: white;
   padding: 12px;
   height: 46px;
@@ -9,7 +9,7 @@
 }
 
 .primary-button:hover {
-  box-shadow: 5px 5px 20px #B00D15ac;
+  box-shadow: 10px 20px 25px var(--primary-color) -90% ;
 }
 
 .primary-button p {
