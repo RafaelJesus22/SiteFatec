@@ -9,7 +9,7 @@
 }
 
 .primary-button:hover {
-  box-shadow: 10px 20px 25px var(--primary-color) -90% ;
+  box-shadow: 10px 5px 30px #b00d15ac;
 }
 
 .primary-button p {
