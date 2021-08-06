@@ -5,46 +5,19 @@ import "./styles.css";
 
 export const Home = () => {
   return (
-    <div className='home-container'>
-      <div className="grid">
-        {WhyUs}
-        {Cursos}
-        {Eventos}
+    <div className="home-container">
+      <div className="home-content grid">
+        {WhyUs()}
+        {Cursos()}
+        {Eventos()}
       </div>
     </div>
   );
 };
 
 const WhyUs = () => {
-  const data = [
-    {
-      icon: <Laptop />,
-      title: "Estrutura",
-      description:
-        "Infraestrutura de qualidade, com equipamentos atuais e espaços de estudo modernos.",
-    },
-    {
-      icon: <People />,
-      title: "Corpo docente",
-      description:
-        "Formado por profissionais e pesquisadores que atuam no mercado de trabalho. Doutores, Mestres e Especialistas formam um time de qualidade.",
-    },
-    {
-      icon: <Work />,
-      title: "Mercado de trabalho",
-      description:
-        "Cursos de tecnologia atuais e planejados de acordo com as demandas do mercado de trabalho.",
-    },
-    {
-      icon: <Book />,
-      title: "Ensino gratuito",
-      description:
-        "Cursos superiores de qualidade e gratuitos que fazem a diferença no currículo dos alunos.",
-    },
-  ];
-
   return (
-    <div className="why-us">
+    <div className="section-container">
       <div className="title-container">
         <SectionTitle
           title={"A Faculdade"}
@@ -52,18 +25,72 @@ const WhyUs = () => {
         />
       </div>
       <div className="motivos-container">
-        {data.map(item => (
-          <div key={item.title} className="motivos-item">
-            <div className="motivos-icon">{item.icon}</div>
-            <div className="motivos-title">{item.title}</div>
-            <div className="motivos-description">{item.description}</div>
+        <div className="motivos-item">
+          <div className="motivos-icon">
+            <img src={Laptop} alt="Laptop" />
           </div>
-        ))}
+          <div className="motivos-title">Estrutura</div>
+          <div className="motivos-description">
+            Formado por profissionais e pesquisadores que atuam no mercado de
+            trabalho. Doutores, Mestres e Especialistas formam um time de
+            qualidade.
+          </div>
+        </div>
+        <div className="motivos-item">
+          <div className="motivos-icon">
+            <img src={People} alt="people" />
+          </div>
+          <div className="motivos-title">Corpo docente</div>
+          <div className="motivos-description">
+            Formado por profissionais e pesquisadores que atuam no mercado de
+            trabalho. Doutores, Mestres e Especialistas formam um time de
+            qualidade.
+          </div>
+        </div>
+        <div className="motivos-item">
+          <div className="motivos-icon">
+            <img src={Book} alt="book" />
+          </div>
+          <div className="motivos-title">Mercado de trabalho</div>
+          <div className="motivos-description">
+            Cursos de tecnologia atuais e planejados de acordo com as demandas
+            do mercado de trabalho.
+          </div>
+        </div>
+        <div className="motivos-item">
+          <div className="motivos-icon">
+            <img src={Work} alt="wallet" />
+          </div>
+          <div className="motivos-title">Ensino gratuito</div>
+          <div className="motivos-description">
+            Cursos superiores de qualidade e gratuitos que fazem a diferença no
+            currículo dos alunos.
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-const Cursos = () => {};
+const Cursos = () => {
+  return (
+    <div className="section-container">
+      <div className="title-container">
+        <SectionTitle 
+          title={"Cursos"}
+        />
+      </div>
+
+      <div className="cursos-container">
+        {[1,2,3,4,5,6,6,7,8].map((item, index) => {
+          return (
+            <div className="cursos-item" key={index}>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )
+};
 
 const Eventos = () => {};
