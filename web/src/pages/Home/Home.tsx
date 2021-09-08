@@ -1,7 +1,8 @@
 import React from 'react';
 import { Laptop, Book, People, Work } from '../../assets/icons/icons';
 import { SectionTitle } from '../../components/SectionTitle/SectionTitle';
-import { CursoCard } from '../../components/Curso/CursoCard';
+import { CursoCard, CursoCardProps } from '../../components/Curso/CursoCard';
+import { EventoCard, EventoCardProps } from '../../components/Evento/EventoCard';
 import { CallToMore } from '../../components/CallToMore/CallToMore'
 import './styles.css';
 
@@ -75,7 +76,7 @@ const WhyUs = () => {
 };
 
 const Cursos = () => {
-  const data = [
+  const data: CursoCardProps[] = [
     { title: 'Análise e Desenvolvimento de Sistemas', image: '' },
     { title: 'Gestão Comercial', image: '' },
     { title: 'Ciência de Dados', image: '' },
@@ -106,4 +107,45 @@ const Cursos = () => {
   )
 };
 
-const Eventos = () => {};
+const Eventos = () => {
+  const data: EventoCardProps[] = [
+    {
+      date: '29 de Junho de 2021',
+      title: 'FATEC Santana De Parnaíba é posto de vacinação contra a COVID-19',
+      description: 'É com muito orgulho que comunicamos a todos os nossos alunos, professores e comunidade que a Fatec...',
+    },      
+    {
+      date: '29 de Junho de 2021',
+      title: 'FATEC Santana De Parnaíba é posto de vacinação contra a COVID-19',
+      description: 'É com muito orgulho que comunicamos a todos os nossos alunos, professores e comunidade que a Fatec...',
+    },      
+  ];
+  return (
+    <div className="section-container">
+      <div className="title-container">
+        <SectionTitle 
+          title={"Eventos"}
+        />
+      </div>
+
+      <div className="eventos-container">
+        {data.map((item,  index) => {
+          return (
+            <div className="evento-item" key={index}>
+              <EventoCard
+                title={item.title}
+                image={item.image}
+                description={item.description}
+                date={item.date}
+              />
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="cta">
+        <CallToMore link={''} title={'Todos os Eventos'} />
+      </div>
+    </div>
+  )
+};

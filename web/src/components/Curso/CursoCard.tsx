@@ -2,7 +2,7 @@
 import React from 'react';
 import './styles.css';
 
-interface CursoCardProps {
+export interface CursoCardProps {
   title: string;
   image: string;
 }
