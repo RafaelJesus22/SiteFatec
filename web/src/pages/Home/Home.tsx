@@ -2,6 +2,7 @@ import React from 'react';
 import { Laptop, Book, People, Work } from '../../assets/icons/icons';
 import { SectionTitle } from '../../components/SectionTitle/SectionTitle';
 import { CursoCard } from '../../components/Curso/CursoCard';
+import { CallToMore } from '../../components/CallToMore/CallToMore'
 import './styles.css';
 
 export const Home = () => {
@@ -96,6 +97,10 @@ const Cursos = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="cta">
+        <CallToMore link={''} title={'Todos os Cursos'} />
       </div>
     </div>
   )
