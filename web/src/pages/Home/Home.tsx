@@ -1,14 +1,15 @@
-import React from "react";
-import { Laptop, Book, People, Work } from "../../assets/icons/icons";
-import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
-import "./styles.css";
+import React from 'react';
+import { Laptop, Book, People, Work } from '../../assets/icons/icons';
+import { SectionTitle } from '../../components/SectionTitle/SectionTitle';
+import { CursoCard } from '../../components/Curso/CursoCard';
+import './styles.css';
 
 export const Home = () => {
   return (
     <div className="home-container">
       <div className="home-content grid">
         {WhyUs()}
-        {Cursos()}
+        <Cursos />
         {Eventos()}
       </div>
     </div>
@@ -73,6 +74,12 @@ const WhyUs = () => {
 };
 
 const Cursos = () => {
+  const data = [
+    { title: 'Análise e Desenvolvimento de Sistemas', image: '' },
+    { title: 'Gestão Comercial', image: '' },
+    { title: 'Ciência de Dados', image: '' },
+    { title: 'Segurança da Informação', image: '' },        
+  ];
   return (
     <div className="section-container">
       <div className="title-container">
@@ -82,9 +89,10 @@ const Cursos = () => {
       </div>
 
       <div className="cursos-container">
-        {[1,2,3,4,5,6,6,7,8].map((item, index) => {
+        {data.map((item, index) => {
           return (
             <div className="cursos-item" key={index}>
+              <CursoCard title={item.title} image={item.image} />
             </div>
           );
         })}

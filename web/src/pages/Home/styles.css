@@ -18,13 +18,13 @@
   margin: 1rem 0;
 }
 
-.section-container .motivos-container {
+.motivos-container {
   display: flex;
   justify-content: space-around;
   margin-top: 3rem;
 }
 
-.section-container .motivos-container .motivos-item {
+.motivos-container .motivos-item {
   margin: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -33,9 +33,9 @@
   width: 20%;
 }
 
-.section-container .motivos-container .motivos-item .motivos-icon {
-  height: 158px;
-  width: 158px;
+.motivos-container .motivos-item .motivos-icon {
+  height: 140px;
+  width: 140px;
   border-radius: 50%;
   background-color: var(--primary-color);
   margin-bottom: 1rem;
@@ -45,15 +45,21 @@
   justify-content: center;
 }
 
-.section-container .motivos-container .motivos-item .motivos-title {
+.motivos-container .motivos-item .motivos-title {
   font-size: 1.5rem;
   color: var(--title-color);
   font-weight: bold;
   margin-bottom: .5rem;
 }
 
-.section-container .motivos-container .motivos-item .motivos-description {
+.motivos-container .motivos-item .motivos-description {
   font-size: 1rem;
   color: var(--secondary-text-color);
   margin-bottom: .5rem;
+}
+
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
 }
