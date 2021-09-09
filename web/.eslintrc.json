@@ -21,11 +21,11 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
-            "error",
-            "tab",
-            "space"
-        ],
+        // "indent": [
+        //     "error",
+        //     "tab",
+        //     "space"
+        // ],
         "linebreak-style": [
             "error",
             "windows"
