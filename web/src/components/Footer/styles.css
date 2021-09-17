@@ -1,30 +1,61 @@
-.curso-card {
-  background-color: var(--white);
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  margin: .5rem;
-}
-
-.curso-card__image img {
-  max-height: 12rem;
+#footer {
   width: 100%;
-  border-radius: 1rem 1rem 0 0;
-  object-fit: none;
+  background-color: #393737;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
 }
 
-.curso-card__content {
-  padding: .75rem;
+.devs {
+  width: 100%;
+  background-color: #1F1F1F;
+  padding: 1rem ; 
+  display: flex;
+  justify-content: center;
 }
 
-.curso-card__title {
-  font-size: 1.25rem;
+.footer-container {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-container .info .title {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   font-weight: bold;
-  text-align: center;
-  color: var(--title-color)
+  text-transform: uppercase;
 }
 
-.curso-card__title:hover {
-  color: var(--primary-color);
-  cursor: pointer;
-  text-decoration: underline;
+.footer-container .info {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.footer-container .social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container .social p {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.footer-container .social .icons img {
+  min-width: 3rem;
+  resize: contain;
+}
+.footer-container .social .icons a {
+  margin: 0 .5rem;
+  width: 3rem;
+}
+
+.devs .name {
+  justify-self: center;
+  color: #fff;
+  text-align: center;
 }
