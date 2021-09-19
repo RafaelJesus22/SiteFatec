@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import './styles.css';
 
@@ -17,34 +17,34 @@ export const Header = (): JSX.Element => {
 				<nav>
 					<ul>
 						<li>
-							<a className='link header-link' href="/">
+							<Link className='link header-link' to="/">
 								<p>Sobre</p>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a className='link header-link' href="/">
+							<Link className='link header-link' to="/">
 								<p>Cursos</p>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a className='link header-link' href="/">
+							<Link className='link header-link' to="/">
 								<p>Departamentos</p>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a className='link header-link' href="/">
+							<Link className='link header-link' to="/">
 								<p>Noticias</p>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a className='link header-link' href="/">
+							<Link className='link header-link' to="/">
 								<p>Aluno</p>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a className='link header-link' href="/">
+							<Link className='link header-link' to="/professores">
 								<p>Professor</p>
-							</a>
+							</Link>
 						</li>
 						<PrimaryButton 
 							to={'/'}

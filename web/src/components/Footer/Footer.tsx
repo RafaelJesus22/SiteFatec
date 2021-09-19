@@ -5,7 +5,8 @@ import './styles.css';
 
 export const Footer = (): JSX.Element => {
   return (
-    <footer id="footer">
+    <>
+		<footer id="footer">
       <div className="footer-container grid">
 				<div className="info">
 					<p className="title">LOCALIZAÇAO</p>
@@ -36,6 +37,8 @@ export const Footer = (): JSX.Element => {
 				</div>
       </div>
     </footer>
+		<Devs />
+		</>
   );
 };
 
