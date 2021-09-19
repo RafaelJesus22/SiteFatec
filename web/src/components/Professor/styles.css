@@ -1,0 +1,33 @@
+.professor-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.professor-card .professor-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.professor-card .professor-card__header .data {
+  display: flex;
+  align-items: center;
+}
+
+.professor-card .professor-card__header img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.professor-card .professor-card__header .actions {
+  display: flex;
+}
+
+.professor-card .professor-card__header .actions button {
+  margin-left: 1rem;
+}

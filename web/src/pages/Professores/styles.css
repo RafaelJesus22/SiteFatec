@@ -1,0 +1,15 @@
+.professores-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color);
+  min-height: 80vh;
+}
+
+.professores__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
