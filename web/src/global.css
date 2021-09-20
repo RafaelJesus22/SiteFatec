@@ -34,9 +34,18 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color);
+  min-height: 80vh;
 }
 
 .grid {
