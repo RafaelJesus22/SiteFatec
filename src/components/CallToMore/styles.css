@@ -1,0 +1,17 @@
+.call-to-more {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.call-to-more:hover {
+  text-decoration: underline;
+}
+
+.call-to-more div p {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  vertical-align: center;
+}

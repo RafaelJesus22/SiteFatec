@@ -1,0 +1,73 @@
+.home-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  margin-top: var(--header-height);
+}
+
+.home-content {
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.section-container {
+  margin: 1rem 0 5rem 0;
+}
+
+.section-container .title-container {
+  margin: 1rem 0;
+}
+
+.motivos-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.motivos-container .motivos-item {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+}
+
+.motivos-container .motivos-item .motivos-icon {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+  box-shadow: 5px 5px 20px  #0008;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivos-container .motivos-item .motivos-title {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.motivos-container .motivos-item .motivos-description {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: .5rem;
+}
+
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin: 2rem 0;
+}
+
+.eventos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 6rem;
+  margin: 5rem 0;
+}
