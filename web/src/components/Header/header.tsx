@@ -22,7 +22,7 @@ export const Header = (): JSX.Element => {
 							</Link>
 						</li>
 						<li>
-							<Link className='link header-link' to="/">
+							<Link className='link header-link' to="/cursos">
 								<p>Cursos</p>
 							</Link>
 						</li>
