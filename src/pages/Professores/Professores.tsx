@@ -21,6 +21,14 @@ export const Professores: React.FC = () => {
     { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 01' },
     { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 02' },
     { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 11' },
+    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 12' },
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 13' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 14' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 15' },
+    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 16' },
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 17' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 18' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 19' },
     {
       imgUrl: 'https://i.pravatar.cc/155?img=1',
       name: 'Professor 20',
@@ -29,11 +37,7 @@ export const Professores: React.FC = () => {
           curso: 'Algoritmos',
           funcao: 'Professor',
           disciplinas: [
-            {
-              nome: 'Algoritmos',
-              cargaHoraria: 80,
-              categoria: 'programação',
-            },
+            { nome: 'Algoritmos', cargaHoraria: 80, categoria: 'programação' },
             {
               nome: 'Estrutura de dados',
               cargaHoraria: 80,
@@ -48,16 +52,8 @@ export const Professores: React.FC = () => {
         },
       ],
     },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 12' },
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 13' },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 14' },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 15' },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 16' },
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 17' },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 18' },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 19' },
   ];
-
+  
   return (
     <Content>
       <div style={{ marginTop: 150 }}>
@@ -88,6 +84,7 @@ export const Professores: React.FC = () => {
           />
         </div>
       </div>
+
       <div className="professores__list">
         {professores.map((professor, index) => (
           <div key={index} style={{ width: '48%' }}>
