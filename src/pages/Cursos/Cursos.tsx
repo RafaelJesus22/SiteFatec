@@ -6,10 +6,9 @@ import './styles.css';
 export const Cursos: React.FC = () => {
   return (
     <Content>
-      <div style={{marginTop: 150}}>
+      <div style={{ marginTop: 150 }}>
         <SectionTitle title="Cursos" />
       </div>
-      
     </Content>
   );
 };

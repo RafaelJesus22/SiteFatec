@@ -32,21 +32,21 @@ export const Professores: React.FC = () => {
             {
               nome: 'Algoritmos',
               cargaHoraria: 80,
-              categoria: 'programação'
+              categoria: 'programação',
             },
             {
               nome: 'Estrutura de dados',
               cargaHoraria: 80,
-              categoria: 'programação'
+              categoria: 'programação',
             },
             {
               nome: 'Orientação a objeto',
               cargaHoraria: 80,
-              categoria: 'programação'
+              categoria: 'programação',
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 12' },
     { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 13' },
@@ -60,12 +60,15 @@ export const Professores: React.FC = () => {
 
   return (
     <Content>
-      <div style={{marginTop: 150}}>
+      <div style={{ marginTop: 150 }}>
         <SectionTitle title="Professores" />
       </div>
       <div className="filtro">
         <div className="filtro__item">
-          <select name="curso" id="cursos" onChange={(e): void => setCurso(e.target.value)} >
+          <select
+            name="curso"
+            id="cursos"
+            onChange={(e): void => setCurso(e.target.value)}>
             <option value="">Todos os cursos</option>
             <option value="ADS">Analise e desenvolvimento de sistemas</option>
             <option value="CD">Ciência de dados</option>
@@ -74,7 +77,7 @@ export const Professores: React.FC = () => {
           </select>
         </div>
         <div className="filtro__item">
-          <img src={ Search } alt="pesquisar" />
+          <img src={Search} alt="pesquisar" />
           <input
             type="text"
             name="search"
@@ -87,7 +90,7 @@ export const Professores: React.FC = () => {
       </div>
       <div className="professores__list">
         {professores.map((professor, index) => (
-          <div key={index} style={{width:'48%'}}>
+          <div key={index} style={{ width: '48%' }}>
             <ProfessorCard
               imgUrl={professor.imgUrl}
               name={professor.name}

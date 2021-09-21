@@ -20,7 +20,9 @@ export const DetralhesProfessor = (props: ProfessorMateria): JSX.Element => {
         <h4 className="detalhe__title">Disciplinas</h4>
         <div className="disciplina__container">
           {disciplinas.map((disciplina: Disciplina) => (
-            <p key={disciplina.nome} className="disciplina">{disciplina.nome}</p>
+            <p key={disciplina.nome} className="disciplina">
+              {disciplina.nome}
+            </p>
           ))}
         </div>
       </div>
