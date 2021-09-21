@@ -1,14 +1,16 @@
 import React from 'react';
+import { ProfessorCard as Props, ProfessorMateria } from '../../types/IProfessor';
+import { DetralhesProfessor } from './DetalhesProfessor';
 import './styles.css';
 
-interface ProfessorCardProps {
-  imgUrl: string;
-  name: string;
-  selected: boolean;
-}
+export const ProfessorCard = (props: Props): JSX.Element => { 
+  const [selected, setSelected] = React.useState(false);
 
-export const ProfessorCard = (props: ProfessorCardProps): JSX.Element => { 
-  const { imgUrl, name, selected } = props;
+  const toggleSelected = (): void => {
+    setSelected(!selected);
+  };
+
+  const { imgUrl, name, CursoDisciplinas } = props;
   return (
     <div className="professor-card">
       <div className="professor-card__header">
@@ -19,13 +21,21 @@ export const ProfessorCard = (props: ProfessorCardProps): JSX.Element => {
           </h2>
         </div>
         <div className="actions">
-          <p className="professor-card__info">
+          <p className="professor-card__info" onClick={toggleSelected}>
             {selected ? 'Ver menos': 'Ver mais'}
           </p>
           <button className="professor-card__buton">
             Ver currículo
           </button>
         </div>
+      </div>
+      <div className="cursos" style={{ height: selected ? 180 : 0 }}>
+        {selected && CursoDisciplinas && CursoDisciplinas.map((curso: ProfessorMateria, index: number) => (
+          <DetralhesProfessor
+            key={index}
+            {...curso}
+          />
+        ))}
       </div>
     </div>
   );

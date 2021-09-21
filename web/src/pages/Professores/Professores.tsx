@@ -3,32 +3,59 @@ import { Content } from '../../components/Content/Content';
 import { ProfessorCard } from '../../components/Professor/ProfessorCard';
 import { SectionTitle } from '../../components/SectionTitle/SectionTitle';
 import { Search } from '../../assets/icons/icons';
+import { ProfessorCard as ProfessorCardProps } from '../../types/IProfessor';
 import './styles.css';
 
 export const Professores: React.FC = () => {
   const [search, setSearch] = useState('');
   const [curso, setCurso] = useState('');
-  const professores = [
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', nome: 'Professor 01', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', nome: 'Professor 02', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', nome: 'Professor 03', selected: true },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', nome: 'Professor 04', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', nome: 'Professor 01', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', nome: 'Professor 02', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', nome: 'Professor 03', selected: true },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', nome: 'Professor 04', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', nome: 'Professor 01', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', nome: 'Professor 02', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', nome: 'Professor 11', selected: true },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', nome: 'Professor 12', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', nome: 'Professor 13', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', nome: 'Professor 14', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', nome: 'Professor 15', selected: true },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', nome: 'Professor 16', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/150?img=1', nome: 'Professor 17', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/140?img=1', nome: 'Professor 18', selected: false },
-    { imgUrl: 'https://i.pravatar.cc/130?img=1', nome: 'Professor 19', selected: true },
-    { imgUrl: 'https://i.pravatar.cc/155?img=1', nome: 'Professor 20', selected: false },
+  const professores: ProfessorCardProps[] = [
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 01' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 02' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 03' },
+    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 04' },
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 01' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 02' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 03' },
+    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 04' },
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 01' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 02' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 11' },
+    {
+      imgUrl: 'https://i.pravatar.cc/155?img=1',
+      name: 'Professor 20',
+      CursoDisciplinas: [
+        {
+          curso: 'Algoritmos',
+          funcao: 'Professor',
+          disciplinas: [
+            {
+              nome: 'Algoritmos',
+              cargaHoraria: 80,
+              categoria: 'programação'
+            },
+            {
+              nome: 'Estrutura de dados',
+              cargaHoraria: 80,
+              categoria: 'programação'
+            },
+            {
+              nome: 'Orientação a objeto',
+              cargaHoraria: 80,
+              categoria: 'programação'
+            },
+          ]
+        }
+      ]
+    },
+    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 12' },
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 13' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 14' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 15' },
+    { imgUrl: 'https://i.pravatar.cc/155?img=1', name: 'Professor 16' },
+    { imgUrl: 'https://i.pravatar.cc/150?img=1', name: 'Professor 17' },
+    { imgUrl: 'https://i.pravatar.cc/140?img=1', name: 'Professor 18' },
+    { imgUrl: 'https://i.pravatar.cc/130?img=1', name: 'Professor 19' },
   ];
 
   return (
@@ -62,10 +89,10 @@ export const Professores: React.FC = () => {
         {professores.map((professor, index) => (
           <div key={index} style={{width:'48%'}}>
             <ProfessorCard
-            imgUrl={professor.imgUrl}
-            name={professor.nome}
-            selected={professor.selected}
-          />
+              imgUrl={professor.imgUrl}
+              name={professor.name}
+              CursoDisciplinas={professor.CursoDisciplinas}
+            />
           </div>
         ))}
       </div>
