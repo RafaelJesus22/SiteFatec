@@ -22,15 +22,15 @@
 }
 
 .footer-container .info .title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .footer-container .info {
-  font-size: 1.15rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
 .footer-container .social {
@@ -41,7 +41,7 @@
 
 .footer-container .social p {
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -58,4 +58,25 @@
   justify-self: center;
   color: #fff;
   text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .footer-container .info {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
 }

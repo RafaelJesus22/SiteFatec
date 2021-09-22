@@ -9,7 +9,7 @@ export const Footer = (): JSX.Element => {
       <footer id="footer">
         <div className="footer-container grid">
           <div className="info">
-            <p className="title">LOCALIZAÇAO</p>
+            <p className="title">LOCALIZAÇÃO</p>
             <p>Fatec - Faculdade de Tecnologia de Santana de Parnaíba</p>
             <p>
               Av. Tenente Marques, 5.136 - Fazendinha - Santana de Parnaíba/SP
