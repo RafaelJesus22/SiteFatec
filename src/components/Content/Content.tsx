@@ -5,8 +5,8 @@ import { SectionTitle } from '../SectionTitle/SectionTitle';
 
 interface contentProps {
   children?: ReactNode;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   isOnTop?: boolean;
 }
 
@@ -25,7 +25,7 @@ export const Content = ({
           style={{ marginTop: isOnTop ? 150 : 0 }}
         >
           <SectionTitle 
-            title={title}
+            title={title || ''}
             subtitle={subtitle}
           />
         </div>
