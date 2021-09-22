@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import './styles.css';
 
-import { Logo } from '../../assets/icons/icons';
+import { Logo, Menu } from '../../assets/icons/icons';
 
 export const Header = (): JSX.Element => {
   return (
     <header className="header-container">
       <div className="header-content grid">
         <div className="home-icon">
-          <img src={Logo} alt="Fatec Santana de Parnaíba" />
+          <Link to={'/'}>
+            <img src={Logo} alt="Fatec Santana de Parnaíba" />
+          </Link>
         </div>
 
         <nav>
@@ -48,6 +50,9 @@ export const Header = (): JSX.Element => {
             <PrimaryButton to={'/'} title={'Quero ser Fatec'} />
           </ul>
         </nav>
+        <div className="menu">
+          <img src={ Menu } alt="menu" />
+        </div>
       </div>
     </header>
   );

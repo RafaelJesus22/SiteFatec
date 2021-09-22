@@ -6,5 +6,6 @@ import Work from './work.svg';
 import Facebook from './facebook.svg';
 import LinkedIn from './linkedin.svg';
 import Search from './search.svg';
+import Menu from './menu.svg';
 
-export { Book, Laptop, Logo, People, Work, Facebook, LinkedIn, Search };
+export { Book, Laptop, Logo, People, Work, Facebook, LinkedIn, Search, Menu };
