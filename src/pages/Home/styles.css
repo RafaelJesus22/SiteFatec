@@ -58,6 +58,10 @@
   margin-bottom: .5rem;
 }
 
+.section-container .pimary-button {
+  display: none;
+}
+
 .cursos-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -72,12 +76,29 @@
   margin: 5rem 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
+  .section-container .pimary-button {
+    display: flex;
+    justify-content: center;
+  }
+  
   .motivos-container {
+    margin-bottom: 3rem;
+  }
+  
+  .cursos-container {
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
   }
 
-  .cursos-container {
+  .cursos-item {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .motivos-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }

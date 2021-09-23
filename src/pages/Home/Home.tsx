@@ -7,6 +7,7 @@ import {
   EventoCardProps,
 } from '../../components/Evento/EventoCard';
 import { CallToMore } from '../../components/CallToMore/CallToMore';
+import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
 import './styles.css';
 
 import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
@@ -75,6 +76,9 @@ const WhyUs = (): JSX.Element => {
             currículo dos alunos.
           </div>
         </div>
+      </div>
+      <div className="pimary-button">
+        <PrimaryButton to={'/'} title={'Quero ser Fatec'} />
       </div>
     </div>
   );

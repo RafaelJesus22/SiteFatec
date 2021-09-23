@@ -49,3 +49,10 @@
 .header-content .menu {
   display: none;
 }
+
+
+@media (max-width: 920px) {
+  .header-content nav ul .cta {
+    display: none;
+  }
+}
