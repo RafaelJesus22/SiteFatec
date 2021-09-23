@@ -74,6 +74,10 @@ body {
   html {
     font-size: 15px;
   }
+
+  .grid {
+    padding: 0 2rem
+  }
 }
 
 @media (max-width: 480px) {

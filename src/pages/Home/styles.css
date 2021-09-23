@@ -19,8 +19,9 @@
 }
 
 .motivos-container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
   margin-top: 3rem;
 }
 
@@ -30,7 +31,6 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 20%;
 }
 
 .motivos-container .motivos-item .motivos-icon {
@@ -70,4 +70,28 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 6rem;
   margin: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .motivos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cursos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .motivos-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cursos-container {
+    grid-template-columns: 1fr;
+  }
+
+  .eventos-container {
+    grid-template-columns: 1fr;
+  }
 }

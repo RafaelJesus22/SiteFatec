@@ -15,9 +15,9 @@ export const Home = (): JSX.Element => {
   return (
     <div className="home-container">
       <div className="home-content grid">
-        {WhyUs()}
+        <WhyUs />
         <Cursos />
-        {Eventos()}
+        <Eventos />
       </div>
     </div>
   );
