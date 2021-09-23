@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
-import './styles.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import "./styles.css";
 
-import { Logo, Menu } from '../../assets/icons/icons';
+import { Logo, Menu } from "../../assets/icons/icons";
 
 export const Header = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuClick = (): void => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="header-container">
       <div className="header-content grid">
         <div className="home-icon">
-          <Link to={'/'}>
+          <Link to={"/"}>
             <img src={Logo} alt="Fatec Santana de Parnaíba" />
           </Link>
         </div>
@@ -50,12 +54,12 @@ export const Header = (): JSX.Element => {
               </Link>
             </li>
             <div className="cta">
-              <PrimaryButton to={'/'} title={'Quero ser Fatec'} />
+              <PrimaryButton to={"/"} title={"Quero ser Fatec"} />
             </div>
           </ul>
         </nav>
-        <div className="menu">
-          <img src={ Menu } alt="menu" />
+        <div className="menu" onClick={handleMenuClick}>
+          <img src={Menu} alt="menu" />
         </div>
       </div>
     </header>

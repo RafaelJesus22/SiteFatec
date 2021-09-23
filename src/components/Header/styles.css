@@ -1,9 +1,10 @@
 .header-container {
   width: 100%;
   height: 98px;
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: var(--white);
@@ -54,5 +55,25 @@
 @media (max-width: 920px) {
   .header-content nav ul .cta {
     display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-content .home-icon img {
+    max-width: 5rem;
+  }
+}
+
+@media (max-width: 645px) {
+  .header-content nav {
+    display: none;
+  }
+
+  .header-content .menu {
+    display: flex;
+  }
+
+  .header-content .menu img {
+    width: 2.5rem;
   }
 }
