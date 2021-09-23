@@ -2,10 +2,16 @@
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   margin: .5rem;
 }
 
+.curso-card img:hover {
+  transform: scale(1.1);
+}
+
 .curso-card__image img {
+  transition: 500ms ease-in-out;
   width: 100%;
   height: 12rem;
   border-radius: 1rem 1rem 0 0;

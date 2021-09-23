@@ -89,6 +89,12 @@
 
   .cursos-container {
     grid-template-columns: 1fr;
+    place-items: center;
+  }
+
+  .cursos-item {
+    width: 100%;
+    max-width: 28rem;
   }
 
   .eventos-container {
