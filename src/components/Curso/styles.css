@@ -6,14 +6,15 @@
 }
 
 .curso-card__image img {
-  max-height: 12rem;
   width: 100%;
+  height: 12rem;
   border-radius: 1rem 1rem 0 0;
-  object-fit: none;
+  object-fit: cover;
 }
 
 .curso-card__content {
   padding: .75rem;
+  min-height: 72px;
 }
 
 .curso-card__title {

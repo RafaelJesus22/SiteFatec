@@ -9,6 +9,8 @@ import {
 import { CallToMore } from '../../components/CallToMore/CallToMore';
 import './styles.css';
 
+import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
+
 export const Home = (): JSX.Element => {
   return (
     <div className="home-container">
@@ -80,10 +82,10 @@ const WhyUs = (): JSX.Element => {
 
 const Cursos = (): JSX.Element => {
   const data: CursoCardProps[] = [
-    { title: 'Análise e Desenvolvimento de Sistemas', image: '' },
-    { title: 'Gestão Comercial', image: '' },
-    { title: 'Ciência de Dados', image: '' },
-    { title: 'Segurança da Informação', image: '' },
+    { title: 'Análise e Desenvolvimento de Sistemas', image: ads },
+    { title: 'Gestão Comercial', image: gcom },
+    { title: 'Ciência de Dados', image: datascience },
+    { title: 'Segurança da Informação', image: seginfo },
   ];
   return (
     <div className="section-container">
