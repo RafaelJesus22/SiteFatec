@@ -9,7 +9,7 @@ import { Container } from "../../components/Container/Container";
 
 export const Professores: React.FC = () => {
   const [search, setSearch] = useState("");
-  const [curso, setCurso] = useState("");
+  const [, setCurso] = useState("");
   const CursoDisciplinas = [
     {
       curso: "Algoritmos",

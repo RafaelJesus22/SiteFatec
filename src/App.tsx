@@ -21,7 +21,7 @@ export default function App(): JSX.Element {
         <Route path="/cursos" exact component={Cursos} />
         <Route path="/departamentos" exact component={Departamentos} />
         <Route path="/noticias" exact component={Noticias} />
-        <Route path="/alunos" exact component={Alunos} />
+        <Route path="/aluno" exact component={Alunos} />
         <Route path="/professores" exact component={Professores} />
         <Footer />
       </Router>
