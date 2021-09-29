@@ -5,6 +5,7 @@ import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
 import { Search } from "../../assets/icons/icons";
 import { ProfessorCard as ProfessorCardProps } from "../../types/IProfessor";
 import "./styles.css";
+import { Container } from "../../components/Container/Container";
 
 export const Professores: React.FC = () => {
   const [search, setSearch] = useState("");
@@ -133,48 +134,50 @@ export const Professores: React.FC = () => {
   ];
 
   return (
-    <Content>
-      <div style={{ marginTop: 150 }}>
-        <SectionTitle title="Professores" />
-      </div>
-      <div className="filtro">
-        <div className="filtro__item">
-          <select
-            name="curso"
-            id="cursos"
-            onChange={(e): void => setCurso(e.target.value)}
-          >
-            <option value="">Todos os cursos</option>
-            <option value="ADS">Analise e desenvolvimento de sistemas</option>
-            <option value="CD">Ciência de dados</option>
-            <option value="SI">Segurança da informação</option>
-            <option value="GCOM">Gestão comercial</option>
-          </select>
+    <Container>
+      <Content>
+        <div style={{ marginTop: 150 }}>
+          <SectionTitle title="Professores" />
         </div>
-        <div className="filtro__item">
-          <img src={Search} alt="pesquisar" />
-          <input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="Pesquisar"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className="professores__list">
-        {professores.map((professor, index) => (
-          <div key={index} style={{ width: "48%" }}>
-            <ProfessorCard
-              imgUrl={professor.imgUrl}
-              name={professor.name}
-              CursoDisciplinas={professor.CursoDisciplinas}
+        <div className="filtro">
+          <div className="filtro__item">
+            <select
+              name="curso"
+              id="cursos"
+              onChange={(e): void => setCurso(e.target.value)}
+            >
+              <option value="">Todos os cursos</option>
+              <option value="ADS">Analise e desenvolvimento de sistemas</option>
+              <option value="CD">Ciência de dados</option>
+              <option value="SI">Segurança da informação</option>
+              <option value="GCOM">Gestão comercial</option>
+            </select>
+          </div>
+          <div className="filtro__item">
+            <img src={Search} alt="pesquisar" />
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Pesquisar"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-        ))}
-      </div>
-    </Content>
+        </div>
+
+        <div className="professores__list">
+          {professores.map((professor, index) => (
+            <div key={index} style={{ width: "48%" }}>
+              <ProfessorCard
+                imgUrl={professor.imgUrl}
+                name={professor.name}
+                CursoDisciplinas={professor.CursoDisciplinas}
+              />
+            </div>
+          ))}
+        </div>
+      </Content>
+    </Container>
   );
 };

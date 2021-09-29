@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactNode } from 'react';
-import { Container } from '../Container/Container';
-import { SectionTitle } from '../SectionTitle/SectionTitle';
+import React, { ReactNode } from "react";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
 
 interface contentProps {
   children?: ReactNode;
@@ -10,27 +9,18 @@ interface contentProps {
   isOnTop?: boolean;
 }
 
-
-export const Content = ({ 
+export const Content = ({
   children,
   title,
   subtitle,
-  isOnTop
- }: contentProps): JSX.Element => {
+  isOnTop,
+}: contentProps): JSX.Element => {
   return (
-    <Container>
-      <div className="grid">
-        <div
-          className="title-container"
-          style={{ marginTop: isOnTop ? 150 : 0 }}
-        >
-          <SectionTitle 
-            title={title || ''}
-            subtitle={subtitle}
-          />
-        </div>
-        {children}
+    <div className="grid">
+      <div className="title-container" style={{ marginTop: isOnTop ? 150 : 0 }}>
+        <SectionTitle title={title || ""} subtitle={subtitle} />
       </div>
-    </Container>
+      {children}
+    </div>
   );
 };

@@ -1,6 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
-export const Container: React.FC = (props: any) => {
-  return <div className="container">{props.children}</div>;
+interface ContainerProps {
+  children?: React.ReactNode;
+  backgroundColor?: string;
+}
+
+export const Container = (props: ContainerProps): JSX.Element => {
+  return (
+    <div
+      className="container"
+      style={{backgroundColor: props.backgroundColor}}
+    >
+      {props.children}
+    </div>
+  );
 };

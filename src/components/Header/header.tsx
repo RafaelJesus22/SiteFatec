@@ -24,7 +24,7 @@ export const Header = (): JSX.Element => {
         <nav>
           <ul>
             <li>
-              <Link className="link header-link" to="/">
+              <Link className="link header-link" to="/sobre">
                 <p>Sobre</p>
               </Link>
             </li>
@@ -34,17 +34,17 @@ export const Header = (): JSX.Element => {
               </Link>
             </li>
             <li>
-              <Link className="link header-link" to="/">
+              <Link className="link header-link" to="/departamentos">
                 <p>Departamentos</p>
               </Link>
             </li>
             <li>
-              <Link className="link header-link" to="/">
+              <Link className="link header-link" to="/noticias">
                 <p>Noticias</p>
               </Link>
             </li>
             <li>
-              <Link className="link header-link" to="/">
+              <Link className="link header-link" to="/aluno">
                 <p>Aluno</p>
               </Link>
             </li>
