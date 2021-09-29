@@ -37,7 +37,8 @@
   position: relative;
 }
 
-.header-content nav ul li a p:hover::after {
+.header-content nav ul li a p:hover::after,
+.header-content nav ul li a p:focus::after {
   content: '';
   position: absolute;
   bottom: -0.875rem;

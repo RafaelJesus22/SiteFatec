@@ -108,7 +108,7 @@ const Cursos = (): JSX.Element => {
       </div>
 
       <div className="cta">
-        <CallToMore link={''} title={'Todos os Cursos'} />
+        <CallToMore link={'/cursos'} title={'Todos os Cursos'} />
       </div>
     </div>
   );
@@ -151,7 +151,7 @@ const Eventos = () => {
       </div>
 
       <div className="cta">
-        <CallToMore link={''} title={'Todos os Eventos'} />
+        <CallToMore link={'/noticias'} title={'Todos os Eventos'} />
       </div>
     </div>
   );
