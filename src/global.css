@@ -52,6 +52,7 @@ body {
 .grid {
   width: 100%;
   max-width: 1290px;
+  padding: 0 1rem;
 }
 
 .link {
@@ -66,9 +67,9 @@ body {
 }
 
 @media (max-width: 920px) {
-  .grid {
+  /* .grid {
     padding: 0 1rem
-  }
+  } */
 }
 
 @media (max-width: 768px) {

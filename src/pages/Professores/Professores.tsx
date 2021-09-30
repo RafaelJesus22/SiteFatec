@@ -135,10 +135,7 @@ export const Professores: React.FC = () => {
 
   return (
     <Container>
-      <Content>
-        <div style={{ marginTop: 150 }}>
-          <SectionTitle title="Professores" />
-        </div>
+      <Content title={'Professores'} isOnTop>
         <div className="filtro">
           <div className="filtro__item">
             <select
@@ -168,7 +165,7 @@ export const Professores: React.FC = () => {
 
         <div className="professores__list">
           {professores.map((professor, index) => (
-            <div key={index} style={{ width: "48%" }}>
+            <div key={index}className={'professores_item'}>
               <ProfessorCard
                 imgUrl={professor.imgUrl}
                 name={professor.name}
