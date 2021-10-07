@@ -130,7 +130,7 @@ const Eventos = () => {
     },
   ];
   return (
-    <div className="section-container">
+    <div className="section-container grid">
       <div className="title-container">
         <SectionTitle title={'Eventos'} />
       </div>
