@@ -20,7 +20,7 @@ export const Footer = (): JSX.Element => {
           <div className="info">
             <p className="title">CONTATO</p>
             <p>Tel: (11) 2424-2757</p>
-            <p>Wattsapp: (11) 99386-8094</p>
+            <p>WhatsApp: (11) 99386-8094</p>
             <p>Fatec.santana@fatec.sp.gov.br</p>
           </div>
 
