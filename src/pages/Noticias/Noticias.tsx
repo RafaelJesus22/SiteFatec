@@ -6,7 +6,7 @@ import './styles.css';
 export const Noticias: React.FC = () => {
   return (
     <Container>
-      <Content title={'Noticias'} isOnTop >
+      <Content title={'Notícias'} isOnTop >
         <div></div>
       </Content>
     </Container>

@@ -53,6 +53,7 @@
 }
 
 .professor-card .cursos {
+  height: auto;
   transition: .5s height ease;
 }
 

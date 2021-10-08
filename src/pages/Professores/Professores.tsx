@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Content } from "../../components/Content/Content";
 import { ProfessorCard } from "../../components/Professor/ProfessorCard";
-import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
 import { Search } from "../../assets/icons/icons";
 import { ProfessorCard as ProfessorCardProps } from "../../types/IProfessor";
 import "./styles.css";
@@ -9,6 +8,7 @@ import { Container } from "../../components/Container/Container";
 
 export const Professores: React.FC = () => {
   const [search, setSearch] = useState("");
+  const [prosessor, setProfessor] = useState<ProfessorCardProps>();
   const [, setCurso] = useState("");
   const CursoDisciplinas = [
     {
