@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish": "git push heroku master"
+    "publish": "git push heroku master",
+    "git": "git push origin master"
   },
   "eslintConfig": {
     "extends": [
