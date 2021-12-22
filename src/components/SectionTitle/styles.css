@@ -2,7 +2,16 @@
   text-align: center;
 }
 
+.subtitle-container, 
+.title-container {
+  max-width: 95%;
+  /* overflow: hidden; */
+}
+
 .section-title .title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 3.5em;
   font-weight: 800;
   text-transform: uppercase;
@@ -15,5 +24,11 @@
   color: var(--secondary-text-color);
   font-weight: bold;
   margin-bottom: .5rem;
+}
+
+@media (max-width: 640px) {
+  .section-title .title {
+    font-size: 2.5rem;
+  }
 }
 
