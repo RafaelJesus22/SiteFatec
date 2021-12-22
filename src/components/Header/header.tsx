@@ -6,7 +6,7 @@ import "./styles.css";
 import { Logo, Menu } from "../../assets/icons/icons";
 
 export const Header = (): JSX.Element => {
-  const [isMenuOpen, setIsMenuOpen] = useState("opened");
+  const [isMenuOpen, setIsMenuOpen] = useState("closed");
 
   const handleMenuClick = (): void => {
     setIsMenuOpen(isMenuOpen === "opened" ? "closed" : "opened");
@@ -53,16 +53,17 @@ export const Header = (): JSX.Element => {
         </div>
       </div>
       <div className={`mobile-nav ${isMenuOpen}`}>
-        
-        <ul>
-          {links.map((link, index) => (
-            <li key={index} onClick={handleMenuClick}>
-              <Link className="link header-link" to={link.link}>
-                <p>{link.title}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {isMenuOpen === "opened" && (
+          <ul>
+            {links.map((link, index) => (
+              <li key={index} onClick={handleMenuClick}>
+                <Link className="link header-link" to={link.link}>
+                  <p>{link.title}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </header>
   );
