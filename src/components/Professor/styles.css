@@ -47,6 +47,7 @@
   font-weight: bold;
   background-color: var(--primary-color);
   cursor: pointer;
+  min-width: 120px;
 }
 .professor-card .professor-card__header .actions button:hover {
   box-shadow: 5px 5px 15px #b00d15ac;
@@ -98,4 +99,19 @@
   display: block;
   width: auto;
   font: 1rem ;
+}
+
+@media (max-width: 465px) {
+  .professor-card {
+    padding: 2rem 1rem;
+    margin: .5rem 0;
+  }
+
+  .professor-card .professor-card__header .professor-card__nome {
+    font-size: 1.25rem;
+  }
+
+  .professor-card .professor-card__header img {
+    display: none
+  }
 }
