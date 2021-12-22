@@ -70,3 +70,10 @@
     margin: 1rem 0;
   }
 }
+
+@media (max-width: 465px) {
+  .footer-container .info p {
+    line-height: 1.5rem;
+    margin-bottom: .5rem;
+  }
+}
