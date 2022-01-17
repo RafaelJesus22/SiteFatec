@@ -4,7 +4,8 @@
 
 .subtitle-container, 
 .title-container {
-  max-width: 95%;
+  align-self: center;
+  /* max-width: 95%; */
   /* overflow: hidden; */
 }
 
