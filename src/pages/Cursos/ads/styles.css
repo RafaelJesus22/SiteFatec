@@ -1,0 +1,85 @@
+.grade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.grade .grade__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--title-color);
+  margin: .5rem 0;
+}
+
+.grade .grade__semestres {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1.5rem;
+  margin-top: .75rem;
+}
+
+.grade .grade__semestres .grade__semestre {
+  width: 100%;
+}
+
+.grade .grade__semestres .grade__semestre .grade__semestre-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--title-color);
+  text-align: center;
+
+  background-color: #e5e5e5;
+  border-radius: .75rem;
+
+  padding: .75rem;
+  width: 100%;
+}
+
+.grade__semestre .semestre-disciplina {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: .75rem;
+  margin: .5rem 0;
+  border-radius: .75rem;
+}
+
+.grade__semestre .semestre-disciplina p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--title-color);
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 1237px) {
+  .grade .grade__semestres {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .grade .grade__semestres {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 557px) {
+  .grade .grade__semestres {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 383px) {
+  .grade .grade__semestres {
+    grid-template-columns: 1fr;
+    width: 75%;
+  }
+}
