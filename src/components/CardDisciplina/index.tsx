@@ -1,5 +1,6 @@
 import { DisciplinaProps } from '../../types/ICurso';
 
+import './styles.css';
 
 export const CardDiciplina: React.FC<DisciplinaProps> = ({
   title,

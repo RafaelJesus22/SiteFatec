@@ -1,6 +1,8 @@
 import { SemestreProps } from '../../types/ICurso';
 import { CardDiciplina } from '../CardDisciplina'
 
+import './styles.css';
+
 interface GradeCurricularProps {
   grade: Array<SemestreProps>
 }
