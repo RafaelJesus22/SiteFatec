@@ -9,7 +9,7 @@ export type SemestreProps = {
 }
 
 export type CursoProps = {
-  semestres: SemestreProps[]
+  grade: SemestreProps[]
 }
 
 export type TipoDisciplina = 'tecnica' | 'infra' | 'matematica' | 'adm' | 'linguagemEstrangeira' | 'linguaPortuguesa' | 'eletiva' | 'multidisciplinarProfissional' | 'multidisciplinarBasica';
@@ -18,5 +18,4 @@ export interface DisciplinaProps {
   title: string;
   aulasSemanais: number;
   type: TipoDisciplina;
-  size?: number;
 }

@@ -1,11 +1,10 @@
-import { DisciplinaProps } from '../../../../types/ICurso';
+import { DisciplinaProps } from '../../types/ICurso';
 
 
 export const CardDiciplina: React.FC<DisciplinaProps> = ({
   title,
   aulasSemanais,
-  type,
-  size,
+  type
 }) => {
   const colors = {
     tecnica: {
@@ -46,13 +45,12 @@ export const CardDiciplina: React.FC<DisciplinaProps> = ({
     },
   }
 
-  console.log(title, size);
   return (
     <div
       className="semestre-disciplina"
       style={{
         backgroundColor: colors[type].background,
-        minHeight: !!size ? size * 32: aulasSemanais * 32,
+        minHeight: (type === 'multidisciplinarBasica' || type === 'tecnica') ? 32 * 4 : aulasSemanais * 32,
       }}>
       <p style={{ color: colors[type].color }}>
         {title} ({aulasSemanais})

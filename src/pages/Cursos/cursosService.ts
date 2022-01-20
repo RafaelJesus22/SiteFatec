@@ -26,7 +26,7 @@ export const TIPO_DISCIPLINA: TipodDisciplinaType = {
 
 export const cursos: { ads: CursoProps } = {
   ads: {
-    semestres: [
+    grade: [
       {
         semestre: [
           {
@@ -60,7 +60,7 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.linguaPortuguesa,
           },
           {
-            title: 'Inglês',
+            title: 'Inglês I',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.linguagemEstrangeira,
           },
@@ -102,7 +102,6 @@ export const cursos: { ads: CursoProps } = {
             title: 'Metodologia da Pesquisa Científico-Tecnológica',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.multidisciplinarBasica,
-            size: 4,
           },
           {
             title: 'Sociedade e Tecnologia',
@@ -110,7 +109,7 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.multidisciplinarProfissional,
           },
           {
-            title: 'Inglês',
+            title: 'Inglês II',
             aulasSemanais: 2,
             type: 'linguagemEstrangeira',
           },
@@ -139,12 +138,7 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.infra,
           },
           {
-            title: 'Cálculo',
-            aulasSemanais: 4,
-            type: TIPO_DISCIPLINA.matematica,
-          },
-          {
-            title: 'Economia e Finanças',
+          title: 'Economia e Finanças',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.adm,
           },
@@ -154,7 +148,12 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.multidisciplinarProfissional,
           },
           {
-            title: 'Inglês',
+            title: 'Cálculo',
+            aulasSemanais: 4,
+            type: TIPO_DISCIPLINA.matematica,
+          },
+          {
+            title: 'Inglês III',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.linguagemEstrangeira,
           },
@@ -173,6 +172,11 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.tecnica,
           },
           {
+            title: 'Interação Humano Computador',
+            aulasSemanais: 2,
+            type: TIPO_DISCIPLINA.tecnica,
+          },
+          {
             title: 'Linguagem de Programação - Linguagem JAVA',
             aulasSemanais: 4,
             type: TIPO_DISCIPLINA.eletiva,
@@ -188,17 +192,12 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.matematica,
           },
           {
-            title: 'Interação Humano Computador',
-            aulasSemanais: 2,
-            type: TIPO_DISCIPLINA.tecnica,
-          },
-          {
             title: 'Ética e Responsabilidade Profissional',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.multidisciplinarProfissional,
           },
           {
-            title: 'Inglês',
+            title: 'Inglês IV',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.linguagemEstrangeira,
           },
@@ -222,17 +221,17 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.infra,
           },
           {
-            title: 'Gestão de Equipes',
-            aulasSemanais: 2,
-            type: TIPO_DISCIPLINA.infra,
-          },
-          {
             title: 'Gestão de Projetos',
             aulasSemanais: 4,
             type: TIPO_DISCIPLINA.infra,
           },
           {
-            title: 'Inglês',
+            title: 'Gestão de Equipes',
+            aulasSemanais: 2,
+            type: TIPO_DISCIPLINA.infra,
+          },
+          {
+            title: 'Inglês V',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.linguagemEstrangeira,
           },
@@ -266,7 +265,7 @@ export const cursos: { ads: CursoProps } = {
             type: TIPO_DISCIPLINA.infra,
           },
           {
-            title: 'Inglês',
+            title: 'Inglês VI',
             aulasSemanais: 2,
             type: TIPO_DISCIPLINA.linguagemEstrangeira,
           },
