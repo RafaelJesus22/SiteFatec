@@ -39,3 +39,15 @@
   color: var(--primary-color);
   font-size: .75rem;
 }
+
+@media (max-width: 1237px) {
+  .sobre-curso {
+    width: 100%;
+  }
+}
+
+@media (max-width: 976px) {
+  .sobre-curso {
+    grid-template-columns: 1fr;
+  }
+}
