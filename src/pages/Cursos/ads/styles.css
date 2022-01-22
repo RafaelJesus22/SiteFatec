@@ -1,0 +1,41 @@
+.sobre-curso {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.sobre-curso .sobre-curso__info p,
+.sobre-curso .sobre-curso__detalhes .description {
+  margin-bottom: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: .5rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.coordenador-curso {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.coordenador-curso .coordenador-curso__photo {
+  margin-right: .5rem;
+}
+
+.coordenador-curso .coordenador-curso__photo img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.coordenador-curso .coordenador-curso__info p a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: .75rem;
+}

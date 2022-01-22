@@ -26,6 +26,12 @@ export const TIPO_DISCIPLINA: TipodDisciplinaType = {
 
 export const cursos: { ads: CursoProps } = {
   ads: {
+    coordenador: {
+      linkPhoto: 'https://avatars0.githubusercontent.com/u/5695589?s=460&v=4',
+      titulo: "Prof. Me.",
+      nome: "Alexandre Chales Cassiano",
+      linkCurriculo: "https://www.linkedin.com/in/alexandre-chales-cassiano-a9a8b8b4/"
+    },
     grade: [
       {
         semestre: [
