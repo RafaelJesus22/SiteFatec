@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
 
-  width: 100%;
   padding: .75rem;
   margin: .5rem 0;
   border-radius: .75rem;
@@ -15,4 +14,11 @@
   color: var(--title-color);
   text-align: center;
   color: white;
+}
+
+@media (max-width: 1080px) {
+  .grade__semestre .semestre-disciplina {
+    width: 160px;
+    height: auto;
+  }
 }
