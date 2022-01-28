@@ -13,23 +13,29 @@
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 3.5em;
+  font-size: 3.5rem;
   font-weight: 800;
   text-transform: uppercase;
   color: var(--title-color);
 }
 
 .section-title .subtitle {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   text-transform: uppercase;
   color: var(--secondary-text-color);
   font-weight: bold;
   margin-bottom: .5rem;
 }
 
+@media (max-width: 768px) {
+  .section-title .title {
+    font-size: 2.25rem;
+  }
+}
+
 @media (max-width: 640px) {
   .section-title .title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 }
 
