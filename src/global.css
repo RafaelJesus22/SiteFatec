@@ -74,20 +74,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-
   .grid {
     padding: 0 2rem
   }
 }
 
 @media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-
   .grid {
     padding: 0 .75rem
   }
