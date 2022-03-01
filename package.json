@@ -25,7 +25,9 @@
     "deploy": "git push heroku master",
     "prod:pull": "git pull heroku master",
     "dev:push": "git push origin master",
-    "dev:pull": "git pull origin master"
+    "dev:pull": "git pull origin master",
+    "full:push": "git push origin master && git push heroku master",
+    "full:pull": "git pull origin master && git pull heroku master"
   },
   "eslintConfig": {
     "extends": [
