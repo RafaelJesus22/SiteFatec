@@ -16,7 +16,7 @@ export const DetalhesCurso = () => {
     <Container>
       <Content
         isOnTop
-        title="Analise e desenvolvimento de sistemas"
+        title="Análise e desenvolvimento de sistemas"
         subtitle='Curso superior de tecnologia em'
       >
         <section className="sobre-curso">

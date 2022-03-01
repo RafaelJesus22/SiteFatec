@@ -1,21 +1,22 @@
 .primary-button {
   background-color: var(--primary-color);
   color: white;
-  padding: 12px;
-  height: 46px;
-  width: 181px;
+  padding: .5rem 1rem;
+  /* width: 181px; */
   border-radius: 90px;
   margin-left: 1rem;
+
+  transition: 200ms ease-in-out;
 }
 
 .primary-button:hover {
-  box-shadow: 10px 5px 30px #b00d15ac;
+  background-color: #8a0e03;
 }
 
 .primary-button p {
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1rem;
   width: 100%;
   text-align: center;
 }
