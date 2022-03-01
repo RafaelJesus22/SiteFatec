@@ -14,8 +14,8 @@
 .card {
   padding: 1.5rem;
   background-color: var(--white);
-  border-radius: .5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  border: 1px solid #e2e2e2;
 }
 
 .coordenador-curso {
@@ -25,7 +25,7 @@
 }
 
 .coordenador-curso .coordenador-curso__photo {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .coordenador-curso .coordenador-curso__photo img {
@@ -37,7 +37,7 @@
 .coordenador-curso .coordenador-curso__info p a {
   text-decoration: none;
   color: var(--primary-color);
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 1237px) {
