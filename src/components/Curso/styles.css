@@ -1,37 +1,91 @@
-.curso-card {
-  background-color: var(--white);
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: .5rem;
+.curso_card__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.curso-card img:hover {
-  transform: scale(1.1);
+.curso-card {
+  width: 70%;
+  margin: 5rem 0;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.curso-card.inverted {
+  flex-direction: row-reverse;
 }
 
 .curso-card__image img {
   transition: 500ms ease-in-out;
   width: 100%;
-  height: 12rem;
+  height: 18.5rem;
   border-radius: 1rem 1rem 0 0;
   object-fit: cover;
 }
 
 .curso-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
   padding: .75rem;
-  min-height: 72px;
+  margin-left: 2rem;
+}
+
+.curso-card.inverted .curso-card__content{
+  margin-right: 2rem;
+  margin-left: 0;
 }
 
 .curso-card__title {
   font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
-  color: var(--title-color)
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.curso-card__description {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin: 1rem 0;
 }
 
 .curso-card__title:hover {
   color: var(--primary-color);
   cursor: pointer;
-  text-decoration: underline;
+}
+
+@media (max-width: 882px) {
+  .curso-card.inverted, .curso-card {
+    width: 100%;
+    margin: 3rem 0 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .curso-card__image img {
+    height: 12rem;
+  }
+}
+
+@media (max-width: 574px) {
+  .curso-card, .curso-card.inverted {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .curso-card__content,
+  .curso-card.inverted .curso-card__content {
+    align-items: center;
+    margin: 0;
+  }
+
+  .curso-card__title,
+  .curso-card__description {
+    text-align: center;
+  }
 }

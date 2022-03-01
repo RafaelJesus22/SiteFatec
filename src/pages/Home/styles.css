@@ -62,9 +62,10 @@
 }
 
 .cursos-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   margin: 2rem 0;
 }
 
@@ -83,16 +84,6 @@
   
   .motivos-container {
     margin-bottom: 3rem;
-  }
-  
-  .cursos-container {
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-  }
-
-  .cursos-item {
-    width: 100%;
-    max-width: 380px;
   }
 }
 

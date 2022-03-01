@@ -12,6 +12,8 @@ import './styles.css';
 
 import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
 
+const LOREN_50 = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla consequatur sequi neque ut magnam perferendis vitae sed architecto fugiat soluta.'
+
 export const Home = (): JSX.Element => {
   return (
     <div className="home-container">
@@ -86,10 +88,10 @@ const WhyUs = (): JSX.Element => {
 
 const Cursos = (): JSX.Element => {
   const data: CursoCardProps[] = [
-    { title: 'Análise e Desenvolvimento de Sistemas', image: ads },
-    { title: 'Gestão Comercial', image: gcom },
-    { title: 'Ciência de Dados', image: datascience },
-    { title: 'Segurança da Informação', image: seginfo },
+    { title: 'Análise e Desenvolvimento de Sistemas', image: ads, description: LOREN_50 },
+    { title: 'Gestão Comercial', image: gcom, description: LOREN_50 },
+    { title: 'Ciência de Dados', image: datascience, description: LOREN_50 },
+    { title: 'Segurança da Informação', image: seginfo, description: LOREN_50 },
   ];
   return (
     <div className="section-container">
@@ -101,7 +103,7 @@ const Cursos = (): JSX.Element => {
         {data.map((item, index) => {
           return (
             <div className="cursos-item" key={index}>
-              <CursoCard title={item.title} image={item.image} />
+              <CursoCard {...item} inverted={index % 2 === 1}/>
             </div>
           );
         })}
