@@ -45,9 +45,18 @@
   min-width: 3rem;
   resize: contain;
 }
+
 .footer-container .social .icons a {
   margin: 0 .5rem;
   width: 3rem;
+}
+
+.footer-container .social .icons a img {
+  transition: 320ms ease-in-out;
+}
+
+.footer-container .social .icons a:hover img {
+  transform: scale(1.1);
 }
 
 .devs .name {
