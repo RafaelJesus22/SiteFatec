@@ -88,10 +88,26 @@ const WhyUs = (): JSX.Element => {
 
 const Cursos = (): JSX.Element => {
   const data: CursoCardProps[] = [
-    { title: 'Análise e Desenvolvimento de Sistemas', image: ads, description: LOREN_50 },
-    { title: 'Gestão Comercial', image: gcom, description: LOREN_50 },
-    { title: 'Ciência de Dados', image: datascience, description: LOREN_50 },
-    { title: 'Segurança da Informação', image: seginfo, description: LOREN_50 },
+    {
+      title: 'Análise e Desenvolvimento de Sistemas',
+      image: ads,
+      description: 'O curso de Análise e Desenvolvimento de Sistemas prepara você para atuar na área de Tecnologia, podendo trabalhar na análise, projeto e desenvolvimento de sistemas computacionais, tais como: aplicativos para celulares e outros dispositivos móveis, sites, jogos, sistema comerciais etc.'
+    },
+    {
+      title: 'Gestão Comercial',
+      image: gcom,
+      description: 'Focado nas transações comerciais, o Tecnólogo em Gestão Comercial presta-se a organização atendendo às diversas formas de intervenção (varejo, atacado, representação, etc.) de qualquer setor. '
+    },
+    {
+      title: 'Ciência de Dados',
+      image: datascience,
+      description: 'O Tecnólogo em Ciência de Dados modela soluções de problemas, aplicando algorítmos de aprendizagem de máquina e técnicas estatísticas para análise de dados como apoio às decisões nas organizações. Utiliza uma abordagem científica para resolução dos problemas de gestão. '
+    },
+    {
+      title: 'Segurança da Informação',
+      image: seginfo,
+      description: 'O Tecnólogo em Segurança da Informação zela pela integridade e resguardo de informações das organizações, protegendo-as contra acessos não autorizados. Assim, dentro dos princípios de confidencialidade, integridade e disponibilidade, esse profissional gerencia, aplica, administra e configura ambientes corporativos com requisitos de segurança. '
+    },
   ];
   return (
     <div className="section-container">
@@ -103,7 +119,7 @@ const Cursos = (): JSX.Element => {
         {data.map((item, index) => {
           return (
             <div className="cursos-item" key={index}>
-              <CursoCard {...item} inverted={index % 2 === 1}/>
+              <CursoCard {...item} inverted={index % 2 === 1} />
             </div>
           );
         })}
