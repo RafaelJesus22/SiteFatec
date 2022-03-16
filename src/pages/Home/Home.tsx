@@ -42,9 +42,7 @@ const WhyUs = (): JSX.Element => {
           </div>
           <div className="motivos-title">Estrutura</div>
           <div className="motivos-description">
-            Formado por profissionais e pesquisadores que atuam no mercado de
-            trabalho. Doutores, Mestres e Especialistas formam um time de
-            qualidade.
+            Infraestrutura de qualidade, com equipamentos atuais e espaços de estudo modernos.
           </div>
         </div>
         <div className="motivos-item">

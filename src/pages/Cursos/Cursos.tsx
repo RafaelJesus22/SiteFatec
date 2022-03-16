@@ -5,7 +5,7 @@ import { DetalhesCurso } from './ads';
 import './styles.css';
 
 export const Cursos: React.FC = () => {
-  
+
   return <DetalhesCurso />
   // (
   //   <Container>
