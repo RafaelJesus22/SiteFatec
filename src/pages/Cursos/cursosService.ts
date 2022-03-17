@@ -1,5 +1,12 @@
 import { CursoProps, TipoDisciplina } from '../../types/ICurso';
 
+export enum CursoEnum {
+  ADS = 'analise_e_desenvolvimento_de_sistemas',
+  GCOM = 'gestao_comercial',
+  SEGINFO = 'seguranca_da_informatica',
+  CIENCIA_DE_DADOS = 'ciencia_de_dados',
+}
+
 type TipodDisciplinaType = {
   tecnica: TipoDisciplina;
   infra: TipoDisciplina;
@@ -24,8 +31,8 @@ export const TIPO_DISCIPLINA: TipodDisciplinaType = {
   multidisciplinarBasica: 'multidisciplinarBasica'
 }
 
-export const cursos: { ads: CursoProps } = {
-  ads: {
+export const cursos: { [CursoEnum.ADS]: CursoProps } = {
+  [CursoEnum.ADS]: {
     coordenador: {
       linkPhoto: 'https://avatars0.githubusercontent.com/u/5695589?s=460&v=4',
       titulo: "Prof. Me.",
