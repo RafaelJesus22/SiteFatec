@@ -1,9 +1,9 @@
 .event .event__date {
-  color: var(--primary-color);
+  color: var(--secondary-text-color);
   text-align: end;
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
 }
 
 .event .event__image {
@@ -14,18 +14,18 @@
 
 .event .event__title {
   color: var(--title-color);
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: .5rem; 
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .event .event__description {
   color: var(--secondary-text-color);
-  font-size: 1.25rem;
-  margin-bottom: .5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .event .ctm {
   display: flex;
-  justify-content: flex-end  
+  justify-content: flex-end;
 }
