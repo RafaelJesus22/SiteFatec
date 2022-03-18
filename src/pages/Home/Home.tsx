@@ -1,4 +1,3 @@
-import React from 'react';
 import { Laptop, Book, People, Work } from '../../assets/icons/icons';
 import { SectionTitle } from '../../components/SectionTitle/SectionTitle';
 import { CursoCard, CursoCardProps } from '../../components/Curso/CursoCard';
@@ -11,18 +10,19 @@ import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
 import './styles.css';
 
 import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
+import { Container } from '../../components/Container/Container';
+import { Content } from '../../components/Content/Content';
 
-const LOREN_50 = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla consequatur sequi neque ut magnam perferendis vitae sed architecto fugiat soluta.'
 
 export const Home = (): JSX.Element => {
   return (
-    <div className="home-container">
-      <div className="home-content grid">
+    <Container>
+      <Content isOnTop>
         <WhyUs />
         <Cursos />
         <Eventos />
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 };
 

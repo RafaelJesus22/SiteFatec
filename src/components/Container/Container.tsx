@@ -1,4 +1,6 @@
 import React from 'react';
+import { Footer } from '../Footer/Footer';
+import { Header } from '../Header/header';
 
 interface ContainerProps {
   children?: React.ReactNode;
@@ -7,11 +9,15 @@ interface ContainerProps {
 
 export const Container = (props: ContainerProps): JSX.Element => {
   return (
-    <div
-      className="container"
-      style={{backgroundColor: props.backgroundColor}}
-    >
-      {props.children}
+    <div>
+      <Header />
+      <div
+        className="container"
+        style={{ backgroundColor: props.backgroundColor }}
+      >
+        {props.children}
+      </div>
+      <Footer />
     </div>
   );
 };

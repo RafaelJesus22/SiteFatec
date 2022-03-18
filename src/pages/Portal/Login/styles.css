@@ -1,0 +1,11 @@
+.portal {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a0a;
+  color: #fff;
+  font-size: 44;
+  font-weight: bold;
+}
