@@ -4,14 +4,21 @@ import { GradeCurricular } from '../../../components/gradeCurricular'
 import { LabelText } from '../../../components/Typography/LabelText'
 import './styles.css';
 import { cursos } from '../cursosService';
-import { CoordenadorCursoProps } from '../../../types/ICurso';
+import { CoordenadorCursoProps,  CursoProps } from '../../../types/ICurso';
+import { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
 
 interface CoordenadorProps {
   data: CoordenadorCursoProps
 }
 
 export const DetalhesCurso = () => {
-  const { ads } = cursos;
+  const [curso, setCurso] = useState<CursoProps | undefined>();
+  // const params = useParams(); // TODO ao entrar na tela de detalhes do curso, buscar o curso correto a partir do nome
+  useEffect(() => {
+    setCurso(cursos.analise_e_desenvolvimento_de_sistemas);
+  }, [])
+
   return (
     <Container>
       <Content
@@ -50,7 +57,7 @@ export const DetalhesCurso = () => {
           </div>
           <div className="sobre-curso__detalhes card">
             <div className="coordenador">
-              <CoordenadorCurso data={ads.coordenador} />
+              {curso && <CoordenadorCurso data={curso.coordenador as CoordenadorCursoProps} />}
             </div>
             <div className="info">
               <LabelText
@@ -91,14 +98,19 @@ export const DetalhesCurso = () => {
           </div>
         </section>
 
-        <GradeCurricular grade={ads.grade} />
+        <GradeCurricular grade={curso?.grade || []} />
       </Content>
     </Container>
   );
 }
 
 const CoordenadorCurso: React.FC<CoordenadorProps> = ({ data }) => {
-  const { linkCurriculo, linkPhoto, nome, titulo } = data;
+  const {
+    linkCurriculo,
+    linkPhoto,
+    nome,
+    titulo
+  } = data;
 
   return (
     <div className="coordenador-curso">
@@ -111,7 +123,9 @@ const CoordenadorCurso: React.FC<CoordenadorProps> = ({ data }) => {
         </LabelText>
         <p>{titulo} {nome}</p>
         <p>
-          <a href={linkCurriculo}>Ver perfil no lattes</a>
+          <a href={linkCurriculo} target="_blank" rel="noreferrer" >
+            Ver perfil no lattes
+          </a>
         </p>
       </div>
     </div>
