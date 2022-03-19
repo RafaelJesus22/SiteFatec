@@ -48,7 +48,6 @@ body {
 }
 
 .App {
-  /* width: 100vw; */
   height: 100vh;
 }
 
@@ -77,11 +76,7 @@ body {
   place-items: center;
 }
 
-@media (max-width: 920px) {
-  /* .grid {
-    padding: 0 1rem
-  } */
-}
+@media (max-width: 920px) {}
 
 @media (max-width: 768px) {
   .grid {

@@ -13,31 +13,45 @@ import './styles.css';
 
 export const DetalhesCurso = () => {
   const [curso, setCurso] = useState<CursoProps | undefined>();
+  const [validRoute, setValidRoute] = useState(true);
   const params = useParams() as { curso: CursosEnum };
 
   useEffect(() => {
     const curso = cursosService.getCurso(params.curso);
-    setCurso(curso);
+
+    if (curso) {
+      return setCurso(curso);
+    }
+    return setValidRoute(false);
   }, [params.curso])
 
   return (
     <Container>
       <Content
         isOnTop
-        title={curso?.nome}
-        subtitle='Curso superior de tecnologia em'
+        title={validRoute ? curso?.nome : 'Curso não encontrado'}
+        subtitle={validRoute ? 'Curso superior de tecnologia em' : '404'}
       >
-        <section className="sobre-curso">
-          {curso && <CursoInfo data={curso.info} />}
-          {curso && (
-            <CursoDetalhesTecnicos
-              coordenador={curso.coordenador}
-              detalhes={curso.detalhesTecnicos}
-            />
-          )}
-        </section>
+        {validRoute && (
+          <div>
+            <section className="sobre-curso">
+              {curso && <CursoInfo data={curso.info} />}
+              {curso && (
+                <CursoDetalhesTecnicos
+                  coordenador={curso.coordenador}
+                  detalhes={curso.detalhesTecnicos}
+                />
+              )}
+            </section>
 
-        <GradeCurricular grade={[]} />
+            <GradeCurricular grade={[]} />
+          </div>
+        )}
+        {!validRoute && (
+          <div className="curso-not_Found">
+            <h1 className='c'>Você digitou uma rota inválida</h1>
+          </div>
+        )}
       </Content>
     </Container>
   );

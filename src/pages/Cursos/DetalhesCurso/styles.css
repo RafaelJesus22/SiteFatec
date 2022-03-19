@@ -6,6 +6,11 @@
   margin: 3rem auto;
 }
 
+.curso-not_Found h1 {
+  text-align: center;
+  color: var(--title-color);
+}
+
 .sobre-curso .sobre-curso__info p {
   margin-bottom: 1rem;
 }
