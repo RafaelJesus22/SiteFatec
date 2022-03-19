@@ -1,5 +1,5 @@
-import { SemestreProps } from '../../types/ICurso';
-import { CardDiciplina } from '../CardDisciplina'
+import { SemestreProps } from '../../../types/ICurso';
+import { CardDiciplina } from '../../atoms/CardDisciplina'
 
 import './styles.css';
 

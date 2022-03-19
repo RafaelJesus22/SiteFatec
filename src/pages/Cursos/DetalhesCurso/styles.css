@@ -6,38 +6,8 @@
   margin: 3rem auto;
 }
 
-.sobre-curso .sobre-curso__info p,
-.sobre-curso .sobre-curso__detalhes .description {
+.sobre-curso .sobre-curso__info p {
   margin-bottom: 1rem;
-}
-
-.card {
-  padding: 1.5rem;
-  background-color: var(--white);
-  border-radius: 0.5rem;
-  border: 1px solid #e2e2e2;
-}
-
-.coordenador-curso {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.coordenador-curso .coordenador-curso__photo {
-  margin-right: 0.5rem;
-}
-
-.coordenador-curso .coordenador-curso__photo img {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-}
-
-.coordenador-curso .coordenador-curso__info p a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-size: 0.75rem;
 }
 
 @media (max-width: 1237px) {

@@ -1,17 +1,18 @@
 import { Laptop, Book, People, Work } from '../../assets/icons/icons';
-import { SectionTitle } from '../../components/SectionTitle/SectionTitle';
-import { CursoCard, CursoCardProps } from '../../components/Curso/CursoCard';
+import { SectionTitle } from '../../components/atoms/SectionTitle/SectionTitle';
+import { CursoCard, CursoCardProps } from '../../components/molecules/CursoCard/CursoCard';
 import {
   EventoCard,
   EventoCardProps,
-} from '../../components/Evento/EventoCard';
-import { CallToMore } from '../../components/CallToMore/CallToMore';
-import { PrimaryButton } from '../../components/PrimaryButton/PrimaryButton';
+} from '../../components/molecules/Evento/EventoCard';
+import { CallToMore } from '../../components/atoms/CallToMore/CallToMore';
+import { PrimaryButton } from '../../components/atoms/PrimaryButton/PrimaryButton';
 import './styles.css';
 
 import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
 import { Container } from '../../components/Container/Container';
 import { Content } from '../../components/Content/Content';
+import { CursosEnum } from '../../enums/cursos';
 
 
 export const Home = (): JSX.Element => {
@@ -89,22 +90,26 @@ const Cursos = (): JSX.Element => {
     {
       title: 'Análise e Desenvolvimento de Sistemas',
       image: ads,
-      description: 'O curso de Análise e Desenvolvimento de Sistemas prepara você para atuar na área de Tecnologia, podendo trabalhar na análise, projeto e desenvolvimento de sistemas computacionais, tais como: aplicativos para celulares e outros dispositivos móveis, sites, jogos, sistema comerciais etc.'
+      description: 'O curso de Análise e Desenvolvimento de Sistemas prepara você para atuar na área de Tecnologia, podendo trabalhar na análise, projeto e desenvolvimento de sistemas computacionais, tais como: aplicativos para celulares e outros dispositivos móveis, sites, jogos, sistema comerciais etc.',
+      link: CursosEnum.ADS,
     },
     {
       title: 'Gestão Comercial',
       image: gcom,
-      description: 'Focado nas transações comerciais, o Tecnólogo em Gestão Comercial presta-se a organização atendendo às diversas formas de intervenção (varejo, atacado, representação, etc.) de qualquer setor. '
+      description: 'Focado nas transações comerciais, o Tecnólogo em Gestão Comercial presta-se a organização atendendo às diversas formas de intervenção (varejo, atacado, representação, etc.) de qualquer setor. ',
+      link: CursosEnum.GCOM,
     },
     {
       title: 'Ciência de Dados',
       image: datascience,
-      description: 'O Tecnólogo em Ciência de Dados modela soluções de problemas, aplicando algorítmos de aprendizagem de máquina e técnicas estatísticas para análise de dados como apoio às decisões nas organizações. Utiliza uma abordagem científica para resolução dos problemas de gestão. '
+      description: 'O Tecnólogo em Ciência de Dados modela soluções de problemas, aplicando algorítmos de aprendizagem de máquina e técnicas estatísticas para análise de dados como apoio às decisões nas organizações. Utiliza uma abordagem científica para resolução dos problemas de gestão. ',
+      link: CursosEnum.CIENCIA_DE_DADOS,
     },
     {
       title: 'Segurança da Informação',
       image: seginfo,
-      description: 'O Tecnólogo em Segurança da Informação zela pela integridade e resguardo de informações das organizações, protegendo-as contra acessos não autorizados. Assim, dentro dos princípios de confidencialidade, integridade e disponibilidade, esse profissional gerencia, aplica, administra e configura ambientes corporativos com requisitos de segurança. '
+      description: 'O Tecnólogo em Segurança da Informação zela pela integridade e resguardo de informações das organizações, protegendo-as contra acessos não autorizados. Assim, dentro dos princípios de confidencialidade, integridade e disponibilidade, esse profissional gerencia, aplica, administra e configura ambientes corporativos com requisitos de segurança. ',
+      link: CursosEnum.SEGINFO,
     },
   ];
   return (

@@ -1,0 +1,7 @@
+.sobre-curso__detalhes {
+  max-height: 400px;
+}
+
+.sobre-curso .sobre-curso__detalhes .description {
+  margin-bottom: 1rem;
+}

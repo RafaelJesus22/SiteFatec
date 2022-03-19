@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import { PrimaryButton } from "../../atoms/PrimaryButton/PrimaryButton";
 import "./styles.css";
 
-import { Logo, Menu } from "../../assets/icons/icons";
+import { Logo, Menu } from "../../../assets/icons/icons";
 
 export const Header = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState("closed");

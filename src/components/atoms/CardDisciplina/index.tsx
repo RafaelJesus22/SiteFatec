@@ -1,4 +1,4 @@
-import { DisciplinaProps } from '../../types/ICurso';
+import { DisciplinaProps } from '../../../types/ICurso';
 
 import './styles.css';
 
