@@ -1,0 +1,25 @@
+.coordenador-curso {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.coordenador-curso .coordenador-curso__photo {
+  margin-right: 0.5rem;
+}
+
+.coordenador-curso .coordenador-curso__photo img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.coordenador-curso .coordenador-curso__info p a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: .85rem;
+}
+
+.coordenador-curso .coordenador-curso__info p a:hover {
+  text-decoration: underline;
+}

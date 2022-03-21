@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ReactNode } from "react";
-import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { SectionTitle } from "../atoms/SectionTitle/SectionTitle";
 
 interface contentProps {
   children?: ReactNode;

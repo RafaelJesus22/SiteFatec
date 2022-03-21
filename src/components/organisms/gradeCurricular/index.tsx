@@ -1,5 +1,5 @@
-import { SemestreProps } from '../../types/ICurso';
-import { CardDiciplina } from '../CardDisciplina'
+import { SemestreProps } from '../../../types/ICurso';
+import { CardDiciplina } from '../../atoms/CardDisciplina'
 
 import './styles.css';
 
@@ -14,8 +14,10 @@ export const GradeCurricular: React.FC<GradeCurricularProps> = ({
     <section className="grade">
       <div className="grade__title">
         <h2>Grade Curricular</h2>
+        <p style={{ textAlign: 'center' }}>Em manutenção...</p>
       </div>
-      <div className="grade__semestres">
+
+      {/* <div className="grade__semestres">
         {
           grade.map((semestre, index) => {
             return (
@@ -38,7 +40,7 @@ export const GradeCurricular: React.FC<GradeCurricularProps> = ({
             )
           }
           )}
-      </div>
+      </div> */}
     </section>
   );
 }

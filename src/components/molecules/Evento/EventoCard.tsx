@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { CallToMore } from '../CallToMore/CallToMore';
+import { CallToMore } from '../../atoms/CallToMore/CallToMore';
 import './styles.css';
 
 export interface EventoCardProps {

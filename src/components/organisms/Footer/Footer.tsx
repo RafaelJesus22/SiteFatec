@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { Facebook, LinkedIn } from '../../assets/icons/icons';
+import { Facebook, LinkedIn } from '../../../assets/icons/icons';
 import './styles.css';
 
 const FATEC_LINKEDIN_URL = 'https://www.linkedin.com/in/fatec-santana-de-parna%C3%ADba-fatecsdp-5baa86198/';

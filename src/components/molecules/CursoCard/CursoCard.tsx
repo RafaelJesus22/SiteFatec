@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { CursoEnum } from '../../pages/Cursos/cursosService';
-import { CallToMore } from '../CallToMore/CallToMore';
+import { CursosEnum } from '../../../enums/cursos';
+import { CallToMore } from '../../atoms/CallToMore/CallToMore';
 import './styles.css';
 
 export interface CursoCardProps {
@@ -9,7 +9,7 @@ export interface CursoCardProps {
   image: string;
   description: string;
   inverted?: boolean;
-  link?: CursoEnum;
+  link?: CursosEnum;
 }
 
 export const CursoCard: React.FC<CursoCardProps> = ({

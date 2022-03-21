@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BiChevronRight } from "react-icons/bi";
 import "./styles.css";
-import "../../global.css";
+import "../../../global.css";
 
 interface CallToMoreProps {
   title: string;
