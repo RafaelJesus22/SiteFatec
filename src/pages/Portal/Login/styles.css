@@ -1,11 +1,38 @@
 .portal {
-  height: 50vh;
-  width: 100%;
+  background-color: #e5e5e5;
+  height: 100%;
+}
+
+.portal_header {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #0a0a0a;
-  color: #fff;
-  font-size: 44;
-  font-weight: bold;
+}
+
+.portal_content {
+  margin: auto;
+  background-color: red;
+  max-width: 1207px;
+  max-height: 631px;
+  display: flex;
+}
+
+.portal_content h1 {
+  color: #415462;
+}
+
+.portal_content p {
+  color: #757575;
+}
+
+.portal input {
+  width: 483px;
+  padding: 0 1.5rem;
+  height: 98px;
+  border-radius: 52px;
+  border: 1px solid #d7d7d7;
+  background: #fefefe;
+  font-size: 1rem;
 }
