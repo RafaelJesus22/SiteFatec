@@ -1,9 +1,12 @@
+import { collection, getDocs,  } from "firebase/firestore";
+import { db } from "../firebase";
+
 import { CursosEnum } from "../enums/cursos";
 import { CursoProps } from "../types/ICurso";
 
 export class CursoServise {
   constructor() {
-    console.log('CursoServise');
+    console.log('db', db);
   }
 
   private ads: CursoProps = {
@@ -50,16 +53,52 @@ export class CursoServise {
     coordenador: {
       titulo: 'Prof. Dr.',
       nome: 'Irapuan Glória Júnior',
-      linkPhoto: 'https://www.linkedin.com/in/irapuan-gl%C3%B3ria-junior-a9a8b8b4/',
-      linkCurriculo: 'https://www.linkedin.com/in/alexandre-charles-cassiano-a9a8b8b4/',
+      linkPhoto: 'https://media-exp1.licdn.com/dms/image/C4D03AQHeU3H8e2QoSQ/profile-displayphoto-shrink_100_100/0/1516952205657?e=1652918400&v=beta&t=W5B3YZ2Gk86ZqSGMD-4nPk44mMnnvXxDLEPLy4irmP0',
+      linkCurriculo: 'http://lattes.cnpq.br/4001571055313294',
     },
     grade: {
-      semestre1: [],
-      semestre2: [],
-      semestre3: [],
-      semestre4: [],
-      semestre5: [],
-      semestre6: [],
+      semestre1: [
+        {
+          title: 'Segurança da Informação',
+          aulasSemanais: 40,
+          type: 'adm'
+        },
+      ],
+      semestre2: [
+        {
+          title: 'Segurança da Informação',
+          aulasSemanais: 40,
+          type: 'adm'
+        },
+      ],
+      semestre3: [
+        {
+          title: 'Segurança da Informação',
+          aulasSemanais: 40,
+          type: 'adm'
+        },
+      ],
+      semestre4: [
+        {
+          title: 'Segurança da Informação',
+          aulasSemanais: 40,
+          type: 'adm'
+        },
+      ],
+      semestre5: [
+        {
+          title: 'Segurança da Informação',
+          aulasSemanais: 40,
+          type: 'adm'
+        },
+      ],
+      semestre6: [
+        {
+          title: 'Segurança da Informação',
+          aulasSemanais: 40,
+          type: 'adm'
+        },
+      ],
     }
   };
 
@@ -145,4 +184,15 @@ export class CursoServise {
   public getCurso(curso: CursosEnum): CursoProps | undefined {
     return this.cursos.find(c => c.link === curso);
   }
+
+  public async getFirebasseProffessors() {
+    const proffessorsCol = collection(db, 'proffessors');
+    const professorsSnapshot = await getDocs(proffessorsCol);
+    const professorsList = professorsSnapshot.docs.map(doc => {
+      return {docId: doc.id, ...doc.data()};
+    });
+
+    console.log('professorsList', professorsList);
+    return professorsList;
+  } 
 }

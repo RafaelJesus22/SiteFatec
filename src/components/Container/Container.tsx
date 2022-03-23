@@ -16,8 +16,8 @@ export const Container = (props: ContainerProps): JSX.Element => {
         style={{ backgroundColor: props.backgroundColor }}
       >
         {props.children}
-      </div>
       <Footer />
+      </div>
     </div>
   );
 };

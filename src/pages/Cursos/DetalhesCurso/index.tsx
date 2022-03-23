@@ -16,8 +16,14 @@ export const DetalhesCurso = () => {
   const [validRoute, setValidRoute] = useState(true);
   const params = useParams() as { curso: CursosEnum };
 
+  const showProffessors = async () => {
+    const proffessors = await cursosService.getFirebasseProffessors();
+    console.log('professores no firebase', proffessors);
+  }
+
   useEffect(() => {
     const curso = cursosService.getCurso(params.curso);
+    showProffessors();
 
     if (curso) {
       return setCurso(curso);

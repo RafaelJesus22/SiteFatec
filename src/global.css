@@ -53,8 +53,8 @@ body {
 
 .container {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   background-color: var(--bg-color);
   min-height: 80vh;
 }

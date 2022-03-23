@@ -1,0 +1,19 @@
+button {
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins';
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 300ms ease-in-out;
+}
+
+button:hover {
+  background-color: var(--title-color);
+}

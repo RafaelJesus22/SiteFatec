@@ -10,6 +10,7 @@ import { Noticias } from './pages/Noticias/Noticias';
 import { Alunos } from './pages/Alunos/Alunos';
 import { Professores } from './pages/Professores/Professores';
 import { PortalLogin } from './pages/Portal/Login';
+import { Disciplinas } from './pages/Portal/disciplinas';
 
 export default function App(): JSX.Element {
   return (
@@ -23,7 +24,8 @@ export default function App(): JSX.Element {
         <Route path="/noticias" exact component={Noticias} />
         <Route path="/aluno" exact component={Alunos} />
         <Route path="/professores" exact component={Professores} />
-        <Route path="/portal" component={PortalLogin} />
+        <Route path="/portal" exact component={PortalLogin} />
+        <Route path="/portal/disciplinas" exact component={Disciplinas} />
       </Router>
     </div>
   );
