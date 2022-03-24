@@ -1,19 +1,27 @@
-.portal-content {
+.portal_content {
   width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-}
+  height: calc(100vh - var(--header-height));
 
-.portal_header {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
+.portal_header {
+  width: 100%;
+  height: var(--header-height);
+  padding: 1rem;
+}
+
+.portal_header .portal_header-content {
+  width: 100%;
+  display: block;
+  flex: 1;
+  max-width: 1080px;
+  margin: auto;
+}
+
 .portal_login-container {
-  background-color: var(--white);
   margin: auto;
   max-width: 1080px;
   max-height: 631px;

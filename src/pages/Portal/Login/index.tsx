@@ -32,12 +32,14 @@ export const PortalLogin = () => {
 
   return (
     <PortalContainer>
-      <div className='portal_content'>
-        <header className='portal_header'>
+      <header className='portal_header'>
+        <div className="portal_header-content">
           <a href="/">
             <img src={Logo} alt='logo da Fatec' />
           </a>
-        </header>
+        </div>
+      </header>
+      <div className='portal_content'>
         <div className='portal_login-container'>
           <div className="portal_login-image">
             <img src={imgPortal} alt='logo da Fatec' style={{ maxWidth: 500 }} />
