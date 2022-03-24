@@ -1,9 +1,20 @@
+import { getDocs, collection } from 'firebase/firestore';
+import { db } from '../firebase';
+
 import { CursosEnum } from "../enums/cursos";
 import { CursoProps } from "../types/ICurso";
+import { CollectionsEnum } from '../enums/collections';
 
 export class CursoServise {
-  constructor() {
-    console.log('CursoServise');
+  constructor () {
+    this.checkFirestoreConnection();
+  }
+
+  async checkFirestoreConnection() {
+    console.log('Checking Firestore connection...');
+    const disciplinesCollectionRes = collection(db, CollectionsEnum.disciplines);
+    const disciplinesSnapShot = await getDocs(disciplinesCollectionRes);
+    disciplinesSnapShot.docs?.map(item => console.log({ ...item.data(), id: item.id }));
   }
 
   private ads: CursoProps = {
