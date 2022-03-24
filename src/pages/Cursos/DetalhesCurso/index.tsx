@@ -1,5 +1,5 @@
-import { Container } from '../../../components/Container/Container';
-import { Content } from '../../../components/Content/Content';
+import { Container } from '../../../components/containers/Container/Container';
+import { Content } from '../../../components/containers/Content/Content';
 import { GradeCurricular } from '../../../components/organisms/gradeCurricular'
 import { CursoProps } from '../../../types/ICurso';
 import { useEffect, useState } from 'react';

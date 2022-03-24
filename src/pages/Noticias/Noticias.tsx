@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from '../../components/Container/Container';
-import { Content } from '../../components/Content/Content';
+import { Container } from '../../components/containers/Container/Container';
+import { Content } from '../../components/containers/Content/Content';
 import './styles.css';
 
 export const Noticias: React.FC = () => {

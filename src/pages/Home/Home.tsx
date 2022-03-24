@@ -10,8 +10,8 @@ import { PrimaryButton } from '../../components/atoms/PrimaryButton/PrimaryButto
 import './styles.css';
 
 import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
-import { Container } from '../../components/Container/Container';
-import { Content } from '../../components/Content/Content';
+import { Container } from '../../components/containers/Container/Container';
+import { Content } from '../../components/containers/Content/Content';
 import { CursosEnum } from '../../enums/cursos';
 
 

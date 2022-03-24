@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Content } from "../../components/Content/Content";
+import { Content } from "../../components/containers/Content/Content";
 import { ProfessorCard } from "../../components/Professor/ProfessorCard";
 import { Search } from "../../assets/icons/icons";
 import { ProfessorCard as ProfessorCardProps } from "../../types/IProfessor";
 import "./styles.css";
-import { Container } from "../../components/Container/Container";
+import { Container } from "../../components/containers/Container/Container";
 
 export const Professores: React.FC = () => {
   const [search, setSearch] = useState("");
