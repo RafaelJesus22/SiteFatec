@@ -1,10 +1,9 @@
-import { PortalContainer } from "../../../components/containers/PortalContainer";
-import { DashboardMenu } from "../../../components/organisms/DashboardMenu";
+import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 
 export const PortalDashboard: React.FC = () => {
   return (
-    <PortalContainer>
-      <DashboardMenu />
-    </PortalContainer>
+    <DashboardContainer>
+      <h1>este é o resultado</h1>
+    </DashboardContainer>
   );
 };
