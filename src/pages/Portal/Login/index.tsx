@@ -1,19 +1,25 @@
+import { signInWithEmailAndPassword, UserCredential } from 'firebase/auth';
 import { useState } from "react";
 import { MdEmail } from 'react-icons/md';
 import { BiLock } from 'react-icons/bi';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
+import { auth } from "../../../firebase";
 import Logo from "../../../assets/icons/logo.svg";
 import imgPortal from "../../../assets/icons/imgPortal.svg";
 import { PortalContainer } from "../../../components/containers/PortalContainer";
 import { PortalInput } from "../../../components/atoms/PortalInput";
 import './styles.css';
+import { useAuth } from '../../../contexts/authContext';
+import { useHistory } from 'react-router-dom';
 
 type PasswordInputType = 'password' | 'text';
 
 export const PortalLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { onChangeUser } = useAuth();
+  const history = useHistory()
+  const [email, setEmail] = useState('rafael.bfmv@outlook.com');
+  const [password, setPassword] = useState('fatec123');
   const [passwordInputType, setPasswordInputType] = 
     useState<PasswordInputType>('password');
 
@@ -24,10 +30,22 @@ export const PortalLogin = () => {
     return setPasswordInputType('password');
   }
 
-  const handleSumit = (e: any) => {
-    e.preventDefault();
+  const handleSumit = async (e: any) => {
+    if (!!email && email.includes('@') && password.length > 7) {
+      e.preventDefault();
+      await singin();
+    }
+  };
 
-    window.alert(`você está logando com o email ${email}`);
+  const singin = async () => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      console.log('response', response);
+      onChangeUser(response.user);
+      return history.push('/portal/dashboard');
+    } catch (error) {
+      window.alert(`Não foi possível realizar o login. Detalhes ${JSON.stringify(error)}`);
+    }
   };
 
   return (
