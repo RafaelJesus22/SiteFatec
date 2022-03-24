@@ -151,11 +151,7 @@ const Eventos = () => {
     },
   ];
   return (
-    <div className="section-container grid">
-      <div className="title-container">
-        <SectionTitle title={'Eventos'} />
-      </div>
-
+    <Content title='Eventos'>
       <div className="eventos-container">
         {data.map((item, index) => {
           return (
@@ -174,6 +170,6 @@ const Eventos = () => {
       <div className="cta">
         <CallToMore link={'/noticias'} title={'Todos os Eventos'} />
       </div>
-    </div>
+    </Content>
   );
 };

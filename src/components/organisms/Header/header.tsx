@@ -27,7 +27,7 @@ export const Header = (): JSX.Element => {
 
   return (
     <header className="header-container">
-      <div className="header-content grid">
+      <div className="header-content">
         <div className="home-icon" onClick={closeMenu}>
           <Link to={"/"}>
             <img src={Logo} alt="Fatec Santana de Parnaíba" />

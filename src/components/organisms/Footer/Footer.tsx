@@ -14,7 +14,7 @@ export const Footer = (): JSX.Element => {
   return (
     <>
       <footer id="footer">
-        <div className="footer-container grid">
+        <div className="footer-container">
           <div className="info">
             <p className="title">LOCALIZAÇÃO</p>
             <p>Fatec - Faculdade de Tecnologia de Santana de Parnaíba</p>
