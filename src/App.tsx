@@ -23,7 +23,7 @@ export default function App(): JSX.Element {
         <Route path="/noticias" exact component={Noticias} />
         <Route path="/aluno" exact component={Alunos} />
         <Route path="/professores" exact component={Professores} />
-        <Route path="/portal" component={PortalLogin} />
+        <Route path="/portal" exact component={PortalLogin} />
       </Router>
     </div>
   );
