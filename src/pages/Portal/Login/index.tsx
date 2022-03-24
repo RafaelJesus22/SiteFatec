@@ -18,8 +18,8 @@ type PasswordInputType = 'password' | 'text';
 export const PortalLogin = () => {
   const { onChangeUser } = useAuth();
   const history = useHistory()
-  const [email, setEmail] = useState('rafael.bfmv@outlook.com');
-  const [password, setPassword] = useState('fatec123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [passwordInputType, setPasswordInputType] = 
     useState<PasswordInputType>('password');
 
