@@ -2,8 +2,8 @@ import { DashboardContainer } from "../../../components/containers/DashboardCont
 
 export const PortalDashboard: React.FC = () => {
   return (
-    <DashboardContainer>
-      <h1>este é o resultado</h1>
+    <DashboardContainer hasPadding>
+      <h1>Dashboard Home</h1>
     </DashboardContainer>
   );
 };

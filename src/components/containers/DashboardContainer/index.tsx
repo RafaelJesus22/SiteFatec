@@ -1,11 +1,15 @@
 import { DashboardMenu } from "../../organisms/DashboardMenu";
 import { PortalContainer } from "../PortalContainer";
 
-export const DashboardContainer: React.FC = ({ children }) => {
+interface Props {
+  hasPadding?: boolean;
+}
+
+export const DashboardContainer: React.FC<Props> = ({ children, hasPadding }) => {
   return (
     <PortalContainer>
       <DashboardMenu />
-      <div style={{ padding: '2rem', marginLeft: '340px' }}>
+      <div style={{ padding: hasPadding ? '2rem' : 0, marginLeft: '340px' }}>
         {children}
       </div>
     </PortalContainer>
