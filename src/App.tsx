@@ -12,6 +12,7 @@ import { Professores } from './pages/Professores/Professores';
 import { PortalLogin } from './pages/Portal/Login';
 import { PortalDashboard } from './pages/Portal/Dashboard';
 import { AuthProvider, AuthContext } from './contexts/authContext';
+import { PortalProfessores } from './pages/Portal/Professores';
 
 export default function App(): JSX.Element {
   const { user } = useContext(AuthContext);
@@ -37,6 +38,7 @@ export default function App(): JSX.Element {
             {/* {!!user ? <PortalDashboard /> : <Redirect to="/" />} */}
             <PortalDashboard />
           </Route>
+          <Route path="/portal/dashboard/professores" component={PortalProfessores} />
         </Router>
       </div>
     </AuthProvider>
