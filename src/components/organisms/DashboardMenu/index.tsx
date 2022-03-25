@@ -3,7 +3,7 @@ import { signOut } from 'firebase/auth';
 import { Link, useHistory } from "react-router-dom";
 import { FaChalkboardTeacher, FaGraduationCap } from 'react-icons/fa';
 import { CgFeed } from 'react-icons/cg';
-import { BiLogOut } from 'react-icons/bi';
+import { BiLogOut, BiHome } from 'react-icons/bi';
 
 import LogoFatec from "../../../assets/icons/logo.svg";
 import './styles.css';
@@ -13,9 +13,14 @@ import { useState } from 'react';
 const ICON_SIZE = 24;
 const MENU_ITENS = [
   {
+    label: 'Início',
+    icon: <BiHome size={ICON_SIZE} color={"#415462"} />,
+    route: '/portal/dashboard',
+  },
+  {
     label: 'Professores',
     icon: <FaChalkboardTeacher size={ICON_SIZE} color={"#415462"} />,
-    route: '#',
+    route: '/portal/dashboard/professores',
   },
   {
     label: 'Eventos',
@@ -31,7 +36,7 @@ const MENU_ITENS = [
 
 
 export const DashboardMenu: React.FC = () => {
-  const [activeItem, setActiveItem] = useState('');
+  const [activeItem, setActiveItem] = useState('Início');
   const history = useHistory();
 
   const logOut = async () => {
@@ -42,7 +47,7 @@ export const DashboardMenu: React.FC = () => {
   return (
     <div className="dashbard-menu">
       <header>
-        <Link to="/portal/dashboard">
+        <Link to="/portal/dashboard" onClick={() => setActiveItem('Início')}>
           <img src={LogoFatec} alt="Logotipo da Fatec Santana de Parnaíba" />
         </Link>
       </header>
