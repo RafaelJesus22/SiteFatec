@@ -1,0 +1,20 @@
+button.app-button {
+  height: 100%;
+  min-height: 50px;
+  padding: .5rem 1rem;
+
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  transition: 300ms ease-in;
+  cursor: pointer;
+}
+
+button.app-button:hover {
+  background-color: #8a0e03;
+}
