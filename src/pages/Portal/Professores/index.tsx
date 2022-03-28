@@ -1,25 +1,27 @@
-import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "../../../components/atoms/Button";
-import { SearchInput } from "../../../components/atoms/SearchInput";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firebase";
+
+import { CollectionsEnum } from "../../../enums/collections";
+import { useAuth } from "../../../contexts/authContext";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { PortalListContainer } from "../../../components/containers/PortalListContainer";
-import { useAuth } from "../../../contexts/authContext";
-import { db } from "../../../firebase";
+import { PortalListFilter } from "../../../components/molecules/PortalListFilter";
+import { FiTrash2, FiEdit2 } from 'react-icons/fi'
 import { DbProffessor } from "../../../types/IProfessor";
 
-import { FiTrash2, FiEdit2 } from 'react-icons/fi'
-
 import './styles.css';
-import { CollectionsEnum } from "../../../enums/collections";
-import { PortalListFilter } from "../../../components/molecules/PortalListFilter";
 
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
   const [search, setSearch] = useState('');
   const history = useHistory();
   const { user } = useAuth();
+
+  const handlePressAdd = () => {
+    history.push("professores/adicionar")
+  }
 
   const getProffessors = async () => {
     const professorsCollectionRef = collection(db, CollectionsEnum.proffessors);
@@ -47,9 +49,9 @@ export const PortalProfessores: React.FC = () => {
       </header>
 
       <PortalListFilter
-        onPressButton={() => history.push("professores/adicionar")}
+        onPressButton={handlePressAdd}
         inputValue={search}
-        onChangeInput={(value) => setSearch(value)}
+        onChangeInput={setSearch}
         inputStyle={{ minWidth: '50%' }}
       />
 
