@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
 
-import { CollectionsEnum } from "../../../enums/collections";
 import { useAuth } from "../../../contexts/authContext";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { PortalListContainer } from "../../../components/containers/PortalListContainer";
@@ -12,6 +9,7 @@ import { FiTrash2, FiEdit2 } from 'react-icons/fi'
 import { DbProffessor } from "../../../types/IProfessor";
 
 import './styles.css';
+import { proffessorsService } from "../../../services";
 
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
@@ -24,14 +22,9 @@ export const PortalProfessores: React.FC = () => {
   }
 
   const getProffessors = async () => {
-    const professorsCollectionRef = collection(db, CollectionsEnum.proffessors);
-    const proffesorsSnapshot = await getDocs(professorsCollectionRef);
+    const proffesors = await proffessorsService.getProffessors();
 
-    const proffesorsData = proffesorsSnapshot?.docs?.map(doc => {
-      return { id: doc.id, ...doc.data() };
-    })
-
-    return setProfessores(proffesorsData as DbProffessor[]);
+    return setProfessores(proffesors as DbProffessor[]);
   }
 
   useEffect(() => {
