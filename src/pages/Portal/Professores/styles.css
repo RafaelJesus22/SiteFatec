@@ -33,6 +33,12 @@
   text-transform: uppercase;
 }
 
+.portal-list_items h2 {
+  margin: 5rem 0;
+  color: var(--title-color);
+  text-align: center;
+}
+
 .portal-list_items .portal-list_item {
   display: flex;
   padding: 1rem;

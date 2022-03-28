@@ -13,6 +13,7 @@ import { proffessorsService } from "../../../services";
 
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
+  const [listItems, setListItems] = useState<DbProffessor[]>([]);
   const [search, setSearch] = useState('');
   const history = useHistory();
   const { user } = useAuth();
@@ -50,6 +51,18 @@ export const PortalProfessores: React.FC = () => {
     getProffessors();
   }, [user]);
 
+  useEffect(() => {
+    if (search === '') {
+      setListItems(professores);
+    }
+
+    const filtered = professores.filter(professor => {
+      return professor.name.toLowerCase().startsWith(search.toLowerCase())
+    });
+
+    setListItems(filtered);
+  }, [professores, search]);
+
   return (
     <DashboardContainer hasPadding>
       <header className="portal-page_header">
@@ -79,7 +92,10 @@ export const PortalProfessores: React.FC = () => {
           </p>
         </div>
         <div className="portal-list_items">
-          {professores.map(professor => (
+          {listItems.length === 0 && (
+            <h2>Nenhum professos encontrado</h2>
+          )}
+          {listItems.map(professor => (
             <div className="portal-list_item" key={professor.id}>
               <div style={{ width: '35%' }}>
                 <p title={professor.name}>
