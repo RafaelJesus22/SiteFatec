@@ -17,6 +17,7 @@
 .portal-input .icon {
   margin-left: 8px;
   margin-top: 5px;
+  max-width: 18px;
 }
 
 .portal-input input {
