@@ -36,6 +36,9 @@ export const PortalProfessores: React.FC = () => {
   }
 
   const getClasses = (proffessor: DbProffessor) => {
+    if (!proffessor.classes) {
+      return;
+    }
     return proffessor.classes.map(classe => classe.label).join(', ');
   };
 
