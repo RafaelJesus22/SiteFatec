@@ -11,3 +11,16 @@ export interface ProfessorCard {
   name: string;
   CursoDisciplinas?: ProfessorMateria[];
 }
+
+
+export interface DbProffessor {
+  name: string;
+  id?: string;
+  imgUrl: string;
+  email: string;
+  classes: string[];
+  lattes: string;
+  linkedin?: string;
+  github?: string;
+  whatsapp?: string;
+}
