@@ -78,6 +78,7 @@ export const ProffessorsForm = () => {
         />
         <FormSelect
           style={{ marginBottom: '1.5rem' }}
+          value={proffessor.classes}
           name="Cursos"
           options={[
             { value: 'ADS', label: 'Análise e desenvolvimento de sistemas' },

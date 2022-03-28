@@ -8,6 +8,7 @@ type Option = {
 interface Props {
   name: string;
   options: Option[];
+  value: Option[];
   onChange: (values: Option[]) => void;
   style?: React.CSSProperties;
 }
@@ -16,6 +17,7 @@ export const FormSelect: React.FC<Props> = ({
   name,
   options,
   style,
+  value,
   onChange,
 }) => {
   const customStyles = {
@@ -34,6 +36,7 @@ export const FormSelect: React.FC<Props> = ({
       <label>{name}</label>
       <Select
         isMulti
+        value={value}
         styles={customStyles}
         options={options}
         placeholder="Selecione"
