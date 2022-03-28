@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { FaChalkboardTeacher, FaGraduationCap } from 'react-icons/fa';
 import { CgFeed } from 'react-icons/cg';
 import { BiLogOut, BiHome } from 'react-icons/bi';
+import { ImFolderOpen } from 'react-icons/im';
 
 import LogoFatec from "../../../assets/icons/logo.svg";
 import './styles.css';
@@ -32,6 +33,11 @@ const MENU_ITENS = [
     icon: <FaGraduationCap size={ICON_SIZE} color={"#415462"} />,
     route: '#',
   },
+  {
+    label: 'Documentos',
+    icon: <ImFolderOpen size={ICON_SIZE} color={"#415462"} />,
+    route: '#',
+  },
 ]
 
 
@@ -57,7 +63,11 @@ export const DashboardMenu: React.FC = () => {
         <div className="dashboard-menu_itens_container">
           {MENU_ITENS.map(({ label, icon, route }) => (
             <div className={`dashboard-menu_item`} onClick={() => setActiveItem(label)}>
-              <Link to={route} className={activeItem === label ? 'active' : ''}>
+              <Link
+                to={route}
+                className={activeItem === label ? 'active' : ''}
+                onClick={() => setActiveItem(label)}
+              >
                 {icon}
                 <p>{label}</p>
               </Link>
