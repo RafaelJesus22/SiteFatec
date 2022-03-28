@@ -1,0 +1,23 @@
+.form-input {
+  flex: 1
+}
+
+.form-input label {
+  display: block;
+  color: var(--secondary-text-color);
+}
+
+.form-input input {
+  padding: .75rem;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: .5rem;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--title-color);
+  width: 100%;
+}
+
+.form-input input:focus {
+  border: 1.5px solid var(--primary-color);
+}
