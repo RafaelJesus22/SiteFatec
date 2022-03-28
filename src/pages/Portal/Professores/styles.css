@@ -36,7 +36,6 @@
 .portal-list_items .portal-list_item {
   display: flex;
   padding: 1rem;
-  align-items: center;
 }
 
 .portal-list_items .portal-list_item:nth-child(even) {
