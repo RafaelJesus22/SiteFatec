@@ -13,6 +13,7 @@ import { FiTrash2, FiEdit2 } from 'react-icons/fi'
 
 import './styles.css';
 import { CollectionsEnum } from "../../../enums/collections";
+import { PortalListFilter } from "../../../components/molecules/PortalListFilter";
 
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
@@ -45,17 +46,12 @@ export const PortalProfessores: React.FC = () => {
         <h1 className="title">Professores</h1>
       </header>
 
-      <div className="portal-page_options">
-        <SearchInput
-          value={search}
-          onChange={setSearch}
-          style={{ maxHeight: 40 }}
-        />
-        <Button
-          title="Adicionar +"
-          onClick={() => history.push('professores/adicionar')}
-        />
-      </div>
+      <PortalListFilter
+        onPressButton={() => history.push("professores/adicionar")}
+        inputValue={search}
+        onChangeInput={(value) => setSearch(value)}
+        inputStyle={{ minWidth: '50%' }}
+      />
 
       <PortalListContainer>
         <div className="portal-list_header">
