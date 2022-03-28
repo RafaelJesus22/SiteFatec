@@ -25,9 +25,13 @@ export const PortalProfessores: React.FC = () => {
     history.push(`professores/editar/${id}`)
   }
 
-  const getProffessors = async () => {
-    const proffesors = await proffessorsService.getProffessors();
+  const handlePressDelete = async (id: string) => {
+    await proffessorsService.deleteProffessor(id);
+    await getProffessors(true);
+  }
 
+  const getProffessors = async (storaged?: boolean) => {
+    const proffesors = await proffessorsService.getProffessors(storaged);
     return setProfessores(proffesors as DbProffessor[]);
   }
 
@@ -90,8 +94,16 @@ export const PortalProfessores: React.FC = () => {
                 </p>
               </div>
               <div className="actions" style={{ width: '10%' }}>
-                <FiEdit2 size={24} className="icon" onClick={() =>handlePressEdit(professor.id || '')} />
-                <FiTrash2 size={24} className="icon delete" />
+                <FiEdit2
+                  size={24}
+                  className="icon"
+                  onClick={() =>handlePressEdit(professor.id || '')}
+                />
+                <FiTrash2
+                  size={24}
+                  className="icon delete"
+                  onClick={() => handlePressDelete(professor.id || '')}
+                />
               </div>
             </div>
           ))}

@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, updateDoc, doc } from "firebase/firestore";
+import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
 import { CollectionsEnum } from "../enums/collections";
 import { db } from "../firebase";
 import { DbProffessor } from "../types/IProfessor";
@@ -48,10 +48,16 @@ export class ProffessorsService {
 
   async updateProffessor(proffessor: DbProffessor): Promise<void> {
     if (proffessor && proffessor.id) {
-      const docRef = doc(db, "proffessors", proffessor.id);
+      const docRef = doc(db, CollectionsEnum.proffessors, proffessor.id);
       const response = await updateDoc(docRef, {...proffessor});
 
       console.log('atualizei', response);
     }
+  }
+
+  async deleteProffessor(id: string): Promise<void> {
+    const docRef = doc(db, CollectionsEnum.proffessors, id)
+    await deleteDoc(docRef);
+    console.log('deletei');
   }
 }
