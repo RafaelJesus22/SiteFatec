@@ -18,7 +18,7 @@ export interface DbProffessor {
   id?: string;
   imgUrl: string;
   email: string;
-  classes: string[];
+  classes: Array<{ label: string, value: string }>;
   lattes: string;
   linkedin?: string;
   github?: string;
