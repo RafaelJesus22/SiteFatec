@@ -1,0 +1,6 @@
+.portal-list_filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
