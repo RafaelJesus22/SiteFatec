@@ -21,11 +21,19 @@ export const PortalProfessores: React.FC = () => {
     history.push("professores/adicionar")
   }
 
+  const handlePressEdit = (id: string) => {
+    history.push(`professores/editar/${id}`)
+  }
+
   const getProffessors = async () => {
     const proffesors = await proffessorsService.getProffessors();
 
     return setProfessores(proffesors as DbProffessor[]);
   }
+
+  const getClasses = (proffessor: DbProffessor) => {
+    return proffessor.classes.map(classe => classe.label).join(', ');
+  };
 
   useEffect(() => {
     if (!user) {
@@ -78,11 +86,11 @@ export const PortalProfessores: React.FC = () => {
               </div>
               <div style={{ width: '30%' }}>
                 <p>
-                  {professor.classes?.join(', ')}
+                  {getClasses(professor)}
                 </p>
               </div>
               <div className="actions" style={{ width: '10%' }}>
-                <FiEdit2 size={24} className="icon" />
+                <FiEdit2 size={24} className="icon" onClick={() =>handlePressEdit(professor.id || '')} />
                 <FiTrash2 size={24} className="icon delete" />
               </div>
             </div>

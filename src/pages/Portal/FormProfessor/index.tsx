@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { Button } from "../../../components/atoms/Button";
 import { FormInput } from "../../../components/atoms/FormInput";
 import { FormSelect } from "../../../components/atoms/FormSelect";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { proffessorsService } from "../../../services";
 import { DbProffessor } from "../../../types/IProfessor";
-import { Professores } from "../../Professores/Professores";
 
 import './styles.css';
 
