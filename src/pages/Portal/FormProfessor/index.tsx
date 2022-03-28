@@ -20,6 +20,16 @@ export const ProffessorsForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    
+    const { classes, email, name, lattes } = proffessor;
+    if (!classes || classes.length === 0 || !email || !name || !lattes) {
+      return window.alert('Preencha todos os campos obrigatórios');
+    };
+
+    if (!email.includes('@')) {
+      return window.alert('Email inválido');
+    }
+
     setLoading(true);
     
     if (proffessorId) {
@@ -56,7 +66,7 @@ export const ProffessorsForm = () => {
         <FormInput
           style={{ marginBottom: '1.5rem' }}
           required
-          name="Nome"
+          name="Nome *"
           value={proffessor.name}
           onChange={e => setProffessor({ ...proffessor, name: e.target.value })}
         />
@@ -64,7 +74,7 @@ export const ProffessorsForm = () => {
           style={{ marginBottom: '1.5rem' }}
           type="email"
           required
-          name="E-Mail"
+          name="E-Mail *"
           value={proffessor.email}
           onChange={e => setProffessor({ ...proffessor, email: e.target.value })}
         />
@@ -72,14 +82,14 @@ export const ProffessorsForm = () => {
           style={{ marginBottom: '1.5rem' }}
           type="url"
           required
-          name="Lattes"
+          name="Lattes *"
           value={proffessor.lattes}
           onChange={e => setProffessor({ ...proffessor, lattes: e.target.value })}
         />
         <FormSelect
           style={{ marginBottom: '1.5rem' }}
           value={proffessor.classes}
-          name="Cursos"
+          name="Cursos *"
           options={[
             { value: 'ADS', label: 'Análise e desenvolvimento de sistemas' },
             { value: 'SEGINFO', label: 'Segurança da informação' },
