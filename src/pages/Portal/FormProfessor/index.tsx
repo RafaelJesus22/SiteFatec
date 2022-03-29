@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { FormInput } from "../../../components/atoms/FormInput";
 import { FormSelect } from "../../../components/atoms/FormSelect";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
+import { useAuth } from "../../../contexts/authContext";
 import { proffessorsService } from "../../../services";
 import { DbProffessor } from "../../../types/IProfessor";
 
@@ -17,6 +18,7 @@ export const ProffessorsForm = () => {
   const { proffessorId } = useParams() as EditProffessorParams;
   const [proffessor, setProffessor] = useState<DbProffessor>({} as DbProffessor);
   const history = useHistory();
+  const { user } = useAuth();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -53,6 +55,12 @@ export const ProffessorsForm = () => {
         });
     }
   }, [proffessorId]);
+
+  useEffect(() => {
+    if (!user) {
+      history.push("/");
+    }
+  }, [history, user]);
 
   return (
     <DashboardContainer hasPadding>

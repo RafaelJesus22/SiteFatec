@@ -45,11 +45,11 @@ export const PortalProfessores: React.FC = () => {
 
   useEffect(() => {
     if (!user) {
-      // history.push("/");
+      history.push("/");
     }
 
     getProffessors();
-  }, [user]);
+  }, [history, user]);
 
   useEffect(() => {
     if (search === '') {
