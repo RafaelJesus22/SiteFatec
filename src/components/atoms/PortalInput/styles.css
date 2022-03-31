@@ -1,0 +1,32 @@
+.portal-input {
+  outline: none;
+  padding: 16px;
+  border: 1px solid #c4c4c4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  margin: 8px 0;
+  background-color: var(--white);
+}
+
+.portal-input:focus-within {
+  border: 2px solid var(--primary-color);
+}
+
+.portal-input .icon {
+  margin-left: 8px;
+  margin-top: 5px;
+  max-width: 18px;
+}
+
+.portal-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  margin-left: 8px;
+  font-size: 18px;
+  color: var(--secondary-text-color);
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+}

@@ -48,8 +48,7 @@ body {
 }
 
 .App {
-  /* width: 100vw; */
-  height: 100vh;
+  height: 100%;
 }
 
 .container {
@@ -60,11 +59,6 @@ body {
   min-height: 80vh;
 }
 
-.grid {
-  width: 100%;
-  max-width: 1290px;
-  padding: 0 1rem;
-}
 
 .link {
   text-decoration: none;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container } from '../../components/Container/Container';
-import { Content } from '../../components/Content/Content';
+import { Container } from '../../components/containers/Container/Container';
+import { Content } from '../../components/containers/Content/Content';
 import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
 import { CursoCardProps } from '../../components/molecules/CursoCard/CursoCard';
 

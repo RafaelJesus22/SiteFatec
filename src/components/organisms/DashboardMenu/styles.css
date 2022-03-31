@@ -1,0 +1,75 @@
+.dashbard-menu {
+  background-color: var(--white);
+  height: 100vh;
+  width: 340px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+}
+
+.dashbard-menu header {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+.dashbard-menu .dashboard-menu_itens {
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.dashbard-menu .dashboard-menu_itens h3 {
+  color: var(--secondary-text-color);
+  font-size: .75rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.dashbard-menu .dashboard-menu_itens .dashboard-menu_itens_container {
+  padding: .5rem 0;
+}
+
+.dashboard-menu_itens_container .dashboard-menu_item a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: .75rem;
+  /* background-color: #41546211; */
+  margin: .5rem 0;
+  border-radius: .5rem;
+  text-decoration: none;
+}
+
+.dashboard-menu_itens_container .dashboard-menu_item a:hover, 
+.dashboard-menu_itens_container .dashboard-menu_item a.active {
+  background-color: #41546211;
+}
+
+.dashboard-menu_itens_container .dashboard-menu_item a p {
+  color: var(--title-color);
+  font-size: 1rem;
+  margin-left: .5rem;
+}
+
+.dashbard-menu footer {
+  padding: 1rem;
+  border-top: 1px solid #41546244;
+}
+
+.dashbard-menu footer button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.dashbard-menu footer button p {
+  color: var(--title-color);
+  font-size: .75rem;
+  margin-left: .5rem;
+}

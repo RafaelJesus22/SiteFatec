@@ -2,10 +2,6 @@ import { CursosEnum } from "../enums/cursos";
 import { CursoProps } from "../types/ICurso";
 
 export class CursoServise {
-  constructor() {
-    console.log('CursoServise');
-  }
-
   private ads: CursoProps = {
     nome: "Analise e Desenvolvimento de Sistemas",
     link: CursosEnum.ADS,

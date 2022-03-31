@@ -1,0 +1,13 @@
+.portal-list_container {
+  width: 100%;
+  border-radius: 1rem;
+  padding:.5rem;
+}
+
+.portal-list_container:nth-child(even) {
+  background: #000;
+}
+
+.portal-list_container:nth-child(odd) {
+  background: var(--white);
+}
