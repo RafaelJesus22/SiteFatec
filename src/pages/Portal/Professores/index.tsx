@@ -13,6 +13,10 @@ import './styles.css';
 import { proffessorsService } from "../../../services";
 import { useLoading } from "../../../contexts/loadingContent";
 
+export type ProffessorParams = {
+  proffessorId: string;
+};
+
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
   const [listItems, setListItems] = useState<DbProffessor[]>([]);
@@ -49,6 +53,10 @@ export const PortalProfessores: React.FC = () => {
     }
     return proffessor.classes.map(classe => classe.label).join(', ');
   };
+
+  const handleProffessorDetails = (proffessorId: string) => {
+    history.push(`professor/${proffessorId}`)
+  }
 
   useEffect(() => {
     if (!user) {
@@ -102,33 +110,33 @@ export const PortalProfessores: React.FC = () => {
           {listItems.length === 0 && (
             <h2>Nenhum professos encontrado</h2>
           )}
-          {listItems.map(professor => (
-            <div className="portal-list_item" key={professor.id}>
-              <div style={{ width: '35%' }}>
-                <p title={professor.name}>
-                  {professor.name}
+          {listItems.map(proffessor => (
+            <div className="portal-list_item" key={proffessor.id}>
+              <div style={{ width: '35%' }} onClick={() => handleProffessorDetails(proffessor.id || '')}>
+                <p title={proffessor.name}>
+                  {proffessor.name}
                 </p>
               </div>
               <div style={{ width: '35%' }}>
-                <p title={professor.email}>
-                  {professor.email}
+                <p title={proffessor.email}>
+                  {proffessor.email}
                 </p>
               </div>
               <div style={{ width: '30%' }}>
                 <p>
-                  {getClasses(professor)}
+                  {getClasses(proffessor)}
                 </p>
               </div>
               <div className="actions" style={{ width: '10%' }}>
                 <FiEdit2
                   size={24}
                   className="icon"
-                  onClick={() =>handlePressEdit(professor.id || '')}
+                  onClick={() =>handlePressEdit(proffessor.id || '')}
                 />
                 <FiTrash2
                   size={24}
                   className="icon delete"
-                  onClick={() => handlePressDelete(professor.id || '')}
+                  onClick={() => handlePressDelete(proffessor.id || '')}
                 />
               </div>
             </div>
