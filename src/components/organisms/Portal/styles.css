@@ -27,7 +27,18 @@
   margin-bottom: 1rem;
 }
 
-.modal-content h1 {
+.modal-content .modal-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content .modal-message h1 {
   color: var(--title-color);
   font-size: 1.5rem;
+}
+
+.modal-content .modal-message img {
+
+  width: 5rem
 }

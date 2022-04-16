@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import { Logo } from '../../../assets/icons/icons';
+import { loading } from '../../../assets/images/images';
 
 import './styles.css';
 
@@ -20,7 +21,10 @@ export const Portal: React.FC<Props> = ({
     <div className="modal-container">
       <div className="modal-content">
         <img src={Logo} alt="Logo tipo da FATEC Santana de Parnaíba" />
-        <h1>{text}</h1>
+        <div className='modal-message'>
+          <h1>{text}</h1>
+          <img src={loading} alt="Carregando informações" />
+        </div>
       </div>
     </div>, 
     document.getElementsByName('portal')[0]

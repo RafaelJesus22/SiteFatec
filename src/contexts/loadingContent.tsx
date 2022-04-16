@@ -17,7 +17,7 @@ export const LoadingProvider: React.FC = ({ children }) => {
   const [message, setMessage] = useState("");
 
   const showLoading = (props?: ShowLoadingType) => {
-    setMessage(props?.message || "Carregando...");  
+    setMessage(props?.message || "Carregando");  
     setLoading(true);
   };
 
