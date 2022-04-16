@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../contexts/authContext";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { PortalListContainer } from "../../../components/containers/PortalListContainer";
+import { Modal } from "../../../components/molecules/Modal";
 import { PortalListFilter } from "../../../components/molecules/PortalListFilter";
 import { FiTrash2, FiEdit2 } from 'react-icons/fi'
 import { DbProffessor } from "../../../types/IProfessor";
@@ -19,7 +20,9 @@ export type ProffessorParams = {
 
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
+  const [selectedProffessor, setSelectedProffessor] = useState<DbProffessor>({} as DbProffessor);
   const [listItems, setListItems] = useState<DbProffessor[]>([]);
+  const [modalDelete, setModalDelete] = useState(false);
   const [search, setSearch] = useState('');
   const history = useHistory();
   const { user } = useAuth();
@@ -33,10 +36,15 @@ export const PortalProfessores: React.FC = () => {
     history.push(`professores/editar/${id}`)
   }
 
-  const handlePressDelete = async (id: string) => {
-    await proffessorsService.deleteProffessor(id);
+  const performDelete = async () => {
+    setModalDelete(false);
+    showLoading();
+
+    await proffessorsService.deleteProffessor(selectedProffessor.id || '');
     await getProffessors(true);
-  }
+
+    hideLoading();
+  };
 
   const getProffessors = useCallback(async (storaged?: boolean) => {
     showLoading();
@@ -136,12 +144,23 @@ export const PortalProfessores: React.FC = () => {
                 <FiTrash2
                   size={24}
                   className="icon delete"
-                  onClick={() => handlePressDelete(proffessor.id || '')}
+                  onClick={() => {
+                    setSelectedProffessor(proffessor);
+                    setModalDelete(true);
+                  }}
                 />
               </div>
             </div>
           ))}
         </div>
+        <Modal
+            visible={modalDelete}
+            title="Excluir professor"
+            text="Tem certeza que deseja excluir este professor?"
+            onClick={performDelete}
+            onCancel={() => setModalDelete(false)}
+            confirmButtonText="Excluir"
+          />
       </PortalListContainer>
     </DashboardContainer>
   );
