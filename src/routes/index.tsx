@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 import { Home } from '../pages/Home/Home';
 import { Sobre } from '../pages/Sobre/Sobre';
@@ -26,22 +26,24 @@ export default function Routes(): JSX.Element {
   return (
     <div className="App">
       <Router>
-        <Route path="/" exact component={Home} />
-        <Route path="/sobre" exact component={Sobre} />
-        <Route path="/cursos" exact component={Cursos} />
-        <Route path="/cursos/:curso" exact component={DetalhesCurso} />
-        <Route path="/departamentos" exact component={Departamentos} />
-        <Route path="/noticias" exact component={Noticias} />
-        <Route path="/aluno" exact component={Alunos} />
-        <Route path="/professores" exact component={Professores} />
-        <Route path="/portal" exact component={PortalLogin} />
-        <Route path="/portal/dashboard" exact>
-          {!!user ? <PortalDashboard /> : <Redirect to="/portal" />}
-          <PortalDashboard />
-        </Route>
-        <Route path="/portal/dashboard/professores" exact component={PortalProfessores} />
-        <Route path="/portal/dashboard/professores/adicionar" exact component={ProffessorsForm} />
-        <Route path="/portal/dashboard/professores/editar/:proffessorId" exact component={ProffessorsForm} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/sobre" exact component={Sobre} />
+          <Route path="/cursos" exact component={Cursos} />
+          <Route path="/cursos/:curso" exact component={DetalhesCurso} />
+          <Route path="/departamentos" exact component={Departamentos} />
+          <Route path="/noticias" exact component={Noticias} />
+          <Route path="/aluno" exact component={Alunos} />
+          <Route path="/professores" exact component={Professores} />
+          <Route path="/portal" exact component={PortalLogin} />
+          <Route path="/portal/dashboard" exact>
+            {!!user ? <PortalDashboard /> : <Redirect to="/portal" />}
+            <PortalDashboard />
+          </Route>
+          <Route path="/portal/dashboard/professores" exact component={PortalProfessores} />
+          <Route path="/portal/dashboard/professores/adicionar" exact component={ProffessorsForm} />
+          <Route path="/portal/dashboard/professores/editar/:proffessorId" exact component={ProffessorsForm} />
+        </Switch>
       </Router>
     </div>
   );
