@@ -4,6 +4,7 @@ import { FormInput } from "../../../components/atoms/FormInput";
 import { FormSelect } from "../../../components/atoms/FormSelect";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { useAuth } from "../../../contexts/authContext";
+import { useLoading } from "../../../contexts/loadingContent";
 import { proffessorsService } from "../../../services";
 import { DbProffessor } from "../../../types/IProfessor";
 
@@ -14,7 +15,7 @@ type EditProffessorParams = {
 };
 
 export const ProffessorsForm = () => {
-  const [loading, setLoading] = useState(false);
+  const { hideLoading, showLoading } = useLoading();
   const { proffessorId } = useParams() as EditProffessorParams;
   const [proffessor, setProffessor] = useState<DbProffessor>({} as DbProffessor);
   const history = useHistory();
@@ -32,7 +33,7 @@ export const ProffessorsForm = () => {
       return window.alert('Email inválido');
     }
 
-    setLoading(true);
+    showLoading({ message: 'Salvando informações' });
     
     if (proffessorId) {
       await proffessorsService.updateProffessor(proffessor);
@@ -41,7 +42,7 @@ export const ProffessorsForm = () => {
     }
     
     await proffessorsService.getProffessors(true);
-    setLoading(false);
+    hideLoading();
     history.goBack();
   }
 
@@ -58,7 +59,7 @@ export const ProffessorsForm = () => {
 
   useEffect(() => {
     if (!user) {
-      history.push("/");
+      history.push("/portal");
     }
   }, [history, user]);
 
@@ -82,7 +83,7 @@ export const ProffessorsForm = () => {
           style={{ marginBottom: '1.5rem' }}
           required
           name="Título *"
-          placeholder="Ex: Profº Drº..."
+          placeholder="Ex: Prof. Dr."
           value={proffessor.title}
           onChange={e => setProffessor({ ...proffessor, title: e.target.value })}
         />
@@ -147,7 +148,7 @@ export const ProffessorsForm = () => {
 
         <div className="form-button">
           <button onClick={handleSubmit} >
-            {loading ? 'Carregando...' : 'Salvar'}
+            Salvar
           </button>
         </div>
       </form>
