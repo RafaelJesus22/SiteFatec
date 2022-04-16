@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -37,6 +38,7 @@ export const PortalProfessores: React.FC = () => {
     showLoading();
     const proffesors = await proffessorsService.getProffessors(storaged);
     console.log('proffesors', proffesors);
+
     setProfessores(proffesors as DbProffessor[]);
     hideLoading();
   }, [hideLoading, showLoading]);
@@ -54,7 +56,7 @@ export const PortalProfessores: React.FC = () => {
     }
 
     getProffessors();
-  }, [getProffessors, history, user]);
+  }, [history, user]);
 
   useEffect(() => {
     if (search === '') {
