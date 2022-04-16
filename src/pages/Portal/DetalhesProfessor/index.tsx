@@ -5,6 +5,7 @@ import { ListItem } from "../../../components/atoms/ListItem";
 import { FormButton } from "../../../components/atoms/PortalButton";
 import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { PortalListContainer } from "../../../components/containers/PortalListContainer";
+import { Modal } from "../../../components/molecules/Modal";
 import { colors } from "../../../config/styles";
 import { useLoading } from "../../../contexts/loadingContent";
 import { proffessorsService } from "../../../services";
@@ -104,7 +105,7 @@ export const ProffessorDetails: React.FC = () => {
                 />
                 <FormButton
                   title="Excluir"
-                  onClick={performDelete}
+                  onClick={() => setModalDelete(true)}
                 />
               </div>
             </Fragment>
@@ -113,6 +114,15 @@ export const ProffessorDetails: React.FC = () => {
           {!proffessor && (
             <h3>Professor não encontrado</h3>
           )}
+
+          <Modal
+            visible={modalDelete}
+            title="Excluir professor"
+            text="Tem certeza que deseja excluir este professor?"
+            onClick={performDelete}
+            onCancel={() => setModalDelete(false)}
+            confirmButtonText="Excluir"
+          />
         </div>
       </PortalListContainer>
     </DashboardContainer>
