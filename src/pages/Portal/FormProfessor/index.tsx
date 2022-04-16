@@ -7,16 +7,13 @@ import { useAuth } from "../../../contexts/authContext";
 import { useLoading } from "../../../contexts/loadingContent";
 import { proffessorsService } from "../../../services";
 import { DbProffessor } from "../../../types/IProfessor";
+import { ProffessorParams } from "../Professores"; 
 
 import './styles.css';
 
-type EditProffessorParams = {
-  proffessorId: string;
-};
-
 export const ProffessorsForm = () => {
   const { hideLoading, showLoading } = useLoading();
-  const { proffessorId } = useParams() as EditProffessorParams;
+  const { proffessorId } = useParams() as ProffessorParams;
   const [proffessor, setProffessor] = useState<DbProffessor>({} as DbProffessor);
   const history = useHistory();
   const { user } = useAuth();
