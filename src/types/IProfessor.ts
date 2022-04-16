@@ -16,6 +16,7 @@ export interface ProfessorCard {
 export interface DbProffessor {
   name: string;
   id?: string;
+  title?: string;
   imgUrl: string;
   email: string;
   classes: Array<{ label: string, value: string }>;

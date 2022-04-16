@@ -80,6 +80,14 @@ export const ProffessorsForm = () => {
         />
         <FormInput
           style={{ marginBottom: '1.5rem' }}
+          required
+          name="Título *"
+          placeholder="Ex: Profº Drº..."
+          value={proffessor.title}
+          onChange={e => setProffessor({ ...proffessor, title: e.target.value })}
+        />
+        <FormInput
+          style={{ marginBottom: '1.5rem' }}
           type="email"
           required
           name="E-Mail *"

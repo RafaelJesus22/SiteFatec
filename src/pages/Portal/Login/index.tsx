@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, UserCredential } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from "react";
 import { MdEmail } from 'react-icons/md';
 import { BiLock } from 'react-icons/bi';
