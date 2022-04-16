@@ -19,7 +19,6 @@ export default function Routes(): JSX.Element {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log('user no routes', user);
   }, [user]);
 
   console.log(user);
@@ -37,7 +36,7 @@ export default function Routes(): JSX.Element {
         <Route path="/professores" exact component={Professores} />
         <Route path="/portal" exact component={PortalLogin} />
         <Route path="/portal/dashboard" exact>
-          {!!user ? <PortalDashboard /> : <Redirect to="/" />}
+          {!!user ? <PortalDashboard /> : <Redirect to="/portal" />}
           <PortalDashboard />
         </Route>
         <Route path="/portal/dashboard/professores" exact component={PortalProfessores} />

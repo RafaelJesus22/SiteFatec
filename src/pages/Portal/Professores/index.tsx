@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { useAuth } from "../../../contexts/authContext";
@@ -10,6 +10,7 @@ import { DbProffessor } from "../../../types/IProfessor";
 
 import './styles.css';
 import { proffessorsService } from "../../../services";
+import { useLoading } from "../../../contexts/loadingContent";
 
 export const PortalProfessores: React.FC = () => {
   const [professores, setProfessores] = useState<DbProffessor[]>([]);
@@ -17,6 +18,7 @@ export const PortalProfessores: React.FC = () => {
   const [search, setSearch] = useState('');
   const history = useHistory();
   const { user } = useAuth();
+  const { hideLoading, showLoading } = useLoading()
 
   const handlePressAdd = () => {
     history.push("professores/adicionar")
@@ -31,10 +33,13 @@ export const PortalProfessores: React.FC = () => {
     await getProffessors(true);
   }
 
-  const getProffessors = async (storaged?: boolean) => {
+  const getProffessors = useCallback(async (storaged?: boolean) => {
+    showLoading();
     const proffesors = await proffessorsService.getProffessors(storaged);
-    return setProfessores(proffesors as DbProffessor[]);
-  }
+    console.log('proffesors', proffesors);
+    setProfessores(proffesors as DbProffessor[]);
+    hideLoading();
+  }, [hideLoading, showLoading]);
 
   const getClasses = (proffessor: DbProffessor) => {
     if (!proffessor.classes) {
@@ -45,11 +50,11 @@ export const PortalProfessores: React.FC = () => {
 
   useEffect(() => {
     if (!user) {
-      history.push("/");
+      history.push("/portal");
     }
 
     getProffessors();
-  }, [history, user]);
+  }, [getProffessors, history, user]);
 
   useEffect(() => {
     if (search === '') {
