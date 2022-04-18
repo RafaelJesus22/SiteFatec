@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { FormInput } from "../../../components/atoms/FormInput";
-import { FormSelect } from "../../../components/atoms/FormSelect";
-import { DashboardContainer } from "../../../components/containers/DashboardContainer";
-import { useAuth } from "../../../contexts/authContext";
-import { useLoading } from "../../../contexts/loadingContent";
-import { proffessorsService } from "../../../services";
-import { DbProffessor } from "../../../types/IProfessor";
-import { ProffessorParams } from "../Professores"; 
+import { FormInput } from "../../../../components/atoms/FormInput";
+import { FormSelect } from "../../../../components/atoms/FormSelect";
+import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
+import { useAuth } from "../../../../contexts/authContext";
+import { useLoading } from "../../../../contexts/loadingContent";
+import { proffessorsService } from "../../../../services";
+import { DbProffessor } from "../../../../types/IProfessor";
+import { ProffessorParams } from ".."; 
 
 import './styles.css';
 

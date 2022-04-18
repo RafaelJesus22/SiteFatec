@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Fragment, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { ListItem } from "../../../components/atoms/ListItem";
-import { FormButton } from "../../../components/atoms/PortalButton";
-import { DashboardContainer } from "../../../components/containers/DashboardContainer";
-import { PortalListContainer } from "../../../components/containers/PortalListContainer";
-import { Modal } from "../../../components/molecules/Modal";
-import { colors } from "../../../config/styles";
-import { useLoading } from "../../../contexts/loadingContent";
-import { proffessorsService } from "../../../services";
-import { DbProffessor } from "../../../types/IProfessor";
-import { ProffessorParams } from "../Professores";
+import { ListItem } from "../../../../components/atoms/ListItem";
+import { FormButton } from "../../../../components/atoms/PortalButton";
+import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
+import { PortalListContainer } from "../../../../components/containers/PortalListContainer";
+import { Modal } from "../../../../components/molecules/Modal";
+import { colors } from "../../../../config/styles";
+import { useLoading } from "../../../../contexts/loadingContent";
+import { proffessorsService } from "../../../../services";
+import { DbProffessor } from "../../../../types/IProfessor";
+import { ProffessorParams } from "..";
 
 import'./styles.css';
 
