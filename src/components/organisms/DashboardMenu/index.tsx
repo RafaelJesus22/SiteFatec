@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 
 import { Link, useHistory } from "react-router-dom";
-import { FaChalkboardTeacher, FaGraduationCap } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaGraduationCap, FaUserGraduate } from 'react-icons/fa';
 import { CgFeed } from 'react-icons/cg';
 import { BiLogOut, BiHome } from 'react-icons/bi';
 import { ImFolderOpen } from 'react-icons/im';
@@ -35,7 +35,7 @@ const MENU_ITENS = [
   },
   {
     label: 'Disciplinas',
-    icon: <FaGraduationCap size={ICON_SIZE} color={"#415462"} />,
+    icon: <FaUserGraduate size={ICON_SIZE} color={"#415462"} />,
     route: '/portal/dashboard/disciplinas',
   },
   {
