@@ -20,8 +20,8 @@ export const PortalLogin = () => {
   const { onChangeUser } = useAuth();
   const { hideLoading, showLoading } = useLoading();
   const history = useHistory()
-  const [email, setEmail] = useState('rafael.bfmv@outlook.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [passwordInputType, setPasswordInputType] = 
     useState<PasswordInputType>('password');
 
