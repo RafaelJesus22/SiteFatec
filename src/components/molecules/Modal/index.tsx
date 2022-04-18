@@ -40,7 +40,7 @@ export const Modal: React.FC<Props> = ({
             onClick={onCancel}
             type="secondary"
           />
-          <div style={{ width: 10 }} />
+          <div style={{ width: 15 }} />
           <Button
             title={confirmButtonText}
             onClick={onClick}
