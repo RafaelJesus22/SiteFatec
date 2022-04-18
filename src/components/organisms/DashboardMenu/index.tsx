@@ -34,6 +34,11 @@ const MENU_ITENS = [
     route: '#',
   },
   {
+    label: 'Disciplinas',
+    icon: <FaGraduationCap size={ICON_SIZE} color={"#415462"} />,
+    route: '/portal/dashboard/disciplinas',
+  },
+  {
     label: 'Documentos',
     icon: <ImFolderOpen size={ICON_SIZE} color={"#415462"} />,
     route: '#',
