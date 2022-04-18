@@ -15,6 +15,9 @@ import { AuthContext } from '../contexts/authContext';
 import { PortalProfessores } from '../pages/Portal/Professores';
 import { ProffessorsForm } from '../pages/Portal/Professores/FormProfessor';
 import { ProffessorDetails } from '../pages/Portal/Professores/DetalhesProfessor';
+import { PortalSubjects } from '../pages/Portal/Disciplinas';
+import { SubjectsForm } from '../pages/Portal/Disciplinas/FormDisciplina';
+import { SubjectDetails } from '../pages/Portal/Disciplinas/DetalhesDisciplina';
 
 export default function Routes(): JSX.Element {
   const { user } = useContext(AuthContext);
@@ -45,6 +48,11 @@ export default function Routes(): JSX.Element {
           <Route path="/portal/dashboard/professores/adicionar" exact component={ProffessorsForm} />
           <Route path="/portal/dashboard/professores/editar/:proffessorId" exact component={ProffessorsForm} />
           <Route path="/portal/dashboard/professor/:proffessorId" exact component={ProffessorDetails} />
+
+          <Route path="/portal/dashboard/disciplinas" exact component={PortalSubjects} />
+          <Route path="/portal/dashboard/disciplinas/adicionar" exact component={SubjectsForm} />
+          <Route path="/portal/dashboard/disciplinas/editar/:disciplinaId" exact component={SubjectsForm} />
+          <Route path="/portal/dashboard/disciplina/:disciplinaId" exact component={SubjectDetails} />
         </Switch>
       </Router>
     </div>
