@@ -94,7 +94,7 @@ export const PortalSubjects: React.FC = () => {
 
       <PortalListContainer>
         <div className="portal-list_header">
-          <p style={{ width: '35%' }}>
+          <p style={{ width: '55%' }}>
             Nome
           </p>
           <p style={{ width: '35%' }}>
@@ -110,7 +110,7 @@ export const PortalSubjects: React.FC = () => {
           )}
           {listItems.map(subject => (
             <div className="portal-list_item" key={subject.id}>
-              <div style={{ width: '35%' }} onClick={() => handleSubjectDetails(subject.id || '')}>
+              <div style={{ width: '55%' }} onClick={() => handleSubjectDetails(subject.id || '')}>
                 <p title={subject.name} className="list-link">
                   {subject.name}
                 </p>

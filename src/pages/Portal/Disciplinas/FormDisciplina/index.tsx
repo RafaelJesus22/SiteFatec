@@ -19,8 +19,9 @@ export const SubjectsForm = () => {
   const [theme, setTheme] = useState<SubjectTheme>({} as SubjectTheme);
   const history = useHistory();
   const { user } = useAuth();
-
+  
   const handleSubmit = async (e: any) => {
+    e.preventDefault();
     const { name, theme, weeklyClasses } = subject;
     if (!name || !weeklyClasses) {
       return window.alert('Preencha todos os campos obrigatórios!');
@@ -29,9 +30,8 @@ export const SubjectsForm = () => {
     if (!theme) {
       return window.alert('Selecione a cor da disciplina no card da grade!');
     }
-    
+
     showLoading({ message: 'Salvando informações' });
-    e.preventDefault();
 
     if (disciplinaId) {
       await subjectService.updateSubject(subject);
@@ -53,9 +53,7 @@ export const SubjectsForm = () => {
     if (disciplinaId) {
       subjectService.getOneSubject(disciplinaId)
         .then(res => {
-          if (res) {
-            setSubject(res);
-          }
+          setSubject(res as DbSubject);
         });
     }
   }, [disciplinaId]);
