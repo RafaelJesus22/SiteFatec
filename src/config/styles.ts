@@ -1,3 +1,5 @@
+import { SubjectTheme } from "../types/ICurso"
+
 export const colors = {
   primaryColor: '#971004',
   titleColor: '#415462',
@@ -19,3 +21,42 @@ export const buttonTheme = {
     border: `1px solid ${colors.primaryColor}`,
   },
 }
+
+export const subjectTheme: SubjectTheme[] = [
+  {
+    background: '#92D050',
+    color: '#fff'
+  },
+  {
+    background: '#C4D69B',
+    color: '#254112'
+  },
+  {
+    background: '#F5F560',
+    color: '#415462'
+  },
+  {
+    background: '#E16B09',
+    color: '#fff'
+  },
+  {
+    background: '#9AC3E1',
+    color: '#415462'
+  },
+  {
+    background: '#BBDAFF',
+    color: '#415462'
+  },
+  {
+    background: '#698953',
+    color: '#fff'
+  },
+  {
+    background: '#BEBEBE',
+    color: '#415462'
+  },
+  {
+    background: '#BBDAFF',
+    color: '#415462'
+  },
+]
