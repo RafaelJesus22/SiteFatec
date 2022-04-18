@@ -121,7 +121,7 @@ export const PortalProfessores: React.FC = () => {
           {listItems.map(proffessor => (
             <div className="portal-list_item" key={proffessor.id}>
               <div style={{ width: '35%' }} onClick={() => handleProffessorDetails(proffessor.id || '')}>
-                <p title={proffessor.name}>
+                <p title={proffessor.name} className="list-link">
                   {proffessor.name}
                 </p>
               </div>

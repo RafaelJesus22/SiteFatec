@@ -55,6 +55,13 @@
   overflow: hidden;
   padding-right: .5rem;
 }
+.portal-list_items .portal-list_item div .list-link {
+  cursor: pointer;
+}
+
+.portal-list_items .portal-list_item div .list-link:hover {
+  text-decoration: underline;
+}
 
 .portal-list_items .portal-list_item .icon {
   color: var(--title-color);
