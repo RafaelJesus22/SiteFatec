@@ -88,3 +88,15 @@ export const TIPO_DISCIPLINA: TipodDisciplinaType = {
   multidisciplinarProfissional: 'multidisciplinarProfissional',
   multidisciplinarBasica: 'multidisciplinarBasica'
 }
+
+export interface SubjectTheme {
+  background: string;
+  color: string;
+}
+
+export interface DbSubject {
+  id: string;
+  name: string;
+  weeklyClasses: number;
+  theme: SubjectTheme;
+}
