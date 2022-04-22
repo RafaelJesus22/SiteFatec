@@ -3,7 +3,7 @@ import './styles.css';
 
 interface Props {
   title: string;
-  onClick: () => any;
+  onClick: (param?: any) => any | Promise<any>;
   color?: string;
 }
 
