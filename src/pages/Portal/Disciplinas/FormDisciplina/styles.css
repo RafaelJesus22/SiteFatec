@@ -1,9 +1,5 @@
 .dashboard-form {
-  background-color: var(--white);
-  padding: 3rem;
-  border-radius: 1rem;
   min-height: 100%;
-
 }
 
 .dashboard-form h1 {
@@ -11,39 +7,8 @@
   padding-bottom: 1rem;
 }
 
-.dashboard-form .row {
-  margin: 0;
-  margin-bottom: 1rem;
-  display: flex;
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-
-.dashboard-form .row input {
-  width: 100%;
-}
-
 .dashboard-form .form-button {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-}
-
-.dashboard-form .form-button button {
-  width: 40%;
-  padding: .75rem;
-  outline: none;
-  border: none;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-radius: .5rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 300ms ease-in-out;
-}
-
-.dashboard-form .form-button button:hover {
-  background-color: #8a0e03;
 }

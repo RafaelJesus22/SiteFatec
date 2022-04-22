@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { ListItem } from "../../../../components/atoms/ListItem";
 import { FormButton } from "../../../../components/atoms/PortalButton";
 import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
-import { PortalListContainer } from "../../../../components/containers/PortalListContainer";
+import { PortalContent } from "../../../../components/containers/PortalContent";
 import { SubjectThemeMarker } from "../../../../components/atoms/SubjectThemeMarker";
 import { Modal } from "../../../../components/molecules/Modal";
 import { colors } from "../../../../config/styles";
@@ -48,7 +48,7 @@ export const SubjectDetails: React.FC = () => {
 
   return (
     <DashboardContainer hasPadding>
-      <PortalListContainer>
+      <PortalContent showsBack>
         <div className="subject-details-container">
           {!!subject && (
             <Fragment>
@@ -91,7 +91,7 @@ export const SubjectDetails: React.FC = () => {
             confirmButtonText="Excluir"
           />
         </div>
-      </PortalListContainer>
+      </PortalContent>
     </DashboardContainer>
   );
 };
