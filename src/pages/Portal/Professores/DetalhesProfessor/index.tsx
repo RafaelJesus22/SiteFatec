@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { ListItem } from "../../../../components/atoms/ListItem";
 import { FormButton } from "../../../../components/atoms/PortalButton";
 import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
-import { PortalListContainer } from "../../../../components/containers/PortalListContainer";
+import { PortalContent } from "../../../../components/containers/PortalContent";
 import { Modal } from "../../../../components/molecules/Modal";
 import { colors } from "../../../../config/styles";
 import { useLoading } from "../../../../contexts/loadingContent";
@@ -57,7 +57,7 @@ export const ProffessorDetails: React.FC = () => {
 
   return (
     <DashboardContainer hasPadding>
-      <PortalListContainer>
+      <PortalContent showsBack>
         <div className="proffessor-details-container">
           {!!proffessor && (
             <Fragment>
@@ -124,7 +124,7 @@ export const ProffessorDetails: React.FC = () => {
             confirmButtonText="Excluir"
           />
         </div>
-      </PortalListContainer>
+      </PortalContent>
     </DashboardContainer>
   );
 };

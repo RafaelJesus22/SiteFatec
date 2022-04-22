@@ -11,6 +11,8 @@ import { subjectTheme } from "../../../../config/styles";
 
 import './styles.css';
 import { SubjectThemeMarker } from "../../../../components/atoms/SubjectThemeMarker";
+import { PortalContent } from "../../../../components/containers/PortalContent";
+import { FormButton } from "../../../../components/atoms/PortalButton";
 
 export const SubjectsForm = () => {
   const { hideLoading, showLoading } = useLoading();
@@ -19,7 +21,7 @@ export const SubjectsForm = () => {
   const [theme, setTheme] = useState<SubjectTheme>({} as SubjectTheme);
   const history = useHistory();
   const { user } = useAuth();
-  
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const { name, theme, weeklyClasses } = subject;
@@ -54,6 +56,7 @@ export const SubjectsForm = () => {
       subjectService.getOneSubject(disciplinaId)
         .then(res => {
           setSubject(res as DbSubject);
+          setTheme(res?.theme as SubjectTheme);
         });
     }
   }, [disciplinaId]);
@@ -66,51 +69,54 @@ export const SubjectsForm = () => {
 
   return (
     <DashboardContainer hasPadding>
-      <form className="dashboard-form">
-        <h1>
-          {disciplinaId ? "Editar" : "Adicionar"} Disciplina
-        </h1>
-        <FormInput
-          style={{ marginBottom: '1.5rem' }}
-          required
-          name="Nome *"
-          value={subject.name}
-          onChange={e => setSubject({ ...subject, name: e.target.value })}
-        />
-        <FormInput
-          style={{ marginBottom: '1.5rem' }}
-          required
-          name="Aulas semanais *"
-          type="number"
-          value={subject.weeklyClasses}
-          onChange={e => setSubject({ ...subject, weeklyClasses: e.target.value })}
-        />
+      <PortalContent showsBack>
+        <form className="dashboard-form">
+          <h1>
+            {disciplinaId ? "Editar" : "Adicionar"} Disciplina
+          </h1>
+          <FormInput
+            style={{ marginBottom: '1.5rem' }}
+            required
+            name="Nome *"
+            value={subject.name}
+            onChange={e => setSubject({ ...subject, name: e.target.value })}
+          />
+          <FormInput
+            style={{ marginBottom: '1.5rem' }}
+            required
+            name="Aulas semanais *"
+            type="number"
+            value={subject.weeklyClasses}
+            onChange={e => setSubject({ ...subject, weeklyClasses: e.target.value })}
+          />
 
-        <div className="form-input">
-          <label>Cor do card na grade</label>
-          <div style={{
-            display: 'flex',
-            marginTop: '0.5rem',
-          }}>
-            {subjectTheme.map((item) => (
-              <SubjectThemeMarker
-                key={item.background}
-                cursorPointer
-                theme={item}
-                size={44}
-                onPress={handleSelectTheme}
-                selected={item === theme}
-              />
-            ))}
+          <div className="form-input">
+            <label>Cor do card na grade</label>
+            <div style={{
+              display: 'flex',
+              marginTop: '0.5rem',
+            }}>
+              {subjectTheme.map((item) => (
+                <SubjectThemeMarker
+                  key={item.background}
+                  cursorPointer
+                  theme={item}
+                  size={44}
+                  onPress={handleSelectTheme}
+                  selected={item === theme}
+                />
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="form-button">
-          <button onClick={handleSubmit} >
-            Salvar
-          </button>
-        </div>
-      </form>
+          <div className="form-button">
+            <FormButton
+              onClick={handleSubmit}
+              title="Salvar"
+            />
+          </div>
+        </form>
+      </PortalContent>
     </DashboardContainer>
   );
 };
