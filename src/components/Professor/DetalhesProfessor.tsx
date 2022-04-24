@@ -1,17 +1,19 @@
 import React from 'react';
-import { ProfessorMateria } from '../../types/IProfessor';
-import { Disciplina } from '../../types/ICurso';
+import { DbProffessor } from '../../types/IProfessor';
+import { DbSubject } from '../../types/ICurso';
 
-export const DetralhesProfessor = (props: ProfessorMateria): JSX.Element => {
-  const { curso, disciplinas, funcao } = props;
+export const DetralhesProfessor: React.FC<DbProffessor> = ({
+  name,
+  classes
+}): JSX.Element => {
   return (
-    <div key={curso} className={'detalhe'}>
+    <div key={name} className={'detalhe'}>
       <div>
         <h4 className="detalhe__title">Curso:</h4>
-        <p>{curso}</p>
+        <p>{classes[0].value}</p>
       </div>
 
-      <div>
+      {/* <div>
         <h4 className="detalhe__title">Função:</h4>
         <p>{funcao}</p>
       </div>
@@ -19,13 +21,13 @@ export const DetralhesProfessor = (props: ProfessorMateria): JSX.Element => {
       <div>
         <h4 className="detalhe__title">Disciplinas</h4>
         <div className="disciplina__container">
-          {disciplinas.map((disciplina: Disciplina) => (
-            <p key={disciplina.nome} className="disciplina">
-              {disciplina.nome}
+          {disciplinas.map((disciplina: DbSubject) => (
+            <p key={disciplina.name} className="disciplina">
+              {disciplina.name}
             </p>
           ))}
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 };

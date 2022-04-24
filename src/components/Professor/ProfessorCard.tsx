@@ -1,19 +1,18 @@
 import React from 'react';
 import {
-  ProfessorCard as Props,
-  ProfessorMateria,
+  DbProffessor,
 } from '../../types/IProfessor';
 import { DetralhesProfessor } from './DetalhesProfessor';
 import './styles.css';
 
-export const ProfessorCard = (props: Props): JSX.Element => {
+export const ProfessorCard = (props: DbProffessor): JSX.Element => {
   const [selected, setSelected] = React.useState(false);
 
   const toggleSelected = (): void => {
     setSelected(!selected);
   };
 
-  const { imgUrl, name, CursoDisciplinas } = props;
+  const { imgUrl, name } = props;
   return (
     <div className="professor-card">
       <div className="professor-card__header">
@@ -29,11 +28,11 @@ export const ProfessorCard = (props: Props): JSX.Element => {
         </div>
       </div>
       <div className="cursos" style={{ height: selected ? 180 : 0 }}>
-        {selected &&
+        {/* {selected &&
           CursoDisciplinas &&
           CursoDisciplinas.map((curso: ProfessorMateria, index: number) => (
             <DetralhesProfessor key={index} {...curso} />
-          ))}
+          ))} */}
       </div>
     </div>
   );

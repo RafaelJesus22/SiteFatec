@@ -1,4 +1,5 @@
-import { CoordenadorCursoProps, CursoDetalhesTecnicosProps } from "../../../types/ICurso";
+import { CourseTechnicalDetailsProps } from "../../../types/ICurso";
+import { DbProffessor } from "../../../types/IProfessor";
 import { Card } from "../../atoms/Card";
 import { LabelText } from "../../atoms/Typography/LabelText";
 import { CoordenadorCurso } from "../../molecules/CoordenadorCurso";
@@ -6,8 +7,8 @@ import { CoordenadorCurso } from "../../molecules/CoordenadorCurso";
 import './styles.css';
 
 interface Props {
-  detalhes: CursoDetalhesTecnicosProps;
-  coordenador?: CoordenadorCursoProps;
+  detalhes: CourseTechnicalDetailsProps;
+  coordenador?: DbProffessor;
 }
 
 export const CursoDetalhesTecnicos: React.FC<Props> = ({
@@ -24,17 +25,17 @@ export const CursoDetalhesTecnicos: React.FC<Props> = ({
         )}
         <Item
           title="Duração do curso"
-          description={`${detalhes.duracao} anos`}
+          description={`${detalhes.duration} anos`}
         />
         <Item
-          title={detalhes.periodo}
-          description={`${detalhes.vagas} vagas por semestre`}
+          title={detalhes.timeCourse}
+          description={`${detalhes.vacancies} vagas por semestre`}
         />
 
-        {detalhes.nota && (
+        {detalhes.note && (
           <Item
             title="Nota"
-            description={detalhes.nota || ''}
+            description={detalhes.note || ''}
           />
         )}
         <Item

@@ -1,7 +1,7 @@
 import { Container } from '../../../components/containers/Container/Container';
 import { Content } from '../../../components/containers/Content/Content';
-import { GradeCurricular } from '../../../components/organisms/gradeCurricular'
-import { CursoProps } from '../../../types/ICurso';
+// import { GradeCurricular } from '../../../components/organisms/gradeCurricular'
+import { DbCurso } from '../../../types/ICurso';
 import { useEffect, useState } from 'react';
 import { cursosService } from '../../../services';
 import { useParams } from 'react-router-dom';
@@ -9,10 +9,11 @@ import { CursosEnum } from '../../../enums/cursos';
 import { CursoInfo } from '../../../components/molecules/CursoInfo';
 import { CursoDetalhesTecnicos } from '../../../components/molecules/CursoDetalhesTecnicos';
 import './styles.css';
+import { DbProffessor } from '../../../types/IProfessor';
 
 
 export const DetalhesCurso = () => {
-  const [curso, setCurso] = useState<CursoProps | undefined>();
+  const [curso, setCurso] = useState<DbCurso | undefined>();
   const [validRoute, setValidRoute] = useState(true);
   const params = useParams() as { curso: CursosEnum };
 
@@ -29,7 +30,7 @@ export const DetalhesCurso = () => {
     <Container>
       <Content
         isOnTop
-        title={validRoute ? curso?.nome : 'Curso não encontrado'}
+        title={validRoute ? curso?.name : 'Curso não encontrado'}
         subtitle={validRoute ? 'Curso superior de tecnologia em' : '404'}
       >
         {validRoute && (
@@ -38,13 +39,13 @@ export const DetalhesCurso = () => {
               {curso && <CursoInfo data={curso.info} />}
               {curso && (
                 <CursoDetalhesTecnicos
-                  coordenador={curso.coordenador}
-                  detalhes={curso.detalhesTecnicos}
+                  coordenador={{} as DbProffessor}
+                  detalhes={curso.technicalDetails}
                 />
               )}
             </section>
 
-            <GradeCurricular grade={[]} />
+            {/* <GradeCurricular grade={[]} /> */}
           </div>
         )}
         {!validRoute && (

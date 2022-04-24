@@ -1,20 +1,20 @@
 import React from 'react';
-import { CursoInfoProps } from '../../../types/ICurso';
+import { CourseInfoProps } from '../../../types/ICurso';
 import { Card } from '../../atoms/Card';
 import { LabelText } from '../../atoms/Typography/LabelText';
 
 interface Props {
-  data: CursoInfoProps;
+  data: CourseInfoProps;
 }
 
 export const CursoInfo: React.FC<Props> = ({
   data,
 }) => {
   const {
-    perfilProfissional,
-    competencias,
-    eixoTecnologico,
-    ondeTrabalhar,
+    professionalProfile,
+    skills,
+    technologicalAxis,
+    whereToWork
   } = data;
 
   console.log(data)
@@ -22,7 +22,7 @@ export const CursoInfo: React.FC<Props> = ({
   return (
     <Card>
       <div className="sobre-curso__info">
-        {perfilProfissional && (
+        {professionalProfile && (
           <div>
             <LabelText
               bold
@@ -31,10 +31,10 @@ export const CursoInfo: React.FC<Props> = ({
             >
               Perfil Profissional
             </LabelText>
-            <p>{perfilProfissional}</p>
+            <p>{professionalProfile}</p>
           </div>
         )}
-        {ondeTrabalhar && (
+        {whereToWork && (
           <div>
             <LabelText
               bold
@@ -43,10 +43,10 @@ export const CursoInfo: React.FC<Props> = ({
             >
               Onde trabalhar?
             </LabelText>
-            <p>{ondeTrabalhar}</p>
+            <p>{whereToWork}</p>
           </div>
         )}
-        {eixoTecnologico && (
+        {technologicalAxis && (
           <div>
             <LabelText
               bold
@@ -55,10 +55,10 @@ export const CursoInfo: React.FC<Props> = ({
             >
               Eixo tecnológico
             </LabelText>
-            <p>{eixoTecnologico}</p>
+            <p>{technologicalAxis}</p>
           </div>
         )}
-        {competencias && (
+        {skills && (
           <div>
             <LabelText
               bold
@@ -67,9 +67,9 @@ export const CursoInfo: React.FC<Props> = ({
             >
               Competências
             </LabelText>
-            <p>{competencias.title}</p>
+            <p>{skills.title}</p>
             <ul style={{ marginLeft: 16 }}>
-              {competencias.itens.map((item, index) => (
+              {skills.itens.map((item, index) => (
                 <li key={index} style={{ marginBottom: 8 }} >{item}</li>
               ))}
             </ul>
