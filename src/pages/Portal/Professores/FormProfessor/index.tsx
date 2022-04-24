@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { FormInput } from "../../../../components/atoms/FormInput";
-import { FormSelect } from "../../../../components/atoms/FormSelect";
+import { FormMultiSelect } from "../../../../components/atoms/FormSelect";
 import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
 import { useAuth } from "../../../../contexts/authContext";
 import { useLoading } from "../../../../contexts/loadingContent";
@@ -103,7 +103,7 @@ export const ProffessorsForm = () => {
             value={proffessor.lattes}
             onChange={e => setProffessor({ ...proffessor, lattes: e.target.value })}
           />
-          <FormSelect
+          <FormMultiSelect
             style={{ marginBottom: '1.5rem' }}
             value={proffessor.classes}
             name="Cursos *"
