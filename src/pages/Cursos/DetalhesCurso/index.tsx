@@ -18,12 +18,14 @@ export const DetalhesCurso = () => {
   const params = useParams() as { curso: CursosEnum };
 
   useEffect(() => {
-    const curso = cursosService.getCurso(params.curso);
+    (async () => {
+      const curso = await cursosService.getCouseByLink(params.curso);
 
-    if (curso) {
-      return setCurso(curso);
-    }
-    return setValidRoute(false);
+      if (curso) {
+        return setCurso(curso as DbCurso);
+      }
+      return setValidRoute(false);
+    })()
   }, [params.curso])
 
   return (
