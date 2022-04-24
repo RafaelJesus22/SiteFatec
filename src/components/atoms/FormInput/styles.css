@@ -7,7 +7,7 @@
   color: var(--secondary-text-color);
 }
 
-.form-input input {
+.form-input input, .form-input textarea {
   padding: .75rem;
   border: 1px solid #ccc;
   outline: none;
@@ -16,8 +16,10 @@
   font-family: 'Poppins', sans-serif;
   color: var(--title-color);
   width: 100%;
+
+  resize: vertical;
 }
 
-.form-input input:focus {
+.form-input input:focus, .form-input textarea:focus {
   border: 1.5px solid var(--primary-color);
 }
