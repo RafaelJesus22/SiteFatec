@@ -1,6 +1,5 @@
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 import { CollectionsEnum } from "../enums/collections";
-import { CursosEnum } from "../enums/cursos";
 import { db } from "../firebase";
 import { DbCurso } from "../types/ICurso";
 
@@ -11,21 +10,25 @@ export class CursoServise {
   public cursos: DbCurso[] = [];
 
   private async getFirestoreCourses(): Promise<DbCurso[]> {
-    const coursesSnapshot = await getDocs(this.courseCollectionRef);
+    try {
+      const coursesSnapshot = await getDocs(this.courseCollectionRef);
 
-    const proffessors = coursesSnapshot.docs.map(doc => {
-      return {
-        id: doc.id,
-        ...doc.data()
-      }
-    });
+      const proffessors = coursesSnapshot.docs.map(doc => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      });
 
-    return proffessors as DbCurso[];
+      return proffessors as DbCurso[];
+    } catch (err) {
+      window.alert('erro ao buscar cursos\n' + JSON.stringify(err));
+    }
+
+    return [];
   }
 
   public async getCourses(storaged?: boolean): Promise<DbCurso[]> {
-    console.log(storaged);
-
     if (this.cursos.length > 0 && !storaged) {
       return this.cursos;
     }
@@ -42,26 +45,34 @@ export class CursoServise {
   }
 
   public async createCourse(course: DbCurso): Promise<void> {
-    const response = await addDoc(this.courseCollectionRef, course);
-    console.log('criei', response);
+    try {
+      await addDoc(this.courseCollectionRef, course);
+    } catch (err) {
+      window.alert('erro ao cadastrar curso:\n' + JSON.stringify(err));
+    } finally {
+      await this.getFirestoreCourses();
+    }
   }
 
   public async updateCourse(course: DbCurso): Promise<void> {
-    if (course && course.id) {
+    try {
       const docRef = doc(db, CollectionsEnum.courses, course.id);
-      const response = await updateDoc(docRef, {...course});
-
-      console.log('atualizei', response);
+      await updateDoc(docRef, { ...course });
+    } catch (err) {
+      window.alert('erro ao editar curso\n' + JSON.stringify(err));
+    } finally {
+      await this.getFirestoreCourses();
     }
   }
 
   public async deleteCourse(id: string): Promise<void> {
-    const docRef = doc(db, CollectionsEnum.courses, id)
-    await deleteDoc(docRef);
-    await this.getFirestoreCourses();
-  }
-
-  public getCurso(curso: CursosEnum): DbCurso | undefined {
-    return this.cursos.find(c => c.link === curso);
+    try {
+      const docRef = doc(db, CollectionsEnum.courses, id)
+      await deleteDoc(docRef);
+    } catch (err) {
+      window.alert('erro ao deletar curso\n' + JSON.stringify(err));
+    } finally {
+      await this.getFirestoreCourses();
+    }
   }
 }
