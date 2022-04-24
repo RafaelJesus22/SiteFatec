@@ -133,8 +133,8 @@ export const CoursesForm = () => {
         setCourseInfo(serverCourse?.info as CourseInfoProps);
         setTechnicalDetails(serverCourse?.technicalDetails as CourseTechnicalDetailsProps);
 
-        const proffessor = serverProffessors.find(p => p.value === course.coordinatorId);
-        setSelectedProffessor(proffessor || {} as Option);
+        const proffessor = serverProffessors.find(p => p.value === serverCourse?.coordinatorId);
+        setSelectedProffessor(proffessor as Option);
 
         const semester1 = serversubjects.filter(s => serverCourse?.curriculum.semester1.includes(s.value));
         const semester2 = serversubjects.filter(s => serverCourse?.curriculum.semester2.includes(s.value));
