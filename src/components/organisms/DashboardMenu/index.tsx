@@ -31,7 +31,7 @@ const MENU_ITENS = [
   {
     label: 'Cursos',
     icon: <FaGraduationCap size={ICON_SIZE} color={"#415462"} />,
-    route: '#',
+    route: '/portal/dashboard/cursos',
   },
   {
     label: 'Disciplinas',
