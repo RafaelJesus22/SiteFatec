@@ -6,21 +6,20 @@ export type Option = {
   label: string;
 }
 
-interface FormMultiSelectProps {
+interface SelectCommonProps {
   name: string;
   options: Option[];
-  value: Option[];
-  onChange: (values: Option[]) => void;
   style?: React.CSSProperties;
-  isMulti?: boolean;
 }
 
-interface FormSelectProps {
-  name: string;
-  options: Option[];
+interface FormMultiSelectProps extends SelectCommonProps {
+  value: Option[];
+  onChange: (values: Option[]) => void;
+}
+
+interface FormSelectProps extends SelectCommonProps {
   value: Option;
   onChange: (values: Option) => void;
-  style?: React.CSSProperties;
 }
 
 export const FormMultiSelect: React.FC<FormMultiSelectProps> = ({
@@ -30,20 +29,9 @@ export const FormMultiSelect: React.FC<FormMultiSelectProps> = ({
   value,
   onChange,
 }) => {
-  const customStyles = {
-    control: () => ({
-      border: `1px solid ${colors.borderColor}`,
-      paddingTop: '0.5rem',
-      paddingBottom: '0.5rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      borderRadius: '0.5rem',
-    }),
-  }
-
   return (
     <div style={style}>
-      <label>{name}</label>
+      <label style={styles.label}>{name}</label>
       <Select
         isMulti
         value={value}
@@ -72,20 +60,9 @@ export const FormSelect: React.FC<FormSelectProps> = ({
   value,
   onChange,
 }) => {
-  const customStyles = {
-    control: () => ({
-      border: `1px solid ${colors.borderColor}`,
-      paddingTop: '0.5rem',
-      paddingBottom: '0.5rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      borderRadius: '0.5rem',
-    }),
-  }
-
   return (
     <div style={style}>
-      <label>{name}</label>
+      <label style={styles.label}>{name}</label>
       <Select
         value={value}
         styles={customStyles}
@@ -99,3 +76,19 @@ export const FormSelect: React.FC<FormSelectProps> = ({
   );
 };
 
+const styles = {
+  label: {
+    color: colors.secondaryTextColor,
+  },
+}
+
+const customStyles = {
+  control: () => ({
+    border: `1px solid ${colors.borderColor}`,
+    paddingTop: '0.5rem',
+    paddingBottom: '0.5rem',
+    display: 'flex',
+    justifyContent: 'space-between',
+    borderRadius: '0.5rem',
+  }),
+}
