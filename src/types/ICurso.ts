@@ -33,12 +33,12 @@ export interface CourseTechnicalDetailsProps {
 }
 
 export interface CurriculumProps {
-  semester1: DbSubject[];
-  semester2: DbSubject[];
-  semester3: DbSubject[];
-  semester4: DbSubject[];
-  semester5: DbSubject[];
-  semester6: DbSubject[];
+  semester1: string[];
+  semester2: string[];
+  semester3: string[];
+  semester4: string[];
+  semester5: string[];
+  semester6: string[];
 }
 
 export type DbCurso = {
