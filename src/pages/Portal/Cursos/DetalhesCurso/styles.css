@@ -1,0 +1,17 @@
+.proffessor-details-container img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+
+.proffessor-details-container h2 {
+  color: var(--title-color);
+}
+
+.proffessor-details-container .buttons {
+  width: 100%;
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: space-evenly;
+}
