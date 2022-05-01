@@ -8,6 +8,7 @@ export const colors = {
   black: '#000000',
   background: '#fff',
   modalBackground: '#0004',
+  borderColor: '#ccc',
 }
 
 export const buttonTheme = {
@@ -41,10 +42,6 @@ export const subjectTheme: SubjectTheme[] = [
   },
   {
     background: '#9AC3E1',
-    color: '#415462'
-  },
-  {
-    background: '#BBDAFF',
     color: '#415462'
   },
   {
