@@ -9,6 +9,7 @@ export const colors = {
   background: '#fff',
   modalBackground: '#0004',
   borderColor: '#ccc',
+  success: '#4CAF50',
 }
 
 export const buttonTheme = {
