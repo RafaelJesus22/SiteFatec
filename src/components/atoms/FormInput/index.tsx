@@ -6,7 +6,7 @@ interface InputProps extends InputHTMLAttributes<any> {
   name: string;
 }
 
-interface TeatAreaProps extends InputHTMLAttributes<any> {
+interface TextAreaProps extends TextareaHTMLAttributes<any> {
   name: string;
 }
 
@@ -25,16 +25,13 @@ export const FormInput: React.FC<InputProps> = ({
   );
 };
 
-export const FormTextArea: React.FC<TeatAreaProps> = ({
+export const FormTextArea: React.FC<TextAreaProps> = ({
   name,
-  type = 'text',
   ...props
 }) => {
   return (
     <div className="form-input">
-      {type !== 'button' && (
-        <label>{name}</label>
-      )}
+      <label>{name}</label>
       <textarea {...props} className="form-input" />
     </div>
   );
