@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Content } from "../../components/containers/Content/Content";
-import { ProfessorCard } from "../../components/Professor/ProfessorCard";
+// import { ProfessorCard } from "../../components/Professor/ProfessorCard";
 import { Search } from "../../assets/icons/icons";
-import { DbProffessor } from "../../types/IProfessor";
+// import { DbProffessor } from "../../types/IProfessor";
 import "./styles.css";
 import { Container } from "../../components/containers/Container/Container";
 
@@ -10,25 +10,25 @@ export const Professores: React.FC = () => {
   const [search, setSearch] = useState("");
   // const [prosessor, setProfessor] = useState<DbProffessor>();
   const [, setCurso] = useState("");
-  const CursoDisciplinas = [
-    {
-      curso: "Algoritmos",
-      funcao: "Professor",
-      disciplinas: [
-        { nome: "Algoritmos", cargaHoraria: 80, categoria: "programação" },
-        {
-          nome: "Estrutura de dados",
-          cargaHoraria: 80,
-          categoria: "programação",
-        },
-        {
-          nome: "Orientação a objeto",
-          cargaHoraria: 80,
-          categoria: "programação",
-        },
-      ],
-    },
-  ];
+  // const CursoDisciplinas = [
+  //   {
+  //     curso: "Algoritmos",
+  //     funcao: "Professor",
+  //     disciplinas: [
+  //       { nome: "Algoritmos", cargaHoraria: 80, categoria: "programação" },
+  //       {
+  //         nome: "Estrutura de dados",
+  //         cargaHoraria: 80,
+  //         categoria: "programação",
+  //       },
+  //       {
+  //         nome: "Orientação a objeto",
+  //         cargaHoraria: 80,
+  //         categoria: "programação",
+  //       },
+  //     ],
+  //   },
+  // ];
 
   // const professores: DbProffessor[] = [
   //   {
