@@ -18,8 +18,10 @@ import { FormMultiSelect, FormSelect, Option } from "../../../../components/atom
 import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
 import { FormButton } from "../../../../components/atoms/PortalButton";
 import { PortalContent } from "../../../../components/containers/PortalContent";
+import { FormFile } from "../../../../components/atoms/FormFile";
 
 import { CursoParams } from "..";
+import { styles } from "../../styles";
 import './styles.css';
 
 export const CoursesForm = () => {
@@ -38,6 +40,10 @@ export const CoursesForm = () => {
   const [fivethSemesterSubjects, setFivethSemesterSubjects] = useState<Option[]>([]);
   const [sixthSemesterSubjects, setSixthSemesterSubjects] = useState<Option[]>([]);
 
+  const [, setCourseImageUrl] = useState('');
+  const [courseImage, setCourseImage] = useState<File | null>(null);
+  const [, setCoursePedagogicalProjectUrl] = useState('');
+  const [coursePedagogicalProject, setCoursePedagogicalProject] = useState<File | null>(null);
   const [modalMessage, setModalMessage] = useState('');
   const [course, setCourse] = useState<DbCurso>({} as DbCurso);
   const [courseInfo, setCourseInfo] = useState<CourseInfoProps>({} as CourseInfoProps);
@@ -50,8 +56,6 @@ export const CoursesForm = () => {
 
     showLoading({ message: modalMessage });
 
-    setModalMessage('Criando payload');
-    console.log('Criando payload');
     const coursePayload: DbCurso = {
       ...course,
       coordinatorId: selectedProffessor.value,
@@ -68,21 +72,15 @@ export const CoursesForm = () => {
       info: courseInfo,
     };
 
-    console.log('course', coursePayload);
-
     if (cursoId) {
       setModalMessage('Atualizando curso');
-      console.log('Atualizando curso');
       await cursosService.updateCourse(coursePayload);
     } else {
       setModalMessage('Cadastrando curso');
-      console.log('Cadastrando curso');
       await cursosService.createCourse(coursePayload);
     }
 
-    setModalMessage('Publicando alterações');
-    console.log('Publicando alterações');
-    await cursosService.getCourses(true);
+    setModalMessage('Sucesso!');
     hideLoading();
     history.goBack();
   }
@@ -152,7 +150,7 @@ export const CoursesForm = () => {
 
       hideLoading();
     };
-    mount().then(() => console.log('montei'));
+    mount();
 
   }, [cursoId]);
 
@@ -175,7 +173,7 @@ export const CoursesForm = () => {
             </h1>
 
             <FormInput
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               required
               name="Nome do curso *"
               value={course.name}
@@ -183,20 +181,29 @@ export const CoursesForm = () => {
             />
             {proffessors && (
               <FormSelect
-                style={{ marginBottom: '1.5rem' }}
+                style={styles.formInput}
                 value={selectedProffessor}
                 name="Coordenador *"
                 options={proffessors}
                 onChange={(option) => setSelectedProffessor(option)}
               />
             )}
+            <FormFile
+              currentFile={courseImage}
+              name="Imagem do curso no menu *"
+              style={styles.formInput}
+              onChangeFile={({ url, file }) => {
+                setCourseImageUrl(url);
+                setCourseImage(file);
+              }}
+            />
           </div>
 
           <div className="form-section">
             <h1>Detalhes técnicos do curso</h1>
 
             <FormInput
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               required
               name="Duração do curso em semestres *"
               type="number"
@@ -206,7 +213,7 @@ export const CoursesForm = () => {
               }}
             />
             <FormInput
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               required
               name="Vagas por semestre *"
               type="number"
@@ -216,7 +223,7 @@ export const CoursesForm = () => {
               }}
             />
             <FormSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={{ value: technicalDetails.timeCourse, label: technicalDetails.timeCourse }}
               name="Período *"
               options={[
@@ -232,16 +239,17 @@ export const CoursesForm = () => {
                 })
               }
             />
-            <FormInput
-              style={{ marginBottom: '1.5rem' }}
+            <FormFile
+              style={styles.formInput}
               name="Projeto pedagógico do curso"
-              value={technicalDetails.PedagogicalProjectLink}
-              onChange={e => {
-                setTechnicalDetails({ ...technicalDetails, PedagogicalProjectLink: e.target.value });
+              currentFile={coursePedagogicalProject}
+              onChangeFile={({ url, file }) => {
+                setCoursePedagogicalProject(file);
+                setCoursePedagogicalProjectUrl(url);
               }}
             />
             <FormTextArea
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               name="Observação"
               value={technicalDetails.note}
               onChange={e => {
@@ -254,27 +262,25 @@ export const CoursesForm = () => {
             <h1>Informações</h1>
 
             <FormTextArea
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               required
               name="Perfil Profissional *"
-              type="number"
               value={courseInfo.professionalProfile}
               onChange={e => {
                 setCourseInfo({ ...courseInfo, professionalProfile: e.target.value });
               }}
             />
             <FormTextArea
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               required
               name="Onde Trabalhar? "
-              type="number"
               value={courseInfo.whereToWork}
               onChange={e => {
                 setCourseInfo({ ...courseInfo, whereToWork: e.target.value });
               }}
             />
             <FormInput
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               name="Eixo tecnológico"
               type="number"
               value={courseInfo.technologicalAxis}
@@ -288,42 +294,42 @@ export const CoursesForm = () => {
             <h1>Grade</h1>
 
             <FormMultiSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={firstSemesterSubjects}
               name="1º Semestre"
               options={subjects}
               onChange={(options) => setFirstSemesterSubjects(options)}
             />
             <FormMultiSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={secondSemesterSubjects}
               name="2º Semestre"
               options={subjects}
               onChange={(options) => setSecondSemesterSubjects(options)}
             />
             <FormMultiSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={thirdSemesterSubjects}
               name="3º Semestre"
               options={subjects}
               onChange={(options) => setThirdSemesterSubjects(options)}
             />
             <FormMultiSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={fourthSemesterSubjects}
               name="4º Semestre"
               options={subjects}
               onChange={(options) => setFourthSemesterSubjects(options)}
             />
             <FormMultiSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={fivethSemesterSubjects}
               name="5º Semestre"
               options={subjects}
               onChange={(options) => setFivethSemesterSubjects(options)}
             />
             <FormMultiSelect
-              style={{ marginBottom: '1.5rem' }}
+              style={styles.formInput}
               value={sixthSemesterSubjects}
               name="6º Semestre"
               options={subjects}
