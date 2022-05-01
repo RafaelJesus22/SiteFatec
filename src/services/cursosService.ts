@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc, query, orderBy } from "firebase/firestore";
 import { CollectionsEnum } from "../enums/collections";
 import { db } from "../firebase";
 import { DbCurso } from "../types/ICurso";
@@ -11,7 +11,8 @@ export class CursoServise {
 
   private async getFirestoreCourses(): Promise<DbCurso[]> {
     try {
-      const coursesSnapshot = await getDocs(this.courseCollectionRef);
+      const coursesQuery = query(this.courseCollectionRef, orderBy('name', 'asc'));
+      const coursesSnapshot = await getDocs(coursesQuery);
 
       const proffessors = coursesSnapshot.docs.map(doc => {
         return {
