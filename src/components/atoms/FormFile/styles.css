@@ -1,0 +1,21 @@
+input[type=file] {
+  display: none;
+}
+
+label.input {
+  display: block;
+  padding: .75rem;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: .5rem;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--title-color);
+  width: 100%;
+}
+
+label.input div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
