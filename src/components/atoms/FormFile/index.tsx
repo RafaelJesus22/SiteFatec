@@ -9,6 +9,7 @@ interface Props {
   onChangeFile: (props: { url: string, file: File | null }) => void;
   name: string;
   currentFile: File | null;
+  currentUrl?: string;
   path?: string;
   style?: CSSProperties;
 }
@@ -17,6 +18,7 @@ export const FormFile: React.FC<Props> = ({
   onChangeFile,
   name,
   currentFile,
+  currentUrl,
   style,
   path = '',
 }) => {
@@ -77,13 +79,14 @@ export const FormFile: React.FC<Props> = ({
         {uploading && (
           <span>Carregando...</span>
         )}
-        {currentFile && (
+        {(currentFile || currentUrl) && (
           <div>
-            <span>{currentFile?.name} | Upload concluído</span>
+            {currentFile && <span>{ currentFile?.name} | Upload concluído</span>}
+            {!currentFile && currentUrl && <span>{currentUrl}</span>}
             <BsCheckCircle size={20} color={colors.success} />
           </div>
         )}
-        {!uploading && !currentFile && (
+        {!uploading && !currentFile && !currentUrl && (
           <span>
             Clique para adicionar um arquivo
           </span>
