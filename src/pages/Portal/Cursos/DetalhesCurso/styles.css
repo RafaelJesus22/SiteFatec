@@ -1,14 +1,25 @@
-.proffessor-details-container img {
+.course-details-container img {
   width: 128px;
   height: 128px;
   border-radius: 50%;
 }
 
-.proffessor-details-container h2 {
+.course-details-container h2,
+.course-details-container h3 {
   color: var(--title-color);
 }
 
-.proffessor-details-container .buttons {
+.course-details-container .form-section {
+  margin-top: 2rem;
+  padding-top: 3rem;
+  padding-bottom: .5rem;
+  border-top: 1px solid var(--border-color);
+}
+.course-details-container .form-section .form-section-title {
+  color: var(--secondary-text-color);
+}
+
+.course-details-container .buttons {
   width: 100%;
   padding: 1rem 0;
 
