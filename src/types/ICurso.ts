@@ -29,7 +29,7 @@ export interface CourseTechnicalDetailsProps {
   timeCourse: TimeCouseType;
   vacancies: number;
   note?: string;
-  PedagogicalProjectLink?: string;
+  pedagogicalProjectUrl?: string;
 }
 
 export interface CurriculumProps {
@@ -45,6 +45,7 @@ export type DbCurso = {
   id: string;
   name: string;
   link: string;
+  imageUrl: string;
   info: CourseInfoProps;
   coordinatorId: string;
   technicalDetails: CourseTechnicalDetailsProps;
