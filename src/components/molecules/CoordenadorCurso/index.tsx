@@ -1,33 +1,33 @@
 import { LabelText } from "../../atoms/Typography/LabelText";
-import { CoordenadorCursoProps } from "../../../types/ICurso";
+import { DbProffessor } from "../../../types/IProfessor";
 import './styles.css';
 
 interface Props {
-  data: CoordenadorCursoProps;
+  data: DbProffessor;
 }
 
 export const CoordenadorCurso: React.FC<Props> = ({ data }) => {
   const {
-    linkCurriculo,
-    linkPhoto,
-    nome,
-    titulo
+    lattes,
+    imgUrl,
+    name,
+    title
   } = data;
 
   return (
     <div className="coordenador-curso">
-      {linkPhoto && (
+      {imgUrl && (
         <div className="coordenador-curso__photo">
-          <img src={linkPhoto} alt={nome} />
+          <img src={imgUrl} alt={name} />
         </div>
       )}
       <div className="coordenador-curso__info">
         <LabelText bold>
           Coordenador do Curso
         </LabelText>
-        <p>{titulo} {nome}</p>
+        <p>{title} {name}</p>
         <p>
-          <a href={linkCurriculo} target="_blank" rel="noreferrer" >
+          <a href={lattes} target="_blank" rel="noreferrer" >
             Ver perfil no lattes
           </a>
         </p>

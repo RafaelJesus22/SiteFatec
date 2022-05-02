@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc, query, orderBy } from "firebase/firestore";
 import { CollectionsEnum } from "../enums/collections";
 import { db } from "../firebase";
 import { DbSubject } from "../types/ICurso";
@@ -11,7 +11,8 @@ export class SubjectService {
   public subjects: DbSubject[] = [];
 
   private async getFirestoreSubjects(): Promise<DbSubject[]> {
-    const subjectsSnapshot = await getDocs(this.subjectsCollectionRef);
+    const subjectsQuery = query(this.subjectsCollectionRef, orderBy('name', 'asc'));
+    const subjectsSnapshot = await getDocs(subjectsQuery);
 
     const subjects = subjectsSnapshot.docs.map(doc => {
       return {
