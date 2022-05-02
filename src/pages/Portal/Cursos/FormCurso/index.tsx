@@ -40,10 +40,10 @@ export const CoursesForm = () => {
   const [fivethSemesterSubjects, setFivethSemesterSubjects] = useState<Option[]>([]);
   const [sixthSemesterSubjects, setSixthSemesterSubjects] = useState<Option[]>([]);
 
-  const [, setCourseImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const [courseImage, setCourseImage] = useState<File | null>(null);
-  const [, setCoursePedagogicalProjectUrl] = useState('');
-  const [coursePedagogicalProject, setCoursePedagogicalProject] = useState<File | null>(null);
+  const [pedagogicalProjectUrl,] = useState('');
+  // const [coursePedagogicalProject, setCoursePedagogicalProject] = useState<File | null>(null);
   const [modalMessage, setModalMessage] = useState('');
   const [course, setCourse] = useState<DbCurso>({} as DbCurso);
   const [courseInfo, setCourseInfo] = useState<CourseInfoProps>({} as CourseInfoProps);
@@ -60,7 +60,11 @@ export const CoursesForm = () => {
       ...course,
       coordinatorId: selectedProffessor.value,
       link: transformToLink(course.name),
-      technicalDetails,
+      imageUrl,
+      technicalDetails: {
+        ...technicalDetails,
+        pedagogicalProjectUrl,
+      },
       curriculum: {
         semester1: firstSemesterSubjects.map(item => item.value),
         semester2: secondSemesterSubjects.map(item => item.value),
@@ -193,7 +197,7 @@ export const CoursesForm = () => {
               name="Imagem do curso no menu *"
               style={styles.formInput}
               onChangeFile={({ url, file }) => {
-                setCourseImageUrl(url);
+                setImageUrl(url);
                 setCourseImage(file);
               }}
             />
@@ -239,15 +243,15 @@ export const CoursesForm = () => {
                 })
               }
             />
-            <FormFile
+            {/* <FormFile
               style={styles.formInput}
               name="Projeto pedagógico do curso"
               currentFile={coursePedagogicalProject}
               onChangeFile={({ url, file }) => {
                 setCoursePedagogicalProject(file);
-                setCoursePedagogicalProjectUrl(url);
+                setPedagogicalProjectUrl(url);
               }}
-            />
+            /> */}
             <FormTextArea
               style={styles.formInput}
               name="Observação"
