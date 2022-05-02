@@ -24,6 +24,7 @@ export const FormFile: React.FC<Props> = ({
   const [, setProgress] = useState(-1);
   const [, setUploadError] = useState<Error | null>(null);
   const [, setUrl] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
 
   const handleChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     let selectedFile = null;
@@ -44,6 +45,7 @@ export const FormFile: React.FC<Props> = ({
       return;
     }
 
+    setUploading(true);
     const fileRef = ref(storage, path + file.name);
     const task = uploadBytesResumable(fileRef, file);
     task.on('state_changed',
@@ -53,12 +55,14 @@ export const FormFile: React.FC<Props> = ({
       },
       (error) => {
         setUploadError(error);
+        console.log(error);
       },
       () => {
         getDownloadURL(fileRef).then((url: string) => {
           setUrl(url);
           onChangeFile({ url, file });
-          setProgress(0);
+          setProgress(-1);
+          setUploading(false);
         });
       }
     );
@@ -70,12 +74,16 @@ export const FormFile: React.FC<Props> = ({
         {name}
       </label>
       <label htmlFor="input-file" className="input">
-        {currentFile ? (
+        {uploading && (
+          <span>Carregando...</span>
+        )}
+        {currentFile && (
           <div>
             <span>{currentFile?.name} | Upload concluído</span>
             <BsCheckCircle size={20} color={colors.success} />
           </div>
-        ) : (
+        )}
+        {!uploading && !currentFile && (
           <span>
             Clique para adicionar um arquivo
           </span>
