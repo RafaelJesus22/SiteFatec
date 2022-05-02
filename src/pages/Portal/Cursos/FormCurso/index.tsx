@@ -40,10 +40,8 @@ export const CoursesForm = () => {
   const [fivethSemesterSubjects, setFivethSemesterSubjects] = useState<Option[]>([]);
   const [sixthSemesterSubjects, setSixthSemesterSubjects] = useState<Option[]>([]);
 
-  const [imageUrl, setImageUrl] = useState('');
   const [courseImage, setCourseImage] = useState<File | null>(null);
   const [pedagogicalProjectUrl,] = useState('');
-  // const [coursePedagogicalProject, setCoursePedagogicalProject] = useState<File | null>(null);
   const [modalMessage, setModalMessage] = useState('');
   const [course, setCourse] = useState<DbCurso>({} as DbCurso);
   const [courseInfo, setCourseInfo] = useState<CourseInfoProps>({} as CourseInfoProps);
@@ -53,6 +51,22 @@ export const CoursesForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    
+    const { name, coordinatorId, imageUrl } = course;
+    const { duration, timeCourse, vacancies } = technicalDetails;
+    const { professionalProfile } = courseInfo;
+
+    if (
+        !name ||
+        !coordinatorId ||
+        !imageUrl ||
+        !duration ||
+        !timeCourse ||
+        !vacancies ||
+        !professionalProfile
+      ) {
+      return window.alert('Preencha todos os campos obrigatórios!');
+    }
 
     showLoading({ message: modalMessage });
 
@@ -60,7 +74,6 @@ export const CoursesForm = () => {
       ...course,
       coordinatorId: selectedProffessor.value,
       link: transformToLink(course.name),
-      imageUrl,
       technicalDetails: {
         ...technicalDetails,
         pedagogicalProjectUrl,
@@ -198,7 +211,7 @@ export const CoursesForm = () => {
               name="Imagem do curso no menu *"
               style={styles.formInput}
               onChangeFile={({ url, file }) => {
-                setImageUrl(url);
+                setCourse({ ...course, imageUrl: url });
                 setCourseImage(file);
               }}
             />
@@ -272,6 +285,7 @@ export const CoursesForm = () => {
               name="Perfil Profissional *"
               value={courseInfo.professionalProfile}
               onChange={e => {
+                console.log('profissional', courseInfo.professionalProfile);
                 setCourseInfo({ ...courseInfo, professionalProfile: e.target.value });
               }}
             />

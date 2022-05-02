@@ -56,7 +56,7 @@ export class CursoServise {
     } catch (err) {
       window.alert('erro ao cadastrar curso:\n' + JSON.stringify(err));
     } finally {
-      await this.getFirestoreCourses();
+      await this.getCourses(true);
     }
   }
 
@@ -67,7 +67,7 @@ export class CursoServise {
     } catch (err) {
       window.alert('erro ao editar curso\n' + JSON.stringify(err));
     } finally {
-      await this.getFirestoreCourses();
+      await this.getCourses(true);
     }
   }
 
