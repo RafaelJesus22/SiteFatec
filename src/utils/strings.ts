@@ -3,5 +3,5 @@ export const removeAccents = (str: string) => {
 }
 
 export const transformToLink = (str: string) => {
-  return removeAccents(str).toLowerCase().replace(/\s/g, '-');
+  return removeAccents(str).toLowerCase().replace(/\s/g, '_');
 }
