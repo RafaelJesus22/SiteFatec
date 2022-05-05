@@ -27,7 +27,7 @@ export const Modal: React.FC<Props> = ({
 
   return ReactDOM.createPortal(
     <div className="modal-container">
-      <div className="content">
+      <div className="modal-content">
         <div className="header">
           <h4>{title}</h4>
         </div>
