@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import { Logo } from '../../../assets/icons/icons';
-import { loading } from '../../../assets/images/images';
+import { loading } from '../../../assets/images';
 
 import './styles.css';
 

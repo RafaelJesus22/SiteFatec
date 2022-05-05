@@ -1,0 +1,41 @@
+.motivos-item {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.motivos-item .motivos-icon {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivos-item .motivos-title {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.motivos-item .motivos-description {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 480px) {
+  .motivos-item .motivos-title {
+    font-size: 2rem;
+  }
+  
+  .motivos-item .motivos-description {
+    font-size: 1.5rem;
+  }
+}

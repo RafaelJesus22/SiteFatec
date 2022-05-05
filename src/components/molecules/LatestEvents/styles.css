@@ -1,0 +1,12 @@
+.eventos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 6rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .eventos-container {
+    grid-template-columns: 1fr;
+  }
+}

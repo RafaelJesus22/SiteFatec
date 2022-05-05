@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
-import { ads, datascience, gcom, seginfo } from '../../assets/images/images';
+import { ads, datascience, gcom, seginfo } from '../../assets/images';
 import { CursoCardProps } from '../../components/molecules/CursoCard/CursoCard';
 
 import { CursosEnum } from '../../enums/cursos';
