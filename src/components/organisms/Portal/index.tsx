@@ -18,7 +18,7 @@ export const Portal: React.FC<Props> = ({
   }
 
   return ReactDOM.createPortal(
-    <div className="portal-container">
+    <div className="portal">
       <div className="portal-content">
         <img src={Logo} alt="Logo tipo da FATEC Santana de Parnaíba" />
         <div className='portal-message'>
