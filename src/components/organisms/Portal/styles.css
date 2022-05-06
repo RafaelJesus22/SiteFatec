@@ -1,4 +1,4 @@
-.modal-container {
+.portal-container {
   position: fixed;
   inset: 0;
 
@@ -8,7 +8,7 @@
   background-color: #fff5;
 }
 
-.modal-content {
+.portal-content {
   max-width: 50%; 
   padding: 2rem 3rem;
   border-radius: .75rem;
@@ -21,24 +21,23 @@
   align-items: center;
 }
 
-.modal-content img {
+.portal-content img {
   width: 12rem;
   height: auto;
   margin-bottom: 1rem;
 }
 
-.modal-content .modal-message {
+.portal-content .portal-message {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.modal-content .modal-message h1 {
+.portal-content .portal-message h1 {
   color: var(--title-color);
   font-size: 1.5rem;
 }
 
-.modal-content .modal-message img {
-
+.portal-content .portal-message img {
   width: 5rem
 }

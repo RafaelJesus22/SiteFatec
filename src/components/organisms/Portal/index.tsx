@@ -18,10 +18,10 @@ export const Portal: React.FC<Props> = ({
   }
 
   return ReactDOM.createPortal(
-    <div className="modal-container">
-      <div className="modal-content">
+    <div className="portal-container">
+      <div className="portal-content">
         <img src={Logo} alt="Logo tipo da FATEC Santana de Parnaíba" />
-        <div className='modal-message'>
+        <div className='portal-message'>
           <h1>{text}</h1>
           <img src={loading} alt="Carregando informações" />
         </div>
