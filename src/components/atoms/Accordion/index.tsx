@@ -3,9 +3,10 @@ import './styles.css';
 
 interface Props {
   Header: () => JSX.Element;
-  Content: () => JSX.Element;
+  Content: () => JSX.Element | null;
   isOpen: boolean;
   onClick: () => void;
+  zIndex?: number;
 }
 
 export const Accordion: React.FC<Props> = ({
@@ -13,8 +14,8 @@ export const Accordion: React.FC<Props> = ({
   Content,
   isOpen,
   onClick,
+  zIndex,
 }) => {
-  const [contentHight, setContentHight] = useState('');
   const [containerHeight, setContainerHeight] = useState('');
   const [headerHeight, setHeaderHeight] = useState('');
   const conteinerHeightRef = useRef<HTMLDivElement>(null);
@@ -23,7 +24,6 @@ export const Accordion: React.FC<Props> = ({
 
   useEffect(() => {
     const height = Number(headerHeightRef.current?.clientHeight) + Number(contentHeightRef.current?.clientHeight);
-    setContentHight(`${conteinerHeightRef.current?.clientHeight}px`);
     setHeaderHeight(`${headerHeightRef.current?.clientHeight}px`);
     setContainerHeight(`${height}px`);
   }, []);
@@ -32,7 +32,7 @@ export const Accordion: React.FC<Props> = ({
     <div
       className="accordion"
       ref={conteinerHeightRef}
-      style={{ height: isOpen ? containerHeight : headerHeight }}
+      style={{ height: isOpen ? containerHeight : headerHeight, zIndex }}
     >
       <div
         className="accordion-header"
@@ -41,12 +41,9 @@ export const Accordion: React.FC<Props> = ({
       >
         <Header />
       </div>
-      <div
-        style={{ height: isOpen ? `${contentHight}px` : '0px' }}
-        className={`accordion-content ${isOpen ? 'animated' : ''}`}
-      >
+      <div className={`accordion-content ${isOpen ? 'animated' : ''}`}>
         <div ref={contentHeightRef}>
-          <Content />
+          {Content && <Content />}
         </div>
       </div>
     </div>
