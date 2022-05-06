@@ -63,6 +63,13 @@
   grid-gap: 1rem;
 }
 
+.professores__list h2 {
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  color: var(--title-color);
+}
+
 .professores__list .proffessor-header {
   display: flex;
   align-items: center;
