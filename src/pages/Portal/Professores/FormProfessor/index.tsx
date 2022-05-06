@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { FormInput } from "../../../../components/atoms/FormInput";
-import { FormMultiSelect } from "../../../../components/atoms/FormSelect";
+import { FormMultiSelect, Option } from "../../../../components/atoms/FormSelect";
 import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
 import { useAuth } from "../../../../contexts/authContext";
 import { useLoading } from "../../../../contexts/loadingContent";
-import { proffessorsService } from "../../../../services";
+import { cursosService, proffessorsService } from "../../../../services";
 import { DbProffessor } from "../../../../types/IProfessor";
 import { ProffessorParams } from "..";
 
@@ -17,6 +18,7 @@ export const ProffessorsForm = () => {
   const { hideLoading, showLoading } = useLoading();
   const { proffessorId } = useParams() as ProffessorParams;
   const [proffessor, setProffessor] = useState<DbProffessor>({} as DbProffessor);
+  const [courses, setCourses] = useState<Option[]>([]);
   const history = useHistory();
   const { user } = useAuth();
 
@@ -45,7 +47,20 @@ export const ProffessorsForm = () => {
     history.goBack();
   }
 
+  const getCourses = async () => {
+    showLoading({ message: 'Carregando cursos' });
+    const courses = await cursosService.getCourses(true);
+    setCourses(courses.map(c =>{
+      return {
+        label: c.name,
+        value: c.id
+      }
+    }));
+    hideLoading();
+  };
+
   useEffect(() => {
+    getCourses();
     if (proffessorId) {
       proffessorsService.getOneProfessor(proffessorId)
         .then(res => {
@@ -107,12 +122,7 @@ export const ProffessorsForm = () => {
             style={{ marginBottom: '1.5rem' }}
             value={proffessor.classes}
             name="Cursos *"
-            options={[
-              { value: 'ADS', label: 'Análise e desenvolvimento de sistemas' },
-              { value: 'SEGINFO', label: 'Segurança da informação' },
-              { value: 'DATASCIENCE', label: 'Ciência de dados' },
-              { value: 'GCOM', label: 'Gestão comercial' },
-            ]}
+            options={courses}
             onChange={(options) => setProffessor({ ...proffessor, classes: options })}
           />
           <div className="row">
