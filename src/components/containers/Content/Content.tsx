@@ -1,29 +1,35 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { ReactNode } from "react";
 import { SectionTitle } from "../../atoms/SectionTitle/SectionTitle";
+import './styles.css';
 
-import './styles.css'
-interface contentProps {
-  children?: ReactNode;
+interface Props {
   title?: string;
   subtitle?: string;
   isOnTop?: boolean;
+  bottomSpace?: boolean;
 }
 
-export const Content = ({
+export const Content: React.FC<Props> = ({
   children,
   title,
   subtitle,
   isOnTop,
-}: contentProps): JSX.Element => {
+  bottomSpace
+}) => {
+  const styles = {
+    title: {
+      marginTop: isOnTop ? 130 : 0,
+    },
+    container: {
+      marginBottom: bottomSpace ? '4rem' : 0,
+    }
+  };
+
   return (
-    <div
-      className="content"
-    >
-      <div className="title-container" style={{ marginTop: isOnTop ? 150 : 0 }}>
+    <div className="content" style={styles.container}>
+      <div className="title-container" style={styles.title}>
         <SectionTitle title={title || ""} subtitle={subtitle} />
       </div>
-        {children}
+      {children}
     </div>
   );
 };
