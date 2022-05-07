@@ -7,10 +7,14 @@ import './styles.css';
 
 interface Props {
   quantity?: number;
+  inverted?: boolean;
+  containerStyle?: React.CSSProperties; 
 }
 
 export const Courses: React.FC<Props> = ({
   quantity,
+  inverted = false,
+  containerStyle = {},
 }) => {
   const [courses, setCourses] = useState<DbCurso[]>([]);
 
@@ -29,12 +33,12 @@ export const Courses: React.FC<Props> = ({
   }, [fetchCourses]);
 
   return (
-    <div className="cursos-container">
+    <div className="cursos-container" style={containerStyle}>
       {courses.map((item, index) => {
         return (
           <div className="cursos-item" key={item.id}>
             <CursoCard
-              inverted={index % 2 === 1}
+              inverted={inverted && index % 2 === 1}
               description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum amet temporibus nam cum at, illo laboriosam illum praesentium sit sunt esse voluptatem! Dolorem, dolorum voluptatem."
               image={item.imageUrl}
               title={item.name}
@@ -43,9 +47,11 @@ export const Courses: React.FC<Props> = ({
           </div>
         );
       })}
-      <div className="cta">
-        <CallToMore link={'/cursos'} title={'Todos os Cursos'} />
-      </div>
+      {!!quantity && (
+        <div className="cta">
+          <CallToMore link={'/cursos'} title={'Todos os Cursos'} />
+        </div>
+      )}
     </div>
   );
 };
