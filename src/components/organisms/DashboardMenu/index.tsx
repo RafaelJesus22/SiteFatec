@@ -58,7 +58,7 @@ export const DashboardMenu: React.FC = () => {
   return (
     <div className="dashbard-menu">
       <header>
-        <Link to="/portal/dashboard" onClick={() => setActiveItem('Início')}>
+        <Link to="/">
           <img src={LogoFatec} alt="Logotipo da Fatec Santana de Parnaíba" />
         </Link>
       </header>
