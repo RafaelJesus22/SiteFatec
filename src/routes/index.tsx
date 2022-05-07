@@ -21,6 +21,7 @@ import { SubjectDetails } from '../pages/Portal/Disciplinas/DetalhesDisciplina';
 import { PortalCourses } from '../pages/Portal/Cursos';
 import { CoursesForm } from '../pages/Portal/Cursos/FormCurso';
 import { CourseDetails } from '../pages/Portal/Cursos/DetalhesCurso';
+import { PerguntasFrequentes } from '../pages/PerguntasFrequentes';
 
 export default function Routes(): JSX.Element {
   const { user } = useContext(AuthContext);
@@ -42,6 +43,8 @@ export default function Routes(): JSX.Element {
           <Route path="/noticias" exact component={Noticias} />
           <Route path="/aluno" exact component={Alunos} />
           <Route path="/professores" exact component={Professores} />
+          <Route path="/quero_ser_fatec" exact component={PerguntasFrequentes} />
+          
           <Route path="/portal" exact component={PortalLogin} />
           <Route path="/portal/dashboard" exact>
             {!!user ? <PortalDashboard /> : <Redirect to="/portal" />}
