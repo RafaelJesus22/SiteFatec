@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { CallToMore } from "../../atoms/CallToMore/CallToMore";
 import { EventoCard } from "../Evento/EventoCard";
 
 import './styles.css';
@@ -29,19 +30,24 @@ export const LatestEvents: React.FC = () => {
   }, []);
 
   return (
-    <div className="eventos-container">
-      {latestEvents.map((item, index) => {
-        return (
-          <div className="evento-item" key={index}>
-            <EventoCard
-              title={item.title}
-              image={item.image}
-              description={item.description}
-              date={item.date}
-            />
-          </div>
-        );
-      })}
-    </div>
+    <Fragment>
+      <div className="eventos-container">
+        {latestEvents.map((item, index) => {
+          return (
+            <div className="evento-item" key={index}>
+              <EventoCard
+                title={item.title}
+                image={item.image}
+                description={item.description}
+                date={item.date}
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className="cta" style={{ marginBottom: '3rem' }}>
+        <CallToMore link={'/noticias'} title={'Todos os Eventos'} />
+      </div>
+    </Fragment>
   );
 };
