@@ -5,7 +5,6 @@ import { Content } from "../../components/containers/Content/Content";
 import { Accordion } from "../../components/atoms/Accordion";
 import { colors } from "../../config/styles";
 import './styles.css';
-import { Link } from "react-router-dom";
 
 interface HeaderProps {
   isOpen: boolean;
