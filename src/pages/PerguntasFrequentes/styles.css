@@ -38,3 +38,7 @@
 .question-content p {
   margin: .5rem 0;
 }
+
+iframe {
+  border: none;
+}
