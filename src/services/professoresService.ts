@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc, query, orderBy } from "firebase/firestore";
 import { CollectionsEnum } from "../enums/collections";
 import { db } from "../firebase";
 import { DbProffessor } from "../types/IProfessor";
@@ -11,7 +11,8 @@ export class ProffessorsService {
   public proffessors: DbProffessor[] = [];
 
   private async getFirestoreProffessors(): Promise<DbProffessor[]> {
-    const proffesorsSnapshot = await getDocs(this.proffessorsCollectionRef);
+    const preffessorsQuery = query(this.proffessorsCollectionRef, orderBy('name', 'asc'));
+    const proffesorsSnapshot = await getDocs(preffessorsQuery);
 
     const proffessors = proffesorsSnapshot.docs.map(doc => {
       return {

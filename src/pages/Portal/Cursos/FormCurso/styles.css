@@ -1,0 +1,26 @@
+.dashboard-form {
+  min-height: 100%;
+}
+
+.dashboard-form h1 {
+  color: var(--title-color);
+  padding-bottom: 1rem;
+}
+
+.dashboard-form .row {
+  margin: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-form .row input {
+  width: 100%;
+}
+
+.dashboard-form .form-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}

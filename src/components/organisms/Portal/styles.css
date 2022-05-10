@@ -1,0 +1,43 @@
+.portal {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff5;
+}
+
+.portal-content {
+  max-width: 50%; 
+  padding: 2rem 3rem;
+  border-radius: .75rem;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portal-content img {
+  width: 12rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.portal-content .portal-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portal-content .portal-message h1 {
+  color: var(--title-color);
+  font-size: 1.5rem;
+}
+
+.portal-content .portal-message img {
+  width: 5rem
+}

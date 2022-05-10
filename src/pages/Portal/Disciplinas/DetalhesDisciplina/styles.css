@@ -1,0 +1,17 @@
+.subject-details-container img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+
+.subject-details-container h2 {
+  color: var(--title-color);
+}
+
+.subject-details-container .buttons {
+  width: 100%;
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: space-evenly;
+}

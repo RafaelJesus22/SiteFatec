@@ -1,14 +1,14 @@
-import { SemestreProps } from '../../../types/ICurso';
-import { CardDiciplina } from '../../atoms/CardDisciplina'
+// import { SemestreProps } from '../../../types/ICurso';
+// import { CardDiciplina } from '../../atoms/CardDisciplina'
 
 import './styles.css';
 
 interface GradeCurricularProps {
-  grade: Array<SemestreProps>
+  // grade: Array<SemestreProps>
 }
 
 export const GradeCurricular: React.FC<GradeCurricularProps> = ({
-  grade
+  // grade
 }) => {
   return (
     <section className="grade">

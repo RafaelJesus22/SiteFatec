@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, UserCredential } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from "react";
 import { MdEmail } from 'react-icons/md';
 import { BiLock } from 'react-icons/bi';
@@ -12,11 +12,13 @@ import { PortalInput } from "../../../components/atoms/PortalInput";
 import './styles.css';
 import { useAuth } from '../../../contexts/authContext';
 import { useHistory } from 'react-router-dom';
+import { useLoading } from '../../../contexts/loadingContent';
 
 type PasswordInputType = 'password' | 'text';
 
 export const PortalLogin = () => {
   const { onChangeUser } = useAuth();
+  const { hideLoading, showLoading } = useLoading();
   const history = useHistory()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,8 +34,10 @@ export const PortalLogin = () => {
 
   const handleSumit = async (e: any) => {
     if (!!email && email.includes('@') && password.length > 7) {
+      showLoading();
       e.preventDefault();
       await singin();
+      hideLoading();
     }
   };
 

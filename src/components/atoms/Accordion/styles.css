@@ -1,0 +1,25 @@
+.accordion {
+  border-radius: .5rem;
+  border: 1px solid var(--border-color);
+  transition: height .3s ease;
+}
+
+.accordion-content {
+  height: 0;
+  font-size: 1.25rem;
+  opacity: 0;
+  color: var(--secondary-color);
+  transition: 
+    opacity 0.3s ease-in-out,
+    height 0.3s 0.3s ease-in-out
+  ;
+}
+
+.animated {
+  opacity: 1;
+  height: auto;
+  transition:
+    opacity 0.3s ease-in-out,
+    height 0.3s 0.3s ease-in-out
+  ;
+}

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { CursosEnum } from '../../../enums/cursos';
 import { CallToMore } from '../../atoms/CallToMore/CallToMore';
 import './styles.css';
 
@@ -9,7 +8,7 @@ export interface CursoCardProps {
   image: string;
   description: string;
   inverted?: boolean;
-  link?: CursosEnum;
+  link?: string;
 }
 
 export const CursoCard: React.FC<CursoCardProps> = ({

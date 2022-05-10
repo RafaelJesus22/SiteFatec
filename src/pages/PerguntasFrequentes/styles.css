@@ -1,0 +1,26 @@
+.fq-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  margin-top: 3rem;
+  place-items: center;
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem
+}
+
+.question-header h3 {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.question-content {
+  padding: 1.5rem 1rem;
+  color: var(--secondary-text-color);
+  border-top: 1px solid var(--border-color);
+}

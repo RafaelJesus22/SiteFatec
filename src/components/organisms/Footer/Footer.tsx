@@ -7,7 +7,7 @@ const FATEC_LINKEDIN_URL = 'https://www.linkedin.com/in/fatec-santana-de-parna%C
 const FATEC_FACEBOOK_URL = 'https://www.facebook.com/fatecsdpoficial';
 
 const MATHEUS_LINKEDIN_URL = 'https://www.linkedin.com/in/matheuslimar/';
-const RAFAEL_LINKEDIN_URL = 'https://www.linkedin.com/in/rafael-jesus-0537a8193/';
+const RAFAEL_LINKEDIN_URL = 'https://www.linkedin.com/in/rafaeljesuscm/';
 
 
 export const Footer = (): JSX.Element => {

@@ -1,0 +1,23 @@
+.partners {
+  margin: 1rem auto 2rem auto;
+  padding: 3rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.partners .partner {
+  margin: 1.5rem 2rem;
+}
+
+.partners .partner .partner-image {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .partners {
+    padding: 0 1rem;
+  }
+}

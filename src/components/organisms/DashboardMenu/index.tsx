@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 
 import { Link, useHistory } from "react-router-dom";
-import { FaChalkboardTeacher, FaGraduationCap } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaGraduationCap, FaUserGraduate } from 'react-icons/fa';
 import { CgFeed } from 'react-icons/cg';
 import { BiLogOut, BiHome } from 'react-icons/bi';
 import { ImFolderOpen } from 'react-icons/im';
@@ -31,7 +31,12 @@ const MENU_ITENS = [
   {
     label: 'Cursos',
     icon: <FaGraduationCap size={ICON_SIZE} color={"#415462"} />,
-    route: '#',
+    route: '/portal/dashboard/cursos',
+  },
+  {
+    label: 'Disciplinas',
+    icon: <FaUserGraduate size={ICON_SIZE} color={"#415462"} />,
+    route: '/portal/dashboard/disciplinas',
   },
   {
     label: 'Documentos',
@@ -53,7 +58,7 @@ export const DashboardMenu: React.FC = () => {
   return (
     <div className="dashbard-menu">
       <header>
-        <Link to="/portal/dashboard" onClick={() => setActiveItem('Início')}>
+        <Link to="/">
           <img src={LogoFatec} alt="Logotipo da Fatec Santana de Parnaíba" />
         </Link>
       </header>

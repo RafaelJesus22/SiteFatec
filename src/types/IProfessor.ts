@@ -1,21 +1,8 @@
-import { Disciplina } from './ICurso';
-
-export interface ProfessorMateria {
-  curso: string;
-  funcao: string;
-  disciplinas: Disciplina[];
-}
-
-export interface ProfessorCard {
-  imgUrl: string;
-  name: string;
-  CursoDisciplinas?: ProfessorMateria[];
-}
-
 
 export interface DbProffessor {
   name: string;
   id?: string;
+  title?: string;
   imgUrl: string;
   email: string;
   classes: Array<{ label: string, value: string }>;
