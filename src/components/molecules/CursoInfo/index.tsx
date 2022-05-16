@@ -17,8 +17,6 @@ export const CursoInfo: React.FC<Props> = ({
     whereToWork
   } = data;
 
-  console.log(data)
-
   return (
     <Card>
       <div className="sobre-curso__info">

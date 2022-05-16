@@ -1,6 +1,6 @@
 import { Container } from '../../../components/containers/Container/Container';
 import { Content } from '../../../components/containers/Content/Content';
-// import { GradeCurricular } from '../../../components/organisms/gradeCurricular'
+import { GradeCurricular } from '../../../components/organisms/gradeCurricular'
 import { DbCurso } from '../../../types/ICurso';
 import { useEffect, useState } from 'react';
 import { cursosService } from '../../../services';
@@ -8,8 +8,8 @@ import { useParams } from 'react-router-dom';
 import { CursosEnum } from '../../../enums/cursos';
 import { CursoInfo } from '../../../components/molecules/CursoInfo';
 import { CursoDetalhesTecnicos } from '../../../components/molecules/CursoDetalhesTecnicos';
-import './styles.css';
 import { DbProffessor } from '../../../types/IProfessor';
+import './styles.css';
 
 
 export const DetalhesCurso = () => {
@@ -47,7 +47,7 @@ export const DetalhesCurso = () => {
               )}
             </section>
 
-            {/* <GradeCurricular grade={[]} /> */}
+            {curso?.curriculum && <GradeCurricular grade={curso?.curriculum} />}
           </div>
         )}
         {!validRoute && (

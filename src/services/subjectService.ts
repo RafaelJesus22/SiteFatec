@@ -50,7 +50,7 @@ export class SubjectService {
   async updateSubject(subject: DbSubject): Promise<void> {
     if (subject && subject.id) {
       const docRef = doc(db, CollectionsEnum.disciplines, subject.id);
-      const response = await updateDoc(docRef, {...subject});
+      const response = await updateDoc(docRef, { ...subject });
 
       console.log('atualizei', response);
     }

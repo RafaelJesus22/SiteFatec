@@ -1,25 +1,29 @@
-// import { SemestreProps } from '../../../types/ICurso';
-// import { CardDiciplina } from '../../atoms/CardDisciplina'
-
+import { CurriculumProps } from '../../../types/ICurso';
+import { CardDiciplina } from '../../atoms/CardDisciplina';
 import './styles.css';
 
 interface GradeCurricularProps {
-  // grade: Array<SemestreProps>
+  grade: CurriculumProps
 }
 
 export const GradeCurricular: React.FC<GradeCurricularProps> = ({
-  // grade
-}) => {
-  return (
+  grade
+}) => (
     <section className="grade">
       <div className="grade__title">
         <h2>Grade Curricular</h2>
-        <p style={{ textAlign: 'center' }}>Em manutenção...</p>
       </div>
 
-      {/* <div className="grade__semestres">
+      <div className="grade__semestres">
         {
-          grade.map((semestre, index) => {
+          [
+            grade.semester1,
+            grade.semester2,
+            grade.semester3,
+            grade.semester4,
+            grade.semester5,
+            grade.semester6,
+          ].map((semestre, index: number) => {
             return (
               <div className="grade__semestre">
                 <div className="grade__semestre-title">
@@ -27,20 +31,18 @@ export const GradeCurricular: React.FC<GradeCurricularProps> = ({
                 </div>
                 <div className="semestre-disciplinas">
                   {
-                    semestre.semestre.map((disciplina) => (
+                    semestre.map((disciplina) => (
                       <CardDiciplina
-                        title={disciplina.title}
-                        aulasSemanais={disciplina.aulasSemanais}
-                        type={disciplina.type}
+                        key={disciplina}
+                        subjectId={disciplina}
                       />
                     ))
                   }
                 </div>
               </div>
             )
-          }
-          )}
-      </div> */}
+          })
+        }
+      </div>
     </section>
   );
-}
