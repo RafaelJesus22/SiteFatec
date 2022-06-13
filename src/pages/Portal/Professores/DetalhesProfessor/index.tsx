@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Fragment, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { ListItem } from "../../../../components/atoms/ListItem";

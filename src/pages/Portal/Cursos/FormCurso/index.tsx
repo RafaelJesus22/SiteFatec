@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 

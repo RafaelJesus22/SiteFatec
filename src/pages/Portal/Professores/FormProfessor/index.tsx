@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { FormInput } from "../../../../components/atoms/FormInput";
