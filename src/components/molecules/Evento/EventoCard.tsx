@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import React from 'react';
 import { CallToMore } from '../../atoms/CallToMore/CallToMore';
 import './styles.css';
 

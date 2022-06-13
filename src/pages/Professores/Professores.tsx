@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 

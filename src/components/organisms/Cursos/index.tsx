@@ -20,7 +20,6 @@ export const Courses: React.FC<Props> = ({
 
   const fetchCourses = useCallback(async () => {
     const cursos = await cursosService.getCourses(true);
-
     if (!!quantity) {
       return setCourses(cursos.slice(0, quantity));
     }

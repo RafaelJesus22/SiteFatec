@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import { Facebook, LinkedIn } from '../../../assets/icons/icons';
 import './styles.css';

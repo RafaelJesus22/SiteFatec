@@ -105,7 +105,8 @@
 
 .professores__list .proffessor-content div h4 {
   color: var(--title-color);
-  font-size: 1.15rem;
+  font-size: 1.20rem;
+  font-weight: normal;
 }
 
 @media (max-width: 768px) {
