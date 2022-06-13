@@ -19,9 +19,10 @@ export const Header = (): JSX.Element => {
   const links = [
     { link: "/sobre", title: "Sobre" },
     { link: "/cursos", title: "Cursos" },
-    { link: "/departamentos", title: "Departamentos" },
+    // { link: "/departamentos", title: "Departamentos" },
     { link: "/noticias", title: "Notícias" },
-    { link: "/aluno", title: "Aluno" },
+    { link: "/documentos", title: "Documentos" },
+    // { link: "/aluno", title: "Aluno" },
     { link: "/professores", title: "Professores" },
   ];
 
