@@ -21,5 +21,4 @@ export interface DbDirectoryPath {
 export interface StorageFile {
   name: string;
   file: StorageReference;
-  url?: string | Promise<string>;
 }
