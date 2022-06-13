@@ -34,12 +34,6 @@
     "full:push": "git push origin master && git push heroku master",
     "full:pull": "git pull origin master && git pull heroku master"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
