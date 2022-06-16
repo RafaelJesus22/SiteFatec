@@ -23,6 +23,8 @@ import { CoursesForm } from '../pages/Portal/Cursos/FormCurso';
 import { CourseDetails } from '../pages/Portal/Cursos/DetalhesCurso';
 import { PerguntasFrequentes } from '../pages/PerguntasFrequentes';
 import { Documentos } from '../pages/Documentos';
+import { PortalDocuments } from '../pages/Portal/Documentos';
+import { DocumentsForm } from '../pages/Portal/Documentos/FormDocument';
 
 export default function Routes(): JSX.Element {
   const { user } = useContext(AuthContext);
@@ -50,7 +52,6 @@ export default function Routes(): JSX.Element {
           <Route path="/portal" exact component={PortalLogin} />
           <Route path="/portal/dashboard" exact>
             {!!user ? <PortalDashboard /> : <Redirect to="/portal" />}
-            <PortalDashboard />
           </Route>
           <Route path="/portal/dashboard/professores" exact component={PortalProfessores} />
           <Route path="/portal/dashboard/professores/adicionar" exact component={ProffessorsForm} />
@@ -66,6 +67,9 @@ export default function Routes(): JSX.Element {
           <Route path="/portal/dashboard/cursos/adicionar" exact component={CoursesForm} />
           <Route path="/portal/dashboard/cursos/editar/:cursoId" exact component={CoursesForm} />
           <Route path="/portal/dashboard/curso/:cursoId" exact component={CourseDetails} />
+
+          <Route path="/portal/dashboard/documentos" exact component={PortalDocuments} />
+          <Route path="/portal/dashboard/documentos/adicionar" exact component={DocumentsForm} />
         </Switch>
       </Router>
     </div>
