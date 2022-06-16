@@ -51,13 +51,13 @@ export const CoursesForm = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     
-    const { name, coordinatorId, imageUrl } = course;
+    const { name, imageUrl } = course;
     const { duration, timeCourse, vacancies } = technicalDetails;
     const { professionalProfile } = courseInfo;
 
     if (
         !name ||
-        !coordinatorId ||
+        !selectedProffessor.value ||
         !imageUrl ||
         !duration ||
         !timeCourse ||
