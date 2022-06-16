@@ -12,7 +12,7 @@ import { auth } from '../../../firebase';
 import { useState } from 'react';
 
 const ICON_SIZE = 24;
-const MENU_ITENS = [
+export const MENU_ITENS = [
   {
     label: 'Início',
     icon: <BiHome size={ICON_SIZE} color={"#415462"} />,
@@ -41,7 +41,7 @@ const MENU_ITENS = [
   {
     label: 'Documentos',
     icon: <ImFolderOpen size={ICON_SIZE} color={"#415462"} />,
-    route: '#',
+    route: '/portal/dashboard/documentos',
   },
 ]
 
