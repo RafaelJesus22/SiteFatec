@@ -150,18 +150,31 @@ export const CoursesForm = () => {
         const proffessor = serverProffessors.find(p => p.value === serverCourse?.coordinatorId);
         setSelectedProffessor(proffessor as Option);
 
-        const semester1 = serversubjects.filter(s => serverCourse?.curriculum.semester1.includes(s.value));
-        const semester2 = serversubjects.filter(s => serverCourse?.curriculum.semester2.includes(s.value));
-        const semester3 = serversubjects.filter(s => serverCourse?.curriculum.semester3.includes(s.value));
-        const semester4 = serversubjects.filter(s => serverCourse?.curriculum.semester4.includes(s.value));
-        const semester5 = serversubjects.filter(s => serverCourse?.curriculum.semester5.includes(s.value));
-        const semester6 = serversubjects.filter(s => serverCourse?.curriculum.semester6.includes(s.value));
-        setFirstSemesterSubjects(semester1);
-        setSecondSemesterSubjects(semester2);
-        setThirdSemesterSubjects(semester3);
-        setFourthSemesterSubjects(semester4);
-        setFivethSemesterSubjects(semester5);
-        setSixthSemesterSubjects(semester6);
+        const semester1 = serverCourse?.curriculum.semester1.map(s => {
+          return serversubjects.find(sub => sub.value === s);
+        });
+        const semester2 = serverCourse?.curriculum.semester2.map(s => {
+          return serversubjects.find(sub => sub.value === s);
+        });
+        const semester3 = serverCourse?.curriculum.semester3.map(s => {
+          return serversubjects.find(sub => sub.value === s);
+        });
+        const semester4 = serverCourse?.curriculum.semester4.map(s => {
+          return serversubjects.find(sub => sub.value === s);
+        });
+        const semester5 = serverCourse?.curriculum.semester5.map(s => {
+          return serversubjects.find(sub => sub.value === s);
+        });
+        const semester6 = serverCourse?.curriculum.semester6.map(s => {
+          return serversubjects.find(sub => sub.value === s);
+        });
+
+        setFirstSemesterSubjects(semester1 as Option[]);
+        setSecondSemesterSubjects(semester2 as Option[]);
+        setThirdSemesterSubjects(semester3 as Option[]);
+        setFourthSemesterSubjects(semester4 as Option[]);
+        setFivethSemesterSubjects(semester5 as Option[]);
+        setSixthSemesterSubjects(semester6 as Option[]);
       }
 
       hideLoading();
