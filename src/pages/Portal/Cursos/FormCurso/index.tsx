@@ -102,7 +102,7 @@ export const CoursesForm = () => {
   }
 
   const getCourse = async () => {
-    return await cursosService.getOneCourse(cursoId);
+    return await cursosService.getCourseById(cursoId);
   };
 
   const getSubjects = async () => {

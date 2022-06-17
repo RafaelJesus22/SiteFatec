@@ -45,7 +45,7 @@ export class CursoServise {
     return courses.find(course => course.link === link);
   }
 
-  public async getOneCourse(id: string): Promise<DbCurso | undefined> {
+  public async getCourseById(id: string): Promise<DbCurso | undefined> {
     const courses = await this.getCourses();
     return courses.find(course => course.id === id);
   }

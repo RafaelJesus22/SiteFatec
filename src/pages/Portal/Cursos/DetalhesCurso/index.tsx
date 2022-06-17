@@ -75,7 +75,7 @@ export const CourseDetails: React.FC = () => {
   useEffect(() => {
     async function load() {
       showLoading();
-      const course = await cursosService.getOneCourse(cursoId);
+      const course = await cursosService.getCourseById(cursoId);
       setCourse(course as DbCurso);
       await getCoordinator(String(course?.coordinatorId));
       await getSubjectsName(course?.curriculum as CurriculumProps);
