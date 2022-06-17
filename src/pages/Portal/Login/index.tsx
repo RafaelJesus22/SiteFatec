@@ -16,6 +16,11 @@ import { useLoading } from '../../../contexts/loadingContent';
 
 type PasswordInputType = 'password' | 'text';
 
+const COMMON_ERRORS = {
+  EMAIL_INVALID: 'auth/user-not-found',
+  WRONG_PASSWORD: 'auth/wrong-password',
+}
+
 export const PortalLogin = () => {
   const { onChangeUser } = useAuth();
   const { hideLoading, showLoading } = useLoading();
@@ -41,6 +46,18 @@ export const PortalLogin = () => {
     }
   };
 
+  const handleError = (error: any) => {
+    if (!!error.code && error.code === COMMON_ERRORS.EMAIL_INVALID) {
+      return alert('Senhor(a), a senha informada está incorreta! Por favor, verifique a senha e tente novamente.');
+    }
+
+    if (!!error.code && error.code === COMMON_ERRORS.EMAIL_INVALID) {
+      return alert('Senhor(a), o e-mail infomado não está cadastrado em nossa base de usuários do portal.');
+    }
+
+    return alert(`Um erro inesperado ocorreu ao tentar logar.\nDetalhes: ${JSON.stringify(error)}`);
+  };
+
   const singin = async () => {
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
@@ -48,7 +65,7 @@ export const PortalLogin = () => {
       onChangeUser(response.user);
       return history.push('/portal/dashboard');
     } catch (error) {
-      window.alert(`Não foi possível realizar o login. Detalhes ${JSON.stringify(error)}`);
+      handleError(error);
     }
   };
 
