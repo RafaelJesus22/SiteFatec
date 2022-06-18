@@ -9,6 +9,7 @@ interface Props {
   onChangeFile: (props: { url: string, file: File | null }) => void;
   name: string;
   currentFile: File | null;
+  maxSize?: number;
   currentUrl?: string;
   path?: string;
   style?: CSSProperties;
@@ -20,6 +21,7 @@ export const FormFile: React.FC<Props> = ({
   currentFile,
   currentUrl,
   style,
+  maxSize = 10 * 1024 * 1024,
   path = '',
 }) => {
   const [file, setFile] = useState<File | null>(null);
@@ -42,13 +44,23 @@ export const FormFile: React.FC<Props> = ({
     }
   };
 
+  const handleUrl = (): string => {
+    if (path === '')
+      return file?.name || '';
+    return `${path}/${file?.name}`;
+  }
+ 
   useEffect(() => {
     if (!file) {
       return;
     }
 
+    if (file.size > maxSize) {
+      return alert(`selecione um arquivo de no máximo ${maxSize / 1024 / 1024}MB`);
+    }
+
     setUploading(true);
-    const fileRef = ref(storage, path + file.name);
+    const fileRef = ref(storage, handleUrl());
     const task = uploadBytesResumable(fileRef, file);
     task.on('state_changed',
       (snapshot) => {
