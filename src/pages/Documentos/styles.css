@@ -35,7 +35,12 @@
 
 .directory-nav {
   display: flex;
+  align-items: center;
   width: 100%;
+}
+
+.directory-nav h1 {
+  font-size: 1.75rem;
 }
 
 .directory-nav .directory-root {
@@ -59,6 +64,7 @@
 .file-grid {
   margin: 2rem 0;
 }
+
 .file-grid .file-item {
   padding: 1rem;
   border-top: 1px solid #eaeaea;
@@ -79,3 +85,17 @@
 .file-grid .file-item svg {
   cursor: pointer;
 }
+
+.file-grid h2 {
+  width: 100%;
+  text-align: center;
+  color: var(--title-color);
+  padding-top: 5rem;
+}
+
+@media (max-width: 600px) {
+  .directory-nav h1 {
+    font-size: 1.25rem;
+  }
+}
+
