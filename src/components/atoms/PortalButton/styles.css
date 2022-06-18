@@ -11,3 +11,8 @@
   cursor: pointer;
   transition: 300ms ease-in-out;
 }
+
+.portal-button.disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
