@@ -1,9 +1,8 @@
 import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc, query, orderBy } from "firebase/firestore";
-import { ref, list, StorageReference, getDownloadURL } from 'firebase/storage';
+import { ref, list, StorageReference, getDownloadURL, deleteObject } from 'firebase/storage';
 import { CollectionsEnum } from "../enums/collections";
 import { db, storage } from "../firebase";
-import { DbDocument, DbDirectoryPath, StorageFile } from "../types/IDocument";
-
+import { DbDocument, DbDirectoryPath, StorageFile, FileListItem } from "../types/IDocument";
 
 export class DocumentService {
   private db = db;
@@ -12,6 +11,12 @@ export class DocumentService {
 
   public documents: DbDocument[] = [];
   public directories: DbDirectoryPath[] = [];
+  public files: FileListItem[] = [];
+
+  constructor() {
+    this.getAllFoldersAndFiles()
+      .then(res => this.files = res);
+  }
 
   private async getFirestoreDocuments(): Promise<DbDocument[]> {
     const documentsQuery = query(this.documentsCollectionRef, orderBy('name', 'asc'));
@@ -72,9 +77,9 @@ export class DocumentService {
     return documents.find(document => document.id === id);
   }
 
-  async createDocument(document: DbDocument): Promise<void> {
-    const response = await addDoc(this.documentsCollectionRef, document);
-    console.log('criei', response);
+  public async deleteFile(file: StorageFile) {
+    const fileRef = ref(this.storage, file.file.fullPath);
+    await deleteObject(fileRef);
   }
 
   public async getFilesByPath(path: string): Promise<StorageFile[]> {
@@ -90,6 +95,31 @@ export class DocumentService {
         name: file.name,
         file,
       };
+    });
+  }
+
+  public async getAllFoldersAndFiles(storaged?: boolean): Promise<FileListItem[]> {
+    if (this.files.length > 0 && !storaged) {
+      return this.files;
+    }
+
+    const directories = await this.getDirectories();
+
+    const files = await Promise.all(
+      directories.map(async (directory) => {
+        const files = await this.getFilesByPath(directory.path);
+
+        return files.map(file => {
+          return {
+            file,
+            category: directory.name,
+          }
+        })
+      })
+    );
+
+    return files.reduce((acc, curr) => {
+      return acc.concat(curr);
     });
   }
 }
