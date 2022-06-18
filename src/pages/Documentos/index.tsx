@@ -15,7 +15,6 @@ export const Documentos: React.FC = () => {
   const [directories, setDirectories] = useState<any[]>([]);
   const [selectedDirectory, setSelectedDirectory] = useState<any>();
   const [files, setFiles] = useState<StorageFile[]>([]);
-  const [loadingFiles, setLoadingFiles] = useState(false);
 
   const handleFileName = (file: StorageFile) => {
     const { name } = file;
@@ -31,9 +30,7 @@ export const Documentos: React.FC = () => {
 
   const handleDownload = async (file: StorageFile) => {
     try {
-      console.log('entrei')
       const url = await getDownloadURL(file.file)
-      console.log('terminei', url)
       window.open(url, '_blank');
     } catch (err) {
       alert('Não foi possivel baixar o arquivo');
@@ -51,11 +48,10 @@ export const Documentos: React.FC = () => {
 
   useEffect(() => {
     showLoading({ message: 'Carregando arquivos...' });
-    setLoadingFiles(true);
+
     documentService.getFilesByPath(selectedDirectory?.path || '')
       .then(res => {
         setFiles(res);
-        console.log(res)
       })
       .catch(err => {
         alert('Um erro ocorreu ao carregar os arquivos');
@@ -63,7 +59,6 @@ export const Documentos: React.FC = () => {
       })
       .finally(() => {
         hideLoading();
-        setLoadingFiles(false);
       });
   }, [selectedDirectory])
 
@@ -108,6 +103,11 @@ export const Documentos: React.FC = () => {
                   />
                 </div>
               ))}
+              {selectedDirectory && files.length === 0 && (
+                <h2>
+                  Não há arquivos nesta pasta
+                </h2>
+              )}
             </div>
           )}
         </div>
