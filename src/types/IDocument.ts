@@ -22,3 +22,8 @@ export interface StorageFile {
   name: string;
   file: StorageReference;
 }
+
+export interface FileListItem  {
+  file: StorageFile;
+  category: string;
+}
