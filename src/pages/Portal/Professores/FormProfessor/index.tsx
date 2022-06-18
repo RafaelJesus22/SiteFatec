@@ -49,7 +49,7 @@ export const ProffessorsForm = () => {
   const getCourses = async () => {
     showLoading({ message: 'Carregando cursos' });
     const courses = await cursosService.getCourses(true);
-    setCourses(courses.map(c =>{
+    setCourses(courses.map(c => {
       return {
         label: c.name,
         value: c.id
@@ -124,36 +124,20 @@ export const ProffessorsForm = () => {
             options={courses}
             onChange={(options) => setProffessor({ ...proffessor, classes: options })}
           />
-          <div className="row">
-            <FormInput
-              type="url"
-              name="URL da imagem"
-              value={proffessor.imgUrl}
-              onChange={e => setProffessor({ ...proffessor, imgUrl: e.target.value })}
-            />
-            <div style={{ width: '2rem' }} />
-            <FormInput
-              type="tel"
-              name="WhatsApp"
-              value={proffessor.whatsapp}
-              onChange={e => setProffessor({ ...proffessor, whatsapp: e.target.value })}
-            />
-          </div>
-          <div className="row">
-            <FormInput
-              type="url"
-              name="LinkedIn"
-              value={proffessor.linkedin}
-              onChange={e => setProffessor({ ...proffessor, linkedin: e.target.value })}
-            />
-            <div style={{ width: '2rem' }} />
-            <FormInput
-              type="url"
-              name="Github"
-              value={proffessor.github}
-              onChange={e => setProffessor({ ...proffessor, github: e.target.value })}
-            />
-          </div>
+          <FormInput
+            type="url"
+            name="URL da imagem"
+            value={proffessor.imgUrl}
+            style={{ marginBottom: '1.5rem' }}
+            onChange={e => setProffessor({ ...proffessor, imgUrl: e.target.value })}
+          />
+          <FormInput
+            type="url"
+            name="LinkedIn"
+            value={proffessor.linkedin}
+            style={{ marginBottom: '1.5rem' }}
+            onChange={e => setProffessor({ ...proffessor, linkedin: e.target.value })}
+          />
 
           <div className="form-button">
             <FormButton
