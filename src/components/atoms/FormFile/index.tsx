@@ -12,6 +12,7 @@ interface Props {
   maxSize?: number;
   currentUrl?: string;
   path?: string;
+  onlyImage?: boolean;
   style?: CSSProperties;
 }
 
@@ -22,6 +23,7 @@ export const FormFile: React.FC<Props> = ({
   currentUrl,
   style,
   maxSize = 10 * 1024 * 1024,
+  onlyImage = false,
   path = '',
 }) => {
   const [file, setFile] = useState<File | null>(null);
@@ -37,10 +39,13 @@ export const FormFile: React.FC<Props> = ({
       selectedFile = event.target.files[0];
     }
 
-    if (selectedFile && selectedFile.type.startsWith('image/')) {
-      setFile(selectedFile);
-    } else {
+    if (onlyImage && selectedFile && !selectedFile.type.startsWith('image/')) {
       setFile(null);
+      return alert('Selecione uma imagem');
+    } 
+
+    if (selectedFile) {
+      setFile(selectedFile);
     }
   };
 
