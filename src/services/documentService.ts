@@ -103,7 +103,8 @@ export class DocumentService {
       return this.files;
     }
 
-    const directories = await this.getDirectories();
+    let directories = await this.getDirectories();
+    directories = directories.filter(d => d.name !== 'Eventos');
 
     const files = await Promise.all(
       directories.map(async (directory) => {
