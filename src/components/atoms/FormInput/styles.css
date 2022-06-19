@@ -18,8 +18,17 @@
   width: 100%;
 
   resize: vertical;
+  position: relative;
 }
 
 .form-input input:focus, .form-input textarea:focus {
   border: 1.5px solid var(--primary-color);
+}
+
+.max-lenght-label {
+  width: 100%;
+  display: block;
+  text-align: end;
+  color: var(--secondary-text-color);
+  margin-top: -1rem;
 }
