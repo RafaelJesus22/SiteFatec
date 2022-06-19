@@ -36,10 +36,10 @@ export const EventForm = () => {
 
     if (eventoId) {
       setModalMessage('Atualizando evento');
-      // TODO
+      await eventService.updateEvent(event);
     } else {
       setModalMessage('Cadastrando evento');
-      // TODO
+      await eventService.createEvent(event);
     }
 
     setModalMessage('Sucesso!');
@@ -60,12 +60,25 @@ export const EventForm = () => {
       }
     });
 
-    return setCourses(options);
+    return options;
   }
 
-
   useLayoutEffect(() => {
-    // TODO
+    const mount = async () => {
+      const coursesOptions = await getCourses();
+      setCourses(coursesOptions);
+
+      if (eventoId) {
+        const event = await getEvent();
+        setEvent(event as DbEvent);
+        setSelectedCourse(
+          coursesOptions.find(
+            course => course.value === event?.courseParentId
+          ) as Option
+        );
+      }
+    };
+    mount();
   }, [eventoId]);
 
   useEffect(() => {
@@ -86,6 +99,7 @@ export const EventForm = () => {
               }
             </h1>
             <FormFile
+              onlyImage
               currentFile={eventImage}
               currentUrl={event.imgURl}
               path={'Eventos'}
