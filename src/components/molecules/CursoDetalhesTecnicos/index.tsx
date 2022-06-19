@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { proffessorsService } from "../../../services";
 import { CourseTechnicalDetailsProps } from "../../../types/ICurso";
 import { DbProffessor } from "../../../types/IProfessor";
 import { Card } from "../../atoms/Card";
@@ -8,13 +10,19 @@ import './styles.css';
 
 interface Props {
   detalhes: CourseTechnicalDetailsProps;
-  coordenador?: DbProffessor;
+  coordenadorId: string;
 }
 
 export const CursoDetalhesTecnicos: React.FC<Props> = ({
   detalhes,
-  coordenador,
+  coordenadorId,
 }) => {
+  const [coordenador, setCoordenador] = useState<DbProffessor | undefined>();
+
+  useEffect(() => {
+    proffessorsService.getProfessorById(coordenadorId).then(setCoordenador);
+  })
+
   return (
     <Card>
       <div className="sobre-curso__detalhes">

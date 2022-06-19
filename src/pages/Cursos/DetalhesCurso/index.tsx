@@ -41,7 +41,7 @@ export const DetalhesCurso = () => {
               {curso && <CursoInfo data={curso.info} />}
               {curso && (
                 <CursoDetalhesTecnicos
-                  coordenador={{} as DbProffessor}
+                  coordenadorId={curso.coordinatorId}
                   detalhes={curso.technicalDetails}
                 />
               )}

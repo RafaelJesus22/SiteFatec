@@ -45,7 +45,7 @@ export const ProffessorDetails: React.FC = () => {
   useEffect(() => {
     if (proffessorId) {
       showLoading();
-      proffessorsService.getOneProfessor(proffessorId)
+      proffessorsService.getProfessorById(proffessorId)
         .then(res => {
           if (res) {
             setProffessor(res);

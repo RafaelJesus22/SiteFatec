@@ -61,7 +61,7 @@ export const ProffessorsForm = () => {
   useEffect(() => {
     getCourses();
     if (proffessorId) {
-      proffessorsService.getOneProfessor(proffessorId)
+      proffessorsService.getProfessorById(proffessorId)
         .then(res => {
           if (res) {
             setProffessor(res);

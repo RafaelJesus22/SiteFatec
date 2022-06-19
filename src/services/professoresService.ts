@@ -37,7 +37,7 @@ export class ProffessorsService {
     return this.proffessors;
   }
 
-  public async getOneProfessor(id: string): Promise<DbProffessor | undefined> {
+  public async getProfessorById(id: string): Promise<DbProffessor | undefined> {
     const proffessors = await this.getProffessors();
     return proffessors.find(proffessor => proffessor.id === id);
   }

@@ -25,7 +25,7 @@ export const CourseDetails: React.FC = () => {
 
 
   const getCoordinator = async (coordinatorId: string) => {
-    const coordinator = await proffessorsService.getOneProfessor(coordinatorId);
+    const coordinator = await proffessorsService.getProfessorById(coordinatorId);
     setCoordinator(coordinator as DbProffessor);
   }
 
