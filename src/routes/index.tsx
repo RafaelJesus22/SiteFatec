@@ -25,6 +25,8 @@ import { PerguntasFrequentes } from '../pages/PerguntasFrequentes';
 import { Documentos } from '../pages/Documentos';
 import { PortalDocuments } from '../pages/Portal/Documentos';
 import { DocumentsForm } from '../pages/Portal/Documentos/FormDocument';
+import { PortalEvents } from '../pages/Portal/Eventos';
+import { EventForm } from '../pages/Portal/Eventos/FormEvento';
 
 export default function Routes(): JSX.Element {
   const { user } = useContext(AuthContext);
@@ -70,6 +72,11 @@ export default function Routes(): JSX.Element {
 
           <Route path="/portal/dashboard/documentos" exact component={PortalDocuments} />
           <Route path="/portal/dashboard/documentos/adicionar" exact component={DocumentsForm} />
+
+          <Route path="/portal/dashboard/eventos" exact component={PortalEvents} />
+          <Route path="/portal/dashboard/eventos/adicionar" exact component={EventForm} />
+          <Route path="/portal/dashboard/eventos/editar/:eventoId" exact component={EventForm} />
+          <Route path="/portal/dashboard/evento/:eventoId" exact component={CourseDetails} />
         </Switch>
       </Router>
     </div>

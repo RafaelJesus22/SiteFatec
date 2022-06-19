@@ -26,7 +26,7 @@ export const MENU_ITENS = [
   {
     label: 'Eventos',
     icon: <CgFeed size={ICON_SIZE} color={"#415462"} />,
-    route: '#',
+    route: '/portal/dashboard/eventos',
   },
   {
     label: 'Cursos',
