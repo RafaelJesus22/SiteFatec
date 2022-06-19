@@ -3,4 +3,5 @@ export enum CollectionsEnum {
   proffessors = 'proffessors',
   courses = 'courses',
   documents = 'filePaths',
+  events = 'events',
 }
