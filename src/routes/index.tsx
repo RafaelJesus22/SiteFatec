@@ -6,7 +6,7 @@ import { Sobre } from '../pages/Sobre/Sobre';
 import { Cursos } from '../pages/Cursos/Cursos';
 import { DetalhesCurso } from '../pages/Cursos/DetalhesCurso';
 import { Departamentos } from '../pages/Departamentos/Departamentos';
-import { Noticias } from '../pages/Noticias/Noticias';
+import { Noticias } from '../pages/Noticias';
 import { Alunos } from '../pages/Alunos/Alunos';
 import { Professores } from '../pages/Professores/Professores';
 import { PortalLogin } from '../pages/Portal/Login';
@@ -46,6 +46,9 @@ export default function Routes(): JSX.Element {
           <Route path="/cursos/:curso" exact component={DetalhesCurso} />
           <Route path="/departamentos" exact component={Departamentos} />
           <Route path="/noticias" exact component={Noticias} />
+          <Route path="/noticias/:noticiaId" exact component={() => (
+            <p>noticia</p>
+          )} />
           <Route path="/aluno" exact component={Alunos} />
           <Route path="/professores" exact component={Professores} />
           <Route path="/documentos" exact component={Documentos} />
