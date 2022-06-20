@@ -1,25 +1,15 @@
-.course-details-container img {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-}
-
-.course-details-container h2,
-.course-details-container h3 {
-  color: var(--title-color);
-}
-
-.course-details-container .form-section {
+.event-details-container .form-section {
   margin-top: 2rem;
   padding-top: 3rem;
   padding-bottom: .5rem;
   border-top: 1px solid var(--border-color);
 }
-.course-details-container .form-section .form-section-title {
+
+.event-details-container .form-section .form-section-title {
   color: var(--secondary-text-color);
 }
 
-.course-details-container .buttons {
+.event-details-container .buttons {
   width: 100%;
   padding: 1rem 0;
 
