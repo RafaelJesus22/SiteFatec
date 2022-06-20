@@ -1,7 +1,9 @@
 .event-item {
-  background-color: #f0f0f5;
-  margin-bottom: 1rem;
-  border-radius: .25rem;
+  background-color: var(--white);
+  /* margin-bottom: 1rem; */
+  /* border-radius: .25rem; */
+  border: 1px solid var(--border-color);
+  margin-top: -1px;
 }
 
 .event-item .event-item-header {
@@ -10,7 +12,7 @@
   align-items: flex-start;
 
   padding: 1rem;
-  border-bottom: 1px solid var(--white);
+  /* border-top: 1px solid var(--border-color); */
 }
 
 .event-item .event-item-header h3 {
@@ -23,6 +25,26 @@
   font-size: .75rem;
   line-height: .75rem;
   color: var(--secondary-text-color);
+}
+
+.event-item .event-item-header .actions {
+  display: flex;
+  align-items: center;
+}
+
+.event-item .event-item-header .actions .icon {
+  margin: 0 .25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: .3s ease-in;
+}
+
+.event-item .event-item-header .actions .icon:hover {
+  transform: scale(1.1);
+}
+
+.event-item .event-item-header .actions .icon.delete:hover {
+  color: var(--primary-color);
 }
 
 /* 
