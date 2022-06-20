@@ -1,16 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { FiTrash2, FiEdit2 } from 'react-icons/fi';
 
 import { useAuth } from "../../../contexts/authContext";
 import { useLoading } from "../../../contexts/loadingContent";
 import { eventService } from "../../../services";
 import { DbEvent } from "../../../types/IEvents";
 
-import { DashboardContainer } from "../../../components/containers/DashboardContainer";
-import { PortalListContainer } from "../../../components/containers/PortalListContainer";
 import { Modal } from "../../../components/molecules/Modal";
+import { DashboardContainer } from "../../../components/containers/DashboardContainer";
 import { PortalListFilter } from "../../../components/molecules/PortalListFilter";
+import { PortalEventCard } from "../../../components/molecules/EventCard";
 
 import './styles.css';
 
@@ -54,7 +53,7 @@ export const PortalEvents: React.FC = () => {
     hideLoading();
   }, [hideLoading, showLoading]);
 
-  const handleCourseDetails = (courseId: string) => {
+  const handleEventoDetails = (courseId: string) => {
     history.push(`evento/${courseId}`)
   }
 
@@ -90,7 +89,16 @@ export const PortalEvents: React.FC = () => {
         inputStyle={{ minWidth: '50%' }}
       />
 
-
+      <div>
+        {events?.map(event => (
+          <PortalEventCard
+            key={event.id}
+            event={event}
+            onPressEdit={handlePressEdit}
+            onPressDelete={() => setModalDelete(true)}
+          />
+        ))}
+      </div>
 
     </DashboardContainer>
   );
