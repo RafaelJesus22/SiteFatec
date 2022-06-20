@@ -7,7 +7,7 @@ import { useLoading } from "../../../../contexts/loadingContent";
 import { cursosService, eventService } from "../../../../services";
 
 import { FormInput, FormTextArea } from "../../../../components/atoms/FormInput";
-import { FormMultiSelect, FormSelect, Option } from "../../../../components/atoms/FormSelect";
+import { FormSelect, Option } from "../../../../components/atoms/FormSelect";
 import { DashboardContainer } from "../../../../components/containers/DashboardContainer";
 import { FormButton } from "../../../../components/atoms/PortalButton";
 import { PortalContent } from "../../../../components/containers/PortalContent";
@@ -132,25 +132,26 @@ export const EventForm = () => {
             style={styles.formInput}
             required
             name="Descreva o evento *"
-            maxLength={10000}
             value={event.post}
             onChange={e => {
               setEvent({ ...event, post: e.target.value });
             }}
           />
 
-          <FormFile
-            onlyImage
-            currentFile={eventImage}
-            currentUrl={event.imgURl}
-            path={'Eventos'}
-            name="Imagem do evento"
-            style={styles.formInput}
-            onChangeFile={({ url, file }) => {
-              setEvent({ ...event, imgURl: url });
-              setEventImage(file);
-            }}
-          />
+          {!eventoId && (
+            <FormFile
+              onlyImage
+              currentFile={eventImage}
+              currentUrl={event.imgURl}
+              path={'Eventos'}
+              name="Imagem do evento"
+              style={styles.formInput}
+              onChangeFile={({ url, file }) => {
+                setEvent({ ...event, imgURl: url });
+                setEventImage(file);
+              }}
+            />
+          )}
 
           <div className="form-button">
             <FormButton
