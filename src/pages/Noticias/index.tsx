@@ -1,4 +1,3 @@
-import { Timestamp } from 'firebase/firestore';
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
@@ -46,9 +45,6 @@ export const Noticias: React.FC = () => {
                 {...event}
               />
             ))}
-          </div>
-          <div className="feed-options">
-
           </div>
         </div>
       </Content>

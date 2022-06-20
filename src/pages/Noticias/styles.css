@@ -1,7 +1,28 @@
 .news {
-  width: 100%;
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: 60% 35%;
-  grid-gap: 5%;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+@media (max-width: 1280px) {
+  .news {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .news {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .news {
+    width: 90%;
+  }
+}
+
+@media (max-width: 660px) {
+  .news {
+    width: 100%;
+  }
 }
