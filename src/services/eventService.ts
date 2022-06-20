@@ -11,7 +11,7 @@ export class EventService {
   public events: Array<DbEvent> = [];
 
   private async getFirestoreEvents(): Promise<DbEvent[]> {
-    const eventsQuery = query(this.eventsCollectionRef);
+    const eventsQuery = query(this.eventsCollectionRef, orderBy('createdAt', 'desc'));
     const eventsSnapshot = await getDocs(eventsQuery);
 
     const proffessors = eventsSnapshot.docs.map(doc => {
