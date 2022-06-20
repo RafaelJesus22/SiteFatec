@@ -36,14 +36,23 @@ export const EventForm = () => {
 
     if (eventoId) {
       setModalMessage('Atualizando evento');
-      await eventService.updateEvent(event);
+      await eventService.updateEvent({
+        ...event,
+        updatedAt: new Date(),
+        edited: true,
+      });
     } else {
       setModalMessage('Cadastrando evento');
-      await eventService.createEvent(event);
+      await eventService.createEvent({
+        ...event,
+        edited: false,
+        createdAt: new Date(),
+      });
     }
 
     setModalMessage('Sucesso!');
     hideLoading();
+    await eventService.getEvents(true);
     history.goBack();
   }
 
@@ -98,19 +107,13 @@ export const EventForm = () => {
                 : "Adicionar evento"
               }
             </h1>
-            <FormFile
-              onlyImage
-              currentFile={eventImage}
-              currentUrl={event.imgURl}
-              path={'Eventos'}
-              name="Imagem do evento"
-              style={styles.formInput}
-              onChangeFile={({ url, file }) => {
-                setEvent({ ...event, imgURl: url });
-                setEventImage(file);
-              }}
-            />
           </div>
+          <FormInput
+            name="Título *"
+            value={event.title}
+            style={styles.formInput}
+            onChange={e => setEvent({ ...event, title: e.target.value })}
+          />
 
           {!!selectedCourse && (
             <FormSelect
@@ -118,7 +121,10 @@ export const EventForm = () => {
               value={selectedCourse}
               name="Curso que o evento pertence"
               options={courses}
-              onChange={(option) => setSelectedCourse(option)}
+              onChange={(option) => {
+                setSelectedCourse(option);
+                setEvent({ ...event, courseParentId: option.value });
+              }}
             />
           )}
 
@@ -130,6 +136,19 @@ export const EventForm = () => {
             value={event.post}
             onChange={e => {
               setEvent({ ...event, post: e.target.value });
+            }}
+          />
+
+          <FormFile
+            onlyImage
+            currentFile={eventImage}
+            currentUrl={event.imgURl}
+            path={'Eventos'}
+            name="Imagem do evento"
+            style={styles.formInput}
+            onChangeFile={({ url, file }) => {
+              setEvent({ ...event, imgURl: url });
+              setEventImage(file);
             }}
           />
 
