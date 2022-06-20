@@ -96,6 +96,10 @@ export const PortalEvents: React.FC = () => {
             event={event}
             onPressEdit={handlePressEdit}
             onPressDelete={() => setModalDelete(true)}
+            style={{
+              borderRadius: '0.25rem',
+              marginBottom: '1rem',
+            }}
           />
         ))}
       </div>

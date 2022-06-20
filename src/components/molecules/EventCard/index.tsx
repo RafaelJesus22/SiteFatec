@@ -12,6 +12,7 @@ interface PortalEventCardProps {
   event: DbEvent;
   onPressEdit: (id: string) => void;
   onPressDelete: (id: string) => void;
+  style?: React.CSSProperties;
 }
 
 export const EventCard: React.FC<DbEvent> = ({
@@ -108,6 +109,7 @@ export const PortalEventCard: React.FC<PortalEventCardProps> = ({
   event,
   onPressEdit,
   onPressDelete,
+  style,
 }) => {
   const [courseName, setCourseName] = useState("");
   const history = useHistory();
@@ -147,7 +149,7 @@ export const PortalEventCard: React.FC<PortalEventCardProps> = ({
   })
 
   return (
-    <div className="event-item">
+    <div className="event-item" style={style}>
       <div className="event-item-header">
         <div>
           <h3>{courseName}</h3>
