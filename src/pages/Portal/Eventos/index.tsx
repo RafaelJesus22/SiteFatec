@@ -41,6 +41,7 @@ export const PortalEvents: React.FC = () => {
     showLoading();
 
     await eventService.deleteEvent(selectedEvent.id);
+    await getEvents(true);
 
     hideLoading();
   };
@@ -53,9 +54,6 @@ export const PortalEvents: React.FC = () => {
     hideLoading();
   }, [hideLoading, showLoading]);
 
-  const handleEventoDetails = (courseId: string) => {
-    history.push(`evento/${courseId}`)
-  }
 
   useEffect(() => {
     if (!user) {
@@ -95,7 +93,10 @@ export const PortalEvents: React.FC = () => {
             key={event.id}
             event={event}
             onPressEdit={handlePressEdit}
-            onPressDelete={() => setModalDelete(true)}
+            onPressDelete={() => {
+              setModalDelete(true);
+              setSelectedEvent(event);
+            }}
             style={{
               borderRadius: '0.25rem',
               marginBottom: '1rem',
@@ -103,6 +104,15 @@ export const PortalEvents: React.FC = () => {
           />
         ))}
       </div>
+
+      <Modal
+        visible={modalDelete}
+        title="Excluir evento"
+        text="Tem certeza que deseja excluir este evento?"
+        onClick={performDelete}
+        onCancel={() => setModalDelete(false)}
+        confirmButtonText="Excluir"
+      />
 
     </DashboardContainer>
   );
