@@ -4,9 +4,13 @@ import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
 import { EventCard } from '../../components/molecules/EventCard';
 import { useLoading } from '../../contexts/loadingContent';
-import { eventService, cursosService } from '../../services';
+import { eventService } from '../../services';
 import { DbEvent } from '../../types/IEvents';
 import './styles.css';
+
+export interface NewsDetailParams {
+  noticiaId: string;
+}
 
 export const Noticias: React.FC = () => {
   const [events, setEvents] = useState<DbEvent[]>([]);

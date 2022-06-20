@@ -27,6 +27,7 @@ import { PortalDocuments } from '../pages/Portal/Documentos';
 import { DocumentsForm } from '../pages/Portal/Documentos/FormDocument';
 import { PortalEvents } from '../pages/Portal/Eventos';
 import { EventForm } from '../pages/Portal/Eventos/FormEvento';
+import { NewsDetail } from '../pages/Noticias/DetalhesNoticial';
 
 export default function Routes(): JSX.Element {
   const { user } = useContext(AuthContext);
@@ -46,9 +47,7 @@ export default function Routes(): JSX.Element {
           <Route path="/cursos/:curso" exact component={DetalhesCurso} />
           <Route path="/departamentos" exact component={Departamentos} />
           <Route path="/noticias" exact component={Noticias} />
-          <Route path="/noticias/:noticiaId" exact component={() => (
-            <p>noticia</p>
-          )} />
+          <Route path="/noticias/:noticiaId" exact component={NewsDetail} />
           <Route path="/aluno" exact component={Alunos} />
           <Route path="/professores" exact component={Professores} />
           <Route path="/documentos" exact component={Documentos} />
