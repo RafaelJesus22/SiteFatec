@@ -11,7 +11,7 @@ export class EventService {
   public events: Array<DbEvent> = [];
 
   private async getFirestoreEvents(): Promise<DbEvent[]> {
-    const eventsQuery = query(this.eventsCollectionRef, orderBy('name', 'asc'));
+    const eventsQuery = query(this.eventsCollectionRef);
     const eventsSnapshot = await getDocs(eventsQuery);
 
     const proffessors = eventsSnapshot.docs.map(doc => {
@@ -43,7 +43,7 @@ export class EventService {
   }
 
   async createEvent(event: Omit<DbEvent, 'id'>): Promise<void> {
-    await addDoc(this.eventsCollectionRef, event);
+    await addDoc(this.eventsCollectionRef, {...event});
   }
 
   async updateEvent(event: DbEvent): Promise<void> {
