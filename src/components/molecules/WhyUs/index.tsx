@@ -20,14 +20,14 @@ export const WhyUs: React.FC = () => {
           description="Formado por profissionais e pesquisadores que atuam no mercado de trabalho. Doutores, Mestres e Especialistas formam um time de qualidade."
         />
         <WhyUsItem
-          image={Book}
-          imageAlt="Ícone de livro"
-          title="Mercado de trabalho"
-          description="Cursos de tecnologia atuais e planejados de acordo com as demandas do mercado de trabalho."
-        />
-        <WhyUsItem
           image={Work}
           imageAlt="Ícone de maleta"
+          title="Mercado de trabalho"
+          description="Cursos de tecnologia atuais e planejados de acordo com as demandas do mercado de trabalho."
+          />
+        <WhyUsItem
+          image={Book}
+          imageAlt="Ícone de livro"
           title="Ensino gratuito"
           description="Cursos superiores de qualidade e gratuitos que fazem a diferença no currículo dos alunos."
         />
