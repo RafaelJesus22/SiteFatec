@@ -32,10 +32,14 @@ export const PortalDocuments: React.FC = () => {
   const getDocuments = useCallback(async (storaged?: boolean) => {
     showLoading();
 
-    const files = await documentService.getAllFoldersAndFiles(storaged);
-    setFiles(files);
-
-    hideLoading();
+    try {
+      const files = await documentService.getAllFoldersAndFiles(storaged);
+      setFiles(files);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      hideLoading();
+    }
   }, [hideLoading, showLoading]);
 
   const performDelete = async () => {
