@@ -33,7 +33,7 @@ export const CursoDetalhesTecnicos: React.FC<Props> = ({
         )}
         <Item
           title="Duração do curso"
-          description={`${detalhes.duration} anos`}
+          description={`${detalhes.duration} semestres`}
         />
         <Item
           title={detalhes.timeCourse}
