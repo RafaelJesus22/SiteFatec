@@ -220,6 +220,7 @@ export const CoursesForm = () => {
             <FormFile
               currentFile={courseImage}
               currentUrl={course.imageUrl}
+              path="thumb_curso"
               name="Imagem do curso no menu *"
               style={styles.formInput}
               onChangeFile={({ url, file }) => {

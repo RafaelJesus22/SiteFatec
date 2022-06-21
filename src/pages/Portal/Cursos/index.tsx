@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { FiTrash2, FiEdit2 } from 'react-icons/fi';
