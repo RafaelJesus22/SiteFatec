@@ -11,25 +11,25 @@ export const WhyUs: React.FC = () => {
           image={Laptop}
           imageAlt="Ícone de laptop"
           title="Estrutura"
-          description="Infraestrutura de qualidade, com equipamentos atuais e espaços de estudo modernos."
+          description="Infraestrutura com equipamentos novos e modernos de qualidade."
         />
         <WhyUsItem
           image={People}
           imageAlt="Ícone de pessoas"
           title="Corpo docente"
-          description="Formado por profissionais e pesquisadores que atuam no mercado de trabalho. Doutores, Mestres e Especialistas formam um time de qualidade."
+          description="Corpo docente formado por Doutores, Mestres e Especialistas."
         />
         <WhyUsItem
           image={Work}
           imageAlt="Ícone de maleta"
           title="Mercado de trabalho"
-          description="Cursos de tecnologia atuais e planejados de acordo com as demandas do mercado de trabalho."
+          description="Cursos de tecnologia atuais e densevolvidos para o mercado de trabalho."
           />
         <WhyUsItem
           image={Book}
           imageAlt="Ícone de livro"
           title="Ensino gratuito"
-          description="Cursos superiores de qualidade e gratuitos que fazem a diferença no currículo dos alunos."
+          description="Cursos superiores gratuitos e de qualidade que se destacam nos currículos dos alunos."
         />
       </div>
       <div className="pimary-button">
