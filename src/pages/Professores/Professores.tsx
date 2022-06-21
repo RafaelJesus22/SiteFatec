@@ -232,8 +232,8 @@ const ProffessorContent: React.FC<DbProffessor> = ({
     <div className="proffessor-content">
       {email && (
         <div>
-          <span>E-mail</span>
-          <h4>{email}</h4>
+          <span>Entre em contato</span>
+          <h4><a href={`mailto:${email}`}>Enviar email</a></h4>
         </div>
       )}
       {lattes && (
