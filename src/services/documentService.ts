@@ -104,7 +104,10 @@ export class DocumentService {
     }
 
     let directories = await this.getDirectories();
-    directories = directories.filter(d => d.name !== 'Eventos');
+    directories = directories.filter(d => {
+      d.name !== 'Eventos' && 
+      d.name !== 'thumb_curso'
+    });
 
     const files = await Promise.all(
       directories.map(async (directory) => {
