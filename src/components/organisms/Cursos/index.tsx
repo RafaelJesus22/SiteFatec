@@ -38,7 +38,7 @@ export const Courses: React.FC<Props> = ({
           <div className="cursos-item" key={item.id}>
             <CursoCard
               inverted={inverted && index % 2 === 1}
-              description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum amet temporibus nam cum at, illo laboriosam illum praesentium sit sunt esse voluptatem! Dolorem, dolorum voluptatem."
+              description={item.info.professionalProfile.slice(0, 150) + '..'}
               image={item.imageUrl}
               title={item.name}
               link={item.link}
