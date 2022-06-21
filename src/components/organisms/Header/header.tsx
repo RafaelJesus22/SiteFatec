@@ -45,7 +45,7 @@ export const Header = (): JSX.Element => {
               </li>
             ))}
             <div className="cta">
-              <PrimaryButton to={"/quero_ser_fatec"} title={"Quero ser Fatec"} />
+              <PrimaryButton to={"/quero_ser_fatec"} title={"Vestibular"} />
             </div>
           </ul>
         </nav>
