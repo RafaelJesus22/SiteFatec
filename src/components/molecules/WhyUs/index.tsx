@@ -33,7 +33,7 @@ export const WhyUs: React.FC = () => {
         />
       </div>
       <div className="pimary-button">
-        <PrimaryButton to={'/quero_ser_fatec'} title={'Quero ser Fatec'} />
+        <PrimaryButton to={'/quero_ser_fatec'} title={'Vestibular'} />
       </div>
     </div>
   );
