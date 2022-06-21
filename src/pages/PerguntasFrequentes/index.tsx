@@ -12,7 +12,7 @@ interface HeaderProps {
   onClick?: () => void;
 }
 
-const LINK_VESTIBULAR_FATEC = "https://www.vestibularfatec.com.br/home/";
+const LINK_VESTIBULAR_FATEC = "https://www.vestibularfatec.com.br/unidades-cursos/escola.asp?c=249";
 const LINK_PROVAS_FATEC = "https://www.vestibularfatec.com.br/provas-gabaritos/";
 const LINK_MAPS_FATEC = "https://www.google.com/maps/dir//fatec+santana+de+parnaiba/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf1ddad2858c6f:0x8540bd64dbbe879b?sa=X&ved=2ahUKEwi4q6nc2KX3AhXiupUCHSPLAjQQ9Rd6BAhaEAQ";
 const LINK_API_MAPS_FATEC = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb4yF0todz5QRm4e-22S9QIU&key=AIzaSyCmc0dkPhRZF-0rzfsTwU8qibrwB0gTIVw";
