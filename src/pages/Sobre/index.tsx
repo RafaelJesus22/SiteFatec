@@ -2,13 +2,14 @@ import React from 'react';
 import { LabelText } from '../../components/atoms/Typography/LabelText';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
+import { Feed } from '../../components/containers/Feed';
 import './styles.css';
 
 export const Sobre: React.FC = () => {
   return (
     <Container>
       <Content title={'Sobre'} isOnTop >
-        <div>
+        <Feed>
           <LabelText
             bold
             size='large'
@@ -125,7 +126,7 @@ export const Sobre: React.FC = () => {
             Para qualquer dúvida, sugestão ou reclamação, você pode acionar a CPA pelo e-mail 
             f283.cpa@fatec.sp.gov.br
           </LabelText>
-        </div>
+        </Feed>
       </Content>
     </Container>
   );
