@@ -4,6 +4,12 @@
   transition: .5s ease;
 }
 
+@media (max-width: 880px) {
+  #feed {
+    max-width: 75%;
+  }
+}
+
 @media (max-width: 768px) {
   #feed {
     max-width: 90%;
