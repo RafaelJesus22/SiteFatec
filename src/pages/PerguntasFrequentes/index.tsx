@@ -45,6 +45,13 @@ export const PerguntasFrequentes: React.FC = () => {
               Clique aqui
             </a>
           </p>
+          <p>Dúvidas sobre vestibular?</p>
+          <p>
+            Fale com o Coordenador do nosso Vestibular, Ana Paula Freitas de Lima Gomes.
+          </p>
+          <p>
+            E-mail: f283.vestibular@fatec.sp.gov.br
+          </p>
         </Fragment>
       )
     },
