@@ -1,6 +1,6 @@
 import './styles.css';
 
-type Size = 'small' | 'medium' | 'large';
+type Size = 'small' | 'medium' | 'large' | 'default';
 type Alginment = 'start' | 'center' | 'end';
 type Margins = {
   marginTop?: number;
@@ -17,6 +17,7 @@ interface Props {
   align?: AlingmentsAcceptable;
   bold?: boolean;
   spacing?: Margins;
+  color?: 'primary' | 'secondary';
   children: React.ReactNode;
 }
 
@@ -30,26 +31,21 @@ interface AlingmentsAcceptable {
 
 export const LabelText: React.FC<Props> = ({
   children,
-  align,
+  color = 'primary',
   bold,
   spacing,
   size
 }) => {
   const sizes = {
     small: '1rem',
+    default: '1.25rem',
     medium: '1.5rem',
     large: '2rem',
   }
 
-  // const alignments: AlingmentsAcceptable = {
-  //   left: 'start',
-  //   center: 'center',
-  //   right: 'end',
-  // }
-
   return (
     <div className="label-text__container">
-      <p className="lable-text__text" style={{ 
+      <p className={`lable-text__text ${color}`} style={{ 
         fontSize: size ? sizes[size] : sizes.small,
         textAlign: 'start',
         fontWeight: bold ? 'bold' : 'normal',

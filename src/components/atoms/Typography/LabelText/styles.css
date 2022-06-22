@@ -1,3 +1,7 @@
 .lable-text__text {
   color: var(--title-color);
 }
+
+.lable-text__text.secondary {
+  color: var(--secondary-text-color);
+}
