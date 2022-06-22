@@ -91,7 +91,7 @@ export const Sobre: React.FC = () => {
           <LabelText
 
             size='medium'
-            spacing={{ marginBottom: 40 }}
+            spacing={{ marginBottom: 100 }}
           >
             Em nossa unidade, a CPA começou em 2020 com o Professor Antonio Lobosco, em 2021 foi a professora Angela dos Santos Oshiro e em 2022 o Prof. Dr. Célio Aparecido Garcia. Para qualquer dúvida, sugestão ou reclamação, você pode acionar a CPA pelo e-mail f283.cpa@fatec.sp.gov.br
           </LabelText>

@@ -111,7 +111,7 @@ export const PerguntasFrequentes: React.FC = () => {
       resposta: (
         <Fragment>
           <p>
-            O Processo Seletivo Vestibular, do 1º Semestre de 2021, destina-se ao ingresso nos Cursos Superiores de Tecnologia oferecidos pelas Fatecs - Faculdades de Tecnologia do CEETEPS, devendo o candidato ter concluído obrigatoriamente o Ensino Médio até a data da matrícula, atendendo aos seguintes pré-requisitos:
+            O Processo Seletivo Vestibular, destina-se ao ingresso nos Cursos Superiores de Tecnologia oferecidos pelas Fatecs - Faculdades de Tecnologia do CEETEPS, devendo o candidato ter concluído obrigatoriamente o Ensino Médio até a data da matrícula, atendendo aos seguintes pré-requisitos:
           </p>
           <p>
             - Para o candidato que concluiu o Ensino Médio regular: possuir Histórico Escolar com Certificado de conclusão do Ensino Médio;
