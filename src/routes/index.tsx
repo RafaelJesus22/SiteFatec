@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 import { Home } from '../pages/Home/Home';
-import { Sobre } from '../pages/Sobre/Sobre';
+import { Sobre } from '../pages/Sobre';
 import { Cursos } from '../pages/Cursos/Cursos';
 import { DetalhesCurso } from '../pages/Cursos/DetalhesCurso';
 import { Departamentos } from '../pages/Departamentos/Departamentos';
