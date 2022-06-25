@@ -109,6 +109,16 @@
   font-weight: normal;
 }
 
+.professores__list .proffessor-content div h4 a {
+  text-decoration: none;
+  color: var(--title-color)
+}
+
+.professores__list .proffessor-content div h4 a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .filtro {
     flex-direction: column-reverse;

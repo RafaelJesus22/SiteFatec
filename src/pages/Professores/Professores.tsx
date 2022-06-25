@@ -233,19 +233,31 @@ const ProffessorContent: React.FC<DbProffessor> = ({
       {email && (
         <div>
           <span>Entre em contato</span>
-          <h4><a href={`mailto:${email}`}>Enviar email</a></h4>
+          <h4>
+            <a href={`mailto:${email}`}>
+              Enviar email
+            </a>
+          </h4>
         </div>
       )}
       {lattes && (
         <div>
           <span>Curriculo</span>
-          <h4>{lattes}</h4>
+          <h4>
+            <a href={lattes} target="_blank">
+              Clique aqui
+            </a>
+          </h4>
         </div>
       )}
       {linkedin && (
         <div>
           <span>Linkedin</span>
-          <h4>{linkedin}</h4>
+          <h4>
+            <a href={linkedin} target="_blank">
+              Clique aqui
+            </a>
+          </h4>
         </div>
       )}
       {classes && (
