@@ -1,17 +1,14 @@
 .detalhes-noticia {
   width: 80%;
   margin: 2rem auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
 }
 
 .detalhes-noticia img {
-  width: 50%;
-  max-height: 15rem;
+  width: 100%;
   object-fit: contain;
   margin-right: 2rem;
-  border-radius: .25rem;
+  border-radius: .5rem;
+  border: 1px solid var(--border-color);
 }
 
 .detalhes-noticia .detalhes-noticia-text {
