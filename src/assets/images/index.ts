@@ -4,6 +4,7 @@ import cisco from './partners/cisco.svg';
 import ms from './partners/ms.svg';
 import amazonAcademy from './partners/oracle-academy.png';
 import oracleAcademy from './partners/amazon-academy.png';
+import fatecDia from './fatec-dia.png';
 
 export {
   loading,
@@ -12,4 +13,5 @@ export {
   amazonAcademy,
   ms,
   oracleAcademy,
+  fatecDia,
 };

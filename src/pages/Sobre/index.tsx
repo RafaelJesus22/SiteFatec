@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { LabelText } from '../../components/atoms/Typography/LabelText';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
 import { Feed } from '../../components/containers/Feed';
+import { fatecDia } from '../../assets/images';
 import './styles.css';
 
 export const Sobre: React.FC = () => {
+  const [image, setImage] = useState(fatecDia);
+
+  useLayoutEffect(() => {
+    const date = new Date();
+
+    if (date.getHours() >= 18) {
+      setImage(fatecDia);
+    }
+  });
+
   return (
     <Container>
       <Content title={'Sobre'} isOnTop >
         <Feed>
+          <img
+            src={image}
+            className="about-img"
+            alt="Imagem do prédio da Fatec Santana de Parnaíba"
+          />
+
           <LabelText
             bold
             size='large'
