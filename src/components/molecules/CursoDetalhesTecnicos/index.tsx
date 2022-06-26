@@ -48,7 +48,7 @@ export const CursoDetalhesTecnicos: React.FC<Props> = ({
         )}
         <Item
           title="Projeto pedagogico do curso"
-          description="Para fazer o download do projeto pedagogico do curso clique aqui"
+          description="Para fazer o download do projeto pedagógico do curso clique aqui"
         />
       </div>
     </Card>
