@@ -3,7 +3,7 @@ import { signOut } from 'firebase/auth';
 import { Link, useHistory } from "react-router-dom";
 import { FaChalkboardTeacher, FaGraduationCap, FaUserGraduate } from 'react-icons/fa';
 import { CgFeed } from 'react-icons/cg';
-import { BiLogOut, BiHome } from 'react-icons/bi';
+import { BiLogOut, BiHome,BiBuildings } from 'react-icons/bi';
 import { ImFolderOpen } from 'react-icons/im';
 
 import LogoFatec from "../../../assets/icons/logo.svg";
@@ -42,6 +42,11 @@ export const MENU_ITENS = [
     label: 'Documentos',
     icon: <ImFolderOpen size={ICON_SIZE} color={"#415462"} />,
     route: '/portal/dashboard/documentos',
+  },
+  {
+    label: 'Estágios',
+    icon: <BiBuildings size={ICON_SIZE} color={"#415462"} />,
+    route: '/portal/dashboard/estagios',
   },
 ]
 
