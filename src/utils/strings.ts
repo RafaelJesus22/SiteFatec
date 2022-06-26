@@ -16,3 +16,10 @@ export const firebaseTimestampToDate = (timestamp: any) => {
 
   return `${day}/${months}/${date.getFullYear()}`;
 };
+
+export const shotenStrings = (text: string, maxWith: number) => {
+  if (!text) {
+    return "";
+  }
+  return text.length > maxWith ? `${text.substring(0, maxWith)}...` : text;
+};
