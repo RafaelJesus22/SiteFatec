@@ -1,11 +1,29 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useLayoutEffect, useState } from 'react';
 import { LabelText } from '../../components/atoms/Typography/LabelText';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
 import { Feed } from '../../components/containers/Feed';
+import { ImageGallery } from '../../components/molecules/ImageGallery';
+import { useLoading } from '../../contexts/loadingContent';
+import { documentService } from '../../services';
+import { StorageFile } from '../../types/IDocument';
 import './styles.css';
 
 export const Alunos: React.FC = () => {
+  const [internships, setInternships] = useState<StorageFile[]>([]);
+  const { hideLoading, showLoading } = useLoading()
+
+  const fetchInternships = async (): Promise<void> => {
+    const internships = await documentService.getFilesByPath('estagios');
+    setInternships(internships);
+  };
+
+  useLayoutEffect(() => {
+    showLoading();
+
+    fetchInternships().finally(() => hideLoading());
+  }, [])
+
   return (
     <Container>
       <Content title={'Alunos'} isOnTop >
@@ -18,6 +36,17 @@ export const Alunos: React.FC = () => {
             >
               Links
             </LabelText>
+          </Fragment>
+
+          <Fragment>
+            <LabelText
+              bold
+              size='large'
+              spacing={{ marginBottom: 12 }}
+            >
+              Empresas que já contrataram nossos alunos
+            </LabelText>
+            <ImageGallery images={internships.map(internship => internship.url)} />
           </Fragment>
 
           <Fragment>

@@ -1,0 +1,29 @@
+.internships {
+  margin: 2rem auto;
+  padding: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.internships .internship {
+  margin: .75rem;
+}
+
+.internships .internship .internship-image {
+  width: 100%;
+  max-width: 256px;
+  opacity: 75%;
+}
+
+.internships .internship .internship-image:hover {
+  opacity: 100%;
+}
+
+@media (max-width: 640px) {
+  .internships {
+    padding: 0 1rem;
+  }
+}
