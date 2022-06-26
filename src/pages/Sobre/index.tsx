@@ -89,60 +89,6 @@ export const Sobre: React.FC = () => {
             <p>Diretora de Serviços Administrativos: Leilane Melo de Souza</p>
             <p>Assessora Administrativa: Daniela Freire Ramos de Oliveira</p>
           </LabelText>
-          <LabelText
-            bold
-            size='large'
-            spacing={{ marginBottom: 12 }}
-          >
-            O QUE É CPA NA FATEC SANTANA DE PARNAÍBA?
-          </LabelText>
-          <LabelText
-            size="default"
-            color="secondary"
-            spacing={{ marginBottom: 12 }}
-          >
-            Denominada Comissão Própria de Avaliação - CPA, é um órgão colegiado, formado
-            por professores, que disciplina a organização, o funcionamento e o cumprimento das 
-            atribuições e é vinculado ao Centro Estadual de Educação Tecnológica do estado de 
-            São Paulo - CPS.
-          </LabelText>
-          <LabelText
-            size="default"
-            color="secondary"
-            spacing={{ marginBottom: 12 }}
-          >
-            A CPA tem atuação autônoma em relação aos Conselhos Superiores e demais Órgãos 
-            Colegiados da Instituição.
-          </LabelText>
-          <LabelText
-            size="default"
-            color="secondary"
-            spacing={{ marginBottom: 12 }}
-          >
-            A CPA tem por finalidade contribuir com o planejamento, elaboração, coordenação e 
-            monitoramento da política de autoavaliação institucional, promovendo, no que 
-            couber, a interlocução com os órgãos de regulação, supervisão e avaliação.
-          </LabelText>
-          <LabelText
-            size="default"
-            color="secondary"
-            spacing={{ marginBottom: 12 }}
-          >
-            A autoavaliação tem por objetivo a melhoria da qualidade do ensino tecnológico, a 
-            orientação da expansão da sua oferta, a consolidação da função social do ensino 
-            superior e o desenvolvimento institucional, e consiste em um processo contínuo, 
-            sistêmico e participativo que envolve comunidade acadêmica e integrantes da sociedade.
-          </LabelText>
-          <LabelText
-            size="default"
-            color="secondary"
-            spacing={{ marginBottom: 100 }}
-          >
-            Em nossa unidade, a CPA começou em 2020 com o Professor Antonio Lobosco, em 2021 foi 
-            a professora Angela dos Santos Oshiro e em 2022 o Prof. Dr. Célio Aparecido Garcia. 
-            Para qualquer dúvida, sugestão ou reclamação, você pode acionar a CPA pelo e-mail 
-            f283.cpa@fatec.sp.gov.br
-          </LabelText>
         </Feed>
       </Content>
     </Container>

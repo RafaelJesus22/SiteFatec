@@ -104,10 +104,17 @@ export class DocumentService {
     }
 
     let directories = await this.getDirectories();
+
     directories = directories.filter(d => {
-      d.name !== 'Eventos' && 
-      d.name !== 'thumb_curso'
+      return (
+        d.name !== 'Eventos' && 
+        d.name !== 'thumb_curso'
+      )
     });
+
+    if (directories.length === 0) {
+      return [];
+    }
 
     const files = await Promise.all(
       directories.map(async (directory) => {
@@ -124,6 +131,6 @@ export class DocumentService {
 
     return files.reduce((acc, curr) => {
       return acc.concat(curr);
-    });
+    }, []);
   }
 }
