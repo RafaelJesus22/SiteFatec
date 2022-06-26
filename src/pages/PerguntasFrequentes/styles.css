@@ -7,12 +7,6 @@
   place-items: center;
 }
 
-.fq-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: text-decoration 0.3s ease;
-}
-
 .fq-link:hover {
   text-decoration: underline;
 }
@@ -37,6 +31,20 @@
 
 .question-content p {
   margin: .5rem 0;
+}
+
+.question-content a.fq-link {
+  color: var(--primary-color)
+}
+
+.question-content a {
+  color: var(--title-color);
+  text-decoration: none;
+}
+
+.question-content a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 iframe {

@@ -16,6 +16,7 @@ const LINK_VESTIBULAR_FATEC = "https://www.vestibularfatec.com.br/unidades-curso
 const LINK_PROVAS_FATEC = "https://www.vestibularfatec.com.br/provas-gabaritos/";
 const LINK_MAPS_FATEC = "https://www.google.com/maps/dir//fatec+santana+de+parnaiba/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x94cf1ddad2858c6f:0x8540bd64dbbe879b?sa=X&ved=2ahUKEwi4q6nc2KX3AhXiupUCHSPLAjQQ9Rd6BAhaEAQ";
 const LINK_API_MAPS_FATEC = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb4yF0todz5QRm4e-22S9QIU&key=AIzaSyCmc0dkPhRZF-0rzfsTwU8qibrwB0gTIVw";
+const EMAIL_VESTIBULAR_FATEC = "f283.vestibular@fatec.sp.gov.br";
 
 export const PerguntasFrequentes: React.FC = () => {
   const [selectedQuestion, setSelectedQuestion] = useState<any>();
@@ -47,10 +48,10 @@ export const PerguntasFrequentes: React.FC = () => {
           </p>
           <p>Dúvidas sobre vestibular?</p>
           <p>
-            Fale com o Coordenador do nosso Vestibular, Ana Paula Freitas de Lima Gomes.
+            Fale com a Coordenadora do nosso Vestibular, Ana Paula Freitas de Lima Gomes.
           </p>
           <p>
-            E-mail: f283.vestibular@fatec.sp.gov.br
+            E-mail: <a href={EMAIL_VESTIBULAR_FATEC}>{EMAIL_VESTIBULAR_FATEC}</a>
           </p>
         </Fragment>
       )
