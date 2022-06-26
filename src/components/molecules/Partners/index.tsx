@@ -1,18 +1,18 @@
 import {
   autodesk,
   cisco,
-  ibm,
   ms,
-  santanaDeParnaiba,
+  amazonAcademy,
+  oracleAcademy
 } from '../../../assets/images';
 import './styles.css';
 
 export const Partners: React.FC = () => {
   const partners = [
-    { image: santanaDeParnaiba, alt: 'Logo do município de Santana de Parnaíba' },
+    { image: amazonAcademy, alt: 'Logo da Amazon Academy' },
     { image: autodesk, alt: 'Logo do autodesk' },
     { image: cisco, alt: 'Logo da cisco' },
-    { image: ibm, alt: 'Logo da IBM' },
+    { image: oracleAcademy, alt: 'Logo da Oracle Academy' },
     { image: ms, alt: 'Logo da Microsoft' },
   ];
 
