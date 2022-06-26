@@ -1,12 +1,10 @@
 .detalhes-noticia {
-  width: 80%;
   margin: 2rem auto;
 }
 
 .detalhes-noticia img {
   width: 100%;
   object-fit: contain;
-  margin-right: 2rem;
   border-radius: .5rem;
   border: 1px solid var(--border-color);
 }
@@ -33,7 +31,7 @@
   font-size: 1.2rem;
   margin-top: 1rem;
 }
-
+/* 
 @media (max-width: 880px) {
   .detalhes-noticia {
     flex-direction: column;
@@ -45,4 +43,4 @@
     margin-bottom: 1rem;
     object-fit: cover;
   }
-}
+} */
