@@ -22,7 +22,7 @@ export const Header = (): JSX.Element => {
     // { link: "/departamentos", title: "Departamentos" },
     { link: "/noticias", title: "Notícias" },
     { link: "/documentos", title: "Documentos" },
-    // { link: "/aluno", title: "Aluno" },
+    { link: "/alunos", title: "Alunos" },
     { link: "/professores", title: "Professores" },
   ];
 

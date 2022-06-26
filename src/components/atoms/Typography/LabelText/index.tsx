@@ -3,13 +3,13 @@ import './styles.css';
 type Size = 'small' | 'medium' | 'large' | 'default';
 type Alginment = 'start' | 'center' | 'end';
 type Margins = {
-  marginTop?: number;
-  marginBottom?: number;
-  marginLeft?: number;
-  marginRight?: number;
-  marginHorizontal?: number;
-  marginVertical?: number;
-  margin?: number;
+  marginTop?: number | string;
+  marginBottom?: number | string;
+  marginLeft?: number | string;
+  marginRight?: number | string;
+  marginHorizontal?: number | string;
+  marginVertical?: number | string;
+  margin?: number | string;
 }
 
 interface Props {

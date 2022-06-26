@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer } from '../../organisms/Footer/Footer';
-import { Header } from '../../organisms/Header/header';
+import { Header } from '../../organisms/Header';
 
 interface ContainerProps {
   children?: React.ReactNode;
