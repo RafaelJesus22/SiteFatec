@@ -67,6 +67,7 @@ export class DocumentService {
     }
 
     const directories = await this.getFirestoreDirectories();
+    console.log(directories)
 
     this.directories = directories as DbDirectoryPath[];
     return this.directories;
@@ -88,14 +89,19 @@ export class DocumentService {
     }
 
     const directoryRef = ref(this.storage, path);
-    const files = await list(directoryRef);
+    const filesList = await list(directoryRef);
 
-    return files.items.map((file) => {
+    const files: StorageFile[] = await Promise.all(filesList.items.map(async (file) => {
+      const fileRef = ref(this.storage, file.fullPath);
+      const url = await getDownloadURL(fileRef);
+
       return {
         name: file.name,
         file,
-      };
-    });
+        url,
+      }
+    }));
+    return files;
   }
 
   public async getAllFoldersAndFiles(storaged?: boolean): Promise<FileListItem[]> {
@@ -108,7 +114,8 @@ export class DocumentService {
     directories = directories.filter(d => {
       return (
         d.name !== 'Eventos' && 
-        d.name !== 'thumb_curso'
+        d.name !== 'thumb_curso' &&
+        d.name !== 'estagios'
       )
     });
 
