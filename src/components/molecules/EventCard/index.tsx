@@ -59,10 +59,8 @@ export const EventCard: React.FC<DbEvent> = ({
   };
 
   useLayoutEffect(() => {
-    console.log(updatedAt !== createdAt ? "Atualizado" : "Criado");
-
     getCourseName(courseParentId);
-  })
+  });
 
   return (
     <div className="event-item">
