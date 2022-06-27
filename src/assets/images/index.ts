@@ -5,6 +5,7 @@ import ms from './partners/ms.svg';
 import amazonAcademy from './partners/oracle-academy.png';
 import oracleAcademy from './partners/amazon-academy.png';
 import fatecDia from './fatec-dia.png';
+import fatecNoite from './fatec-noite.png';
 
 export {
   loading,
@@ -14,4 +15,5 @@ export {
   ms,
   oracleAcademy,
   fatecDia,
+  fatecNoite,
 };

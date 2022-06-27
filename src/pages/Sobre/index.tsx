@@ -3,7 +3,7 @@ import { LabelText } from '../../components/atoms/Typography/LabelText';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
 import { Feed } from '../../components/containers/Feed';
-import { fatecDia } from '../../assets/images';
+import { fatecDia, fatecNoite } from '../../assets/images';
 import './styles.css';
 
 export const Sobre: React.FC = () => {
@@ -13,13 +13,13 @@ export const Sobre: React.FC = () => {
     const date = new Date();
 
     if (date.getHours() >= 18) {
-      setImage(fatecDia);
+      setImage(fatecNoite);
     }
   });
 
   return (
     <Container>
-      <Content title={'Sobre'} isOnTop >
+      <Content title={''} isOnTop >
         <Feed>
           <img
             src={image}
