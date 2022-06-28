@@ -13,6 +13,10 @@ type GetInTouch = {
   subject: string;
 }
 
+const SIGA_ALUNOS_LINK = 'https://siga.cps.sp.gov.br/aluno/login.aspx?';
+const CPS_LINK = 'www.cps.sp.gov.br';
+const VESTIBULAR_FATEC_LINK = 'www.vestibularfatec.com.br';
+
 export const Alunos: React.FC = () => {
   const [getInTouch, setGetInTouch] = useState<GetInTouch>({} as GetInTouch);
 
@@ -40,7 +44,7 @@ export const Alunos: React.FC = () => {
               alunos.<br />
             </LabelText>
             <LabelText color="secondary" size="default">
-              <LinkAluno href="https://siga.cps.sp.gov.br/aluno/login.aspx?">
+              <LinkAluno href={SIGA_ALUNOS_LINK}>
                 Clique <strong>aqui</strong> para acessar o SIGA
               </LinkAluno>
             </LabelText>
@@ -66,8 +70,8 @@ export const Alunos: React.FC = () => {
             </LabelText>
             <LabelText color="secondary" size="default">
               As informações reunidas nessa publicação já estão disponíveis no site do Centro Paula
-              Souza <LinkAluno href="www.cps.sp.gov.br">(www.cps.sp.gov.br)</LinkAluno>, na aba Fatecs /Cursos, e na página do Vestibular
-              <LinkAluno href="www.vestibularfatec.com.br">(www.vestibularfatec.com.br)</LinkAluno>.
+              Souza <LinkAluno href={CPS_LINK}> ({CPS_LINK})</LinkAluno>, na aba Fatecs /Cursos, e na página do Vestibular
+              <LinkAluno href={VESTIBULAR_FATEC_LINK}> ({VESTIBULAR_FATEC_LINK})</LinkAluno>.
             </LabelText>
           </Fragment>
 
