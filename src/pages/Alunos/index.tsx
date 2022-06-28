@@ -16,6 +16,7 @@ type GetInTouch = {
 const SIGA_ALUNOS_LINK = 'https://siga.cps.sp.gov.br/aluno/login.aspx?';
 const CPS_LINK = 'www.cps.sp.gov.br';
 const VESTIBULAR_FATEC_LINK = 'www.vestibularfatec.com.br';
+const BIBLIOTECA_CPS_LINK = 'biblio.cps.sp.gov.br/';
 
 export const Alunos: React.FC = () => {
   const [getInTouch, setGetInTouch] = useState<GetInTouch>({} as GetInTouch);
@@ -46,6 +47,21 @@ export const Alunos: React.FC = () => {
             <LabelText color="secondary" size="default">
               <LinkAluno href={SIGA_ALUNOS_LINK}>
                 Clique <strong>aqui</strong> para acessar o SIGA
+              </LinkAluno>
+            </LabelText>
+          </Fragment>
+          
+          <Fragment>
+            <LabelText
+              bold
+              size='large'
+              spacing={{ marginBottom: '1rem', marginTop: '2rem' }}
+            >
+              BIBLIOTECA VIRTUAL
+            </LabelText>
+            <LabelText color="secondary" size="default">
+              <LinkAluno href={SIGA_ALUNOS_LINK}>
+                Clique <strong>aqui</strong> para acessar a Biblioteca virtual do Centro Paula Souza
               </LinkAluno>
             </LabelText>
           </Fragment>
