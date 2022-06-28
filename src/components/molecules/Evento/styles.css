@@ -12,19 +12,6 @@
   margin-bottom: 1rem;
 }
 
-.event .event__title {
-  color: var(--title-color);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.event .event__description {
-  color: var(--secondary-text-color);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
 .event .ctm {
   display: flex;
   justify-content: flex-end;

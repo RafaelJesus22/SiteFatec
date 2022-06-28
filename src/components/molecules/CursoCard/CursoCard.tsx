@@ -1,5 +1,7 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { CallToMore } from '../../atoms/CallToMore/CallToMore';
+import { LabelText } from '../../atoms/Typography/LabelText';
 import './styles.css';
 
 export interface CursoCardProps {
@@ -17,6 +19,12 @@ export const CursoCard: React.FC<CursoCardProps> = ({
   inverted,
   link,
 }) => {
+  const history = useHistory();
+  const handleClick = () => {
+    if (!!link) {
+      history.push(`cursos/${link}`);
+    }
+  };
   return (
     <div className="curso_card__container">
       <div className={`curso-card ${inverted ? 'inverted' : ''}`}>
@@ -27,10 +35,10 @@ export const CursoCard: React.FC<CursoCardProps> = ({
           />
         </div>
         <div className="curso-card__content">
-          <h3 className="curso-card__title" onClick={(): void => { }}>
+          <h3 className="curso-card__title" onClick={handleClick}>
             {title}
           </h3>
-          <p className='curso-card__description'>{description}</p>
+          <LabelText color="secondary">{description}</LabelText>
           <CallToMore title='Saiba mais' link={`/cursos/${link}`} />
         </div>
       </div>

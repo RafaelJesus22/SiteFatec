@@ -45,12 +45,6 @@
   color: var(--title-color);
 }
 
-.curso-card__description {
-  font-size: 1rem;
-  color: var(--secondary-text-color);
-  margin: 1rem 0;
-}
-
 .curso-card__title:hover {
   color: var(--primary-color);
   cursor: pointer;
