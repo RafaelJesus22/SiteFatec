@@ -1,3 +1,4 @@
+import { LabelText } from '../Typography/LabelText';
 import './styles.css';
 
 interface Props {
@@ -18,10 +19,12 @@ export const WhyUsItem: React.FC<Props> = ({
       <div className="motivos-icon">
         <img src={image} alt={imageAlt} />
       </div>
-      <div className="motivos-title">{title}</div>
-      <div className="motivos-description">
+      <LabelText bold size="medium" spacing={{ marginBottom: '1rem' }}>
+        {title}
+      </LabelText>
+      <LabelText size="small" color="secondary" align="center">
         {description}
-      </div>
+      </LabelText>
     </div>
   );
 };
