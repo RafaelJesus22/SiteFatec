@@ -1,7 +1,7 @@
 import './styles.css';
 
 type Size = 'small' | 'medium' | 'large' | 'default';
-type Alginment = 'start' | 'center' | 'end';
+type Alginment = 'start' | 'end' | 'left' | 'right' | 'center' | 'justify';
 type Margins = {
   marginTop?: number | string;
   marginBottom?: number | string;
@@ -14,26 +14,19 @@ type Margins = {
 
 interface Props {
   size?: Size;
-  align?: AlingmentsAcceptable;
+  align?: Alginment;
   bold?: boolean;
   spacing?: Margins;
   color?: 'primary' | 'secondary';
   children: React.ReactNode;
 }
 
-interface AlingmentsAcceptable {
-  left: Alginment;
-  center: Alginment;
-  right: Alginment;
-}
-
-
-
 export const LabelText: React.FC<Props> = ({
   children,
   color = 'primary',
   bold,
   spacing,
+  align,
   size
 }) => {
   const sizes = {
@@ -47,7 +40,7 @@ export const LabelText: React.FC<Props> = ({
     <div className="label-text__container">
       <p className={`lable-text__text ${color}`} style={{ 
         fontSize: size ? sizes[size] : sizes.small,
-        textAlign: 'start',
+        textAlign: align ? align : 'left',
         fontWeight: bold ? 'bold' : 'normal',
         ...spacing
       }}>
