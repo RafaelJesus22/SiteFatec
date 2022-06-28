@@ -5,6 +5,7 @@ import { Content } from '../../components/containers/Content/Content';
 import { Feed } from '../../components/containers/Feed';
 import { fatecDia, fatecNoite } from '../../assets/images';
 import './styles.css';
+import { colors } from '../../config/styles';
 
 export const Sobre: React.FC = () => {
   const [image, setImage] = useState(fatecDia);
@@ -87,10 +88,38 @@ export const Sobre: React.FC = () => {
               color="secondary"
               spacing={{ marginBottom: 40 }}
             >
-              <p>Diretor: Prof. Dr. Ricardo Slavov</p>
-              <p>Diretora de Serviços Acadêmicos: Ana Paula Freitas de Lima Gomes</p>
-              <p>Diretora de Serviços Administrativos: Leilane Melo de Souza</p>
-              <p>Assessora Administrativa: Daniela Freire Ramos de Oliveira</p>
+              <Row>
+                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
+                  Diretor:
+                </LabelText>
+                <LabelText color="secondary" size="default">
+                  Prof. Dr. Ricardo Slavov
+                </LabelText>
+              </Row>
+              <Row>
+                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
+                  Diretora de Serviços Acadêmicos:
+                </LabelText>
+                <LabelText color="secondary" size="default">
+                  Ana Paula Freitas de Lima Gomes
+                </LabelText>
+              </Row>
+              <Row>
+                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
+                  Diretora de Serviços Administrativos:
+                </LabelText>
+                <LabelText color="secondary" size="default">
+                  Leilane Melo de Souza
+                </LabelText>
+              </Row>
+              <Row>
+                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
+                  Assessora Administrativa:
+                </LabelText>
+                <LabelText color="secondary" size="default">
+                  Daniela Freire Ramos de Oliveira
+                </LabelText>
+              </Row>
             </LabelText>
           </Fragment>
 
@@ -107,10 +136,10 @@ export const Sobre: React.FC = () => {
               color="secondary"
               spacing={{ marginBottom: 40 }}
             >
-              <p>Tecnologia em Gestão Comercial: Professora Me. Jucelaine Lopes de Oliveira</p>
-              <p>Tecnologia em Análise e Desenvolvimento de Sistemas: Professor Me. Alexandre Charles Cassiano;</p>
-              <p>Tecnologia em Segurança de Informação: Prof. Dr. Irapuan Glória Júnior;</p>
-              <p>Tecnologia em Ciência de Dados: Prof. Me Gilberto Francisco de Oliveira.</p>
+              <p><strong style={styles.strong}>Tecnologia em Gestão Comercial:</strong> Professora Me. Jucelaine Lopes de Oliveira</p>
+              <p><strong style={styles.strong}>Tecnologia em Análise e Desenvolvimento de Sistemas:</strong> Professor Me. Alexandre Charles Cassiano</p>
+              <p><strong style={styles.strong}>Tecnologia em Segurança de Informação:</strong> Prof. Dr. Irapuan Glória Júnior</p>
+              <p><strong style={styles.strong}>Tecnologia em Ciência de Dados:</strong> Prof. Me Gilberto Francisco de Oliveira.</p>
             </LabelText>
           </Fragment>
 
@@ -175,3 +204,18 @@ export const Sobre: React.FC = () => {
     </Container>
   );
 };
+
+const Row: React.FC = ({ children }) => (
+  <div
+    style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
+  >
+    {children}
+  </div>
+);
+
+const styles = {
+  strong: {
+    fontWeight: '600',
+    color: colors.titleColor,
+  }
+}
