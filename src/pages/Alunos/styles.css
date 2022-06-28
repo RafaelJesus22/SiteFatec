@@ -3,7 +3,11 @@
   color: var(--title-color);
 }
 
+.alunos-link strong {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
 .alunos-link:hover {
   text-decoration: underline;
-  color: var(--primary-color);
 }
