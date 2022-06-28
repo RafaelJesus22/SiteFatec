@@ -2,6 +2,7 @@ import './styles.css';
 
 type Size = 'small' | 'medium' | 'large' | 'default';
 type Alginment = 'start' | 'end' | 'left' | 'right' | 'center' | 'justify';
+type weights = 'normal' | '600' | 'bold';
 type Margins = {
   marginTop?: number | string;
   marginBottom?: number | string;
@@ -16,6 +17,7 @@ interface Props {
   size?: Size;
   align?: Alginment;
   bold?: boolean;
+  weight?: weights;
   spacing?: Margins;
   color?: 'primary' | 'secondary';
   children: React.ReactNode;
@@ -25,6 +27,7 @@ export const LabelText: React.FC<Props> = ({
   children,
   color = 'primary',
   bold,
+  weight = 'normal',
   spacing,
   align,
   size
@@ -41,7 +44,7 @@ export const LabelText: React.FC<Props> = ({
       <p className={`lable-text__text ${color}`} style={{ 
         fontSize: size ? sizes[size] : sizes.small,
         textAlign: align ? align : 'left',
-        fontWeight: bold ? 'bold' : 'normal',
+        fontWeight: bold ? 'bold' : weight,
         ...spacing
       }}>
         {children}
