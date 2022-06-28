@@ -270,15 +270,17 @@ export const CoursesForm = () => {
                 })
               }
             />
-            {/* <FormFile
+            <FormInput
               style={styles.formInput}
-              name="Projeto pedagógico do curso"
-              currentFile={coursePedagogicalProject}
-              onChangeFile={({ url, file }) => {
-                setCoursePedagogicalProject(file);
-                setPedagogicalProjectUrl(url);
+              name="Link do projeto pedagógico do curso"
+              value={technicalDetails.pedagogicalProjectUrl}
+              onChange={(e) => {
+                setTechnicalDetails({
+                  ...technicalDetails,
+                  pedagogicalProjectUrl: e.target.value
+                });
               }}
-            /> */}
+            />
             <FormTextArea
               style={styles.formInput}
               name="Observação"
