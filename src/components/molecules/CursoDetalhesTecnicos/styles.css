@@ -5,3 +5,7 @@
 .sobre-curso .sobre-curso__detalhes .description {
   margin-bottom: 1rem;
 }
+
+.sobre-curso .sobre-curso__detalhes .description a {
+  color: var(--primary-color);
+}

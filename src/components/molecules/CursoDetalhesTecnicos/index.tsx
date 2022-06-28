@@ -13,6 +13,13 @@ interface Props {
   coordenadorId: string;
 }
 
+type ItemProps = {
+  title: string,
+  description: string,
+  link?: string
+  url?: string;
+}
+
 export const CursoDetalhesTecnicos: React.FC<Props> = ({
   detalhes,
   coordenadorId,
@@ -21,7 +28,7 @@ export const CursoDetalhesTecnicos: React.FC<Props> = ({
 
   useEffect(() => {
     proffessorsService.getProfessorById(coordenadorId).then(setCoordenador);
-  })
+  });
 
   return (
     <Card>
@@ -46,16 +53,20 @@ export const CursoDetalhesTecnicos: React.FC<Props> = ({
             description={detalhes.note || ''}
           />
         )}
-        <Item
-          title="Projeto pedagogico do curso"
-          description="Para fazer o download do projeto pedagógico do curso clique aqui"
-        />
+        {detalhes.pedagogicalProjectUrl && (
+          <Item
+            title="Projeto pedagogico do curso"
+            description="Para ver o projeto pedagógico do curso"
+            link="clique aqui"
+            url={detalhes.pedagogicalProjectUrl}
+          />
+        )}
       </div>
     </Card>
   );
 };
 
-const Item: React.FC<{ title: string, description: string }> = ({ title, description }) => (
+const Item: React.FC<ItemProps> = ({ title, description, link, url }) => (
   <div className="info">
     <LabelText
       bold
@@ -63,6 +74,11 @@ const Item: React.FC<{ title: string, description: string }> = ({ title, descrip
     >
       {title}
     </LabelText>
-    <p className="description">{description}</p>
+    <p className="description">
+      {description}{' '}
+      {!!link && (
+        <a href={url} target="_blank">{link}</a>
+      )}
+    </p>
   </div>
 )
