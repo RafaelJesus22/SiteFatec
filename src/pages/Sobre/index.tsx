@@ -4,8 +4,8 @@ import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
 import { Feed } from '../../components/containers/Feed';
 import { fatecDia, fatecNoite } from '../../assets/images';
-import './styles.css';
 import { colors } from '../../config/styles';
+import './styles.css';
 
 export const Sobre: React.FC = () => {
   const [image, setImage] = useState(fatecDia);
@@ -88,38 +88,10 @@ export const Sobre: React.FC = () => {
               color="secondary"
               spacing={{ marginBottom: 40 }}
             >
-              <Row>
-                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
-                  Diretor:
-                </LabelText>
-                <LabelText color="secondary" size="default">
-                  Prof. Dr. Ricardo Slavov
-                </LabelText>
-              </Row>
-              <Row>
-                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
-                  Diretora de Serviços Acadêmicos:
-                </LabelText>
-                <LabelText color="secondary" size="default">
-                  Ana Paula Freitas de Lima Gomes
-                </LabelText>
-              </Row>
-              <Row>
-                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
-                  Diretora de Serviços Administrativos:
-                </LabelText>
-                <LabelText color="secondary" size="default">
-                  Leilane Melo de Souza
-                </LabelText>
-              </Row>
-              <Row>
-                <LabelText weight="600" size="default" spacing={{ marginRight: '5px' }}>
-                  Assessora Administrativa:
-                </LabelText>
-                <LabelText color="secondary" size="default">
-                  Daniela Freire Ramos de Oliveira
-                </LabelText>
-              </Row>
+              <p><strong style={styles.strong}>Diretor:</strong> Prof. Dr. Ricardo Slavov</p>
+              <p><strong style={styles.strong}>Diretora de Serviços Acadêmicos:</strong> Ana Paula Freitas de Lima Gomes</p>
+              <p><strong style={styles.strong}>Diretora de Serviços Administrativos:</strong> Leilane Melo de Souza</p>
+              <p><strong style={styles.strong}>Assessora Administrativa:</strong> Daniela Freire Ramos de Oliveira</p>
             </LabelText>
           </Fragment>
 
@@ -204,14 +176,6 @@ export const Sobre: React.FC = () => {
     </Container>
   );
 };
-
-const Row: React.FC = ({ children }) => (
-  <div
-    style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
-  >
-    {children}
-  </div>
-);
 
 const styles = {
   strong: {
