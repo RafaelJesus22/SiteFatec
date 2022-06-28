@@ -1,28 +1,25 @@
-import React, { Fragment, useLayoutEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
+import { FormInput } from '../../components/atoms/FormInput';
+import { FormButton } from '../../components/atoms/PortalButton';
 import { LabelText } from '../../components/atoms/Typography/LabelText';
 import { Container } from '../../components/containers/Container/Container';
 import { Content } from '../../components/containers/Content/Content';
 import { Feed } from '../../components/containers/Feed';
-import { ImageGallery } from '../../components/molecules/ImageGallery';
-import { useLoading } from '../../contexts/loadingContent';
-import { documentService } from '../../services';
-import { StorageFile } from '../../types/IDocument';
 import './styles.css';
 
+type GetInTouch = {
+  name: string;
+  email: string;
+  subject: string;
+}
+
 export const Alunos: React.FC = () => {
-  const [internships, setInternships] = useState<StorageFile[]>([]);
-  const { hideLoading, showLoading } = useLoading()
+  const [getInTouch, setGetInTouch] = useState<GetInTouch>({} as GetInTouch);
 
-  const fetchInternships = async (): Promise<void> => {
-    const internships = await documentService.getFilesByPath('estagios');
-    setInternships(internships);
-  };
-
-  useLayoutEffect(() => {
-    showLoading();
-
-    fetchInternships().finally(() => hideLoading());
-  }, [])
+  const handleTalkToDirector = async (e: any): Promise<void> => {
+    e.preventDefault();
+    alert('Em breve...');
+  }
 
   return (
     <Container>
@@ -34,7 +31,18 @@ export const Alunos: React.FC = () => {
               size='large'
               spacing={{ marginBottom: '1rem', marginTop: '2rem' }}
             >
-              Links
+              SIGA
+            </LabelText>
+            <LabelText color="secondary" size="default">
+              O SIGA (Sistema Integrado de Gestão Acadêmica) é a fonte oficial de todos
+              os dados referentes aos cursos ministrados, inclusive com relação às suas
+              atividades curriculares, participação de docentes e histórico escolar dos
+              alunos.<br />
+            </LabelText>
+            <LabelText color="secondary" size="default">
+              <LinkAluno href="https://siga.cps.sp.gov.br/aluno/login.aspx?">
+                Clique <strong>aqui</strong> para acessar o SIGA
+              </LinkAluno>
             </LabelText>
           </Fragment>
 
@@ -42,71 +50,76 @@ export const Alunos: React.FC = () => {
             <LabelText
               bold
               size='large'
-              spacing={{ marginBottom: 12 }}
+              spacing={{ marginBottom: '1rem', marginTop: '2rem' }}
             >
-              Empresas que já contrataram nossos alunos
+              GUIA DE PROFISSÕES
             </LabelText>
-            <ImageGallery images={internships.map(internship => internship.url)} />
+            <LabelText color="secondary" size="default">
+              Apresentamos aos senhores o Guia das Profissões Tecnológicas, uma publicação elaborada
+              pela Assessoria de Comunicação (AssCom), com a colaboração de coordenadores e
+              professores da Cesu e de coordenadores de cursos das Fatecs. Nosso objetivo é
+              possibilitar que o candidato ao Vestibular possa ter uma ideia mais precisa sobre
+              o curso pretendido e até mesmo mudar sua opção ao se informar melhor sobre as
+              disciplinas que serão estudadas, a atividade profissional e o mercado de trabalho.
+              Ter alunos mais convictos de suas escolhas de curso pode contribuir para a queda
+              do índice de evasão.<br /><br />
+            </LabelText>
+            <LabelText color="secondary" size="default">
+              As informações reunidas nessa publicação já estão disponíveis no site do Centro Paula
+              Souza <LinkAluno href="www.cps.sp.gov.br">(www.cps.sp.gov.br)</LinkAluno>, na aba Fatecs /Cursos, e na página do Vestibular
+              <LinkAluno href="www.vestibularfatec.com.br">(www.vestibularfatec.com.br)</LinkAluno>.
+            </LabelText>
           </Fragment>
 
           <Fragment>
             <LabelText
               bold
               size='large'
-              spacing={{ marginBottom: 12 }}
+              spacing={{ marginBottom: 12, marginTop: '2rem' }}
             >
-              O QUE É CPA NA FATEC SANTANA DE PARNAÍBA?
+              FALE COM O DIRETOR
             </LabelText>
-            <LabelText
-              size="default"
-              color="secondary"
-              spacing={{ marginBottom: 12 }}
-            >
-              Denominada Comissão Própria de Avaliação - CPA, é um órgão colegiado, formado
-              por professores, que disciplina a organização, o funcionamento e o cumprimento das
-              atribuições e é vinculado ao Centro Estadual de Educação Tecnológica do estado de
-              São Paulo - CPS.
-            </LabelText>
-            <LabelText
-              size="default"
-              color="secondary"
-              spacing={{ marginBottom: 12 }}
-            >
-              A CPA tem atuação autônoma em relação aos Conselhos Superiores e demais Órgãos
-              Colegiados da Instituição.
-            </LabelText>
-            <LabelText
-              size="default"
-              color="secondary"
-              spacing={{ marginBottom: 12 }}
-            >
-              A CPA tem por finalidade contribuir com o planejamento, elaboração, coordenação e
-              monitoramento da política de autoavaliação institucional, promovendo, no que
-              couber, a interlocução com os órgãos de regulação, supervisão e avaliação.
-            </LabelText>
-            <LabelText
-              size="default"
-              color="secondary"
-              spacing={{ marginBottom: 12 }}
-            >
-              A autoavaliação tem por objetivo a melhoria da qualidade do ensino tecnológico, a
-              orientação da expansão da sua oferta, a consolidação da função social do ensino
-              superior e o desenvolvimento institucional, e consiste em um processo contínuo,
-              sistêmico e participativo que envolve comunidade acadêmica e integrantes da sociedade.
-            </LabelText>
-            <LabelText
-              size="default"
-              color="secondary"
-              spacing={{ marginBottom: 100 }}
-            >
-              Em nossa unidade, a CPA começou em 2020 com o Professor Antonio Lobosco, em 2021 foi
-              a professora Angela dos Santos Oshiro e em 2022 o Prof. Dr. Célio Aparecido Garcia.
-              Para qualquer dúvida, sugestão ou reclamação, você pode acionar a CPA pelo e-mail
-              f283.cpa@fatec.sp.gov.br
-            </LabelText>
+            <form style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+              <FormInput
+                style={{ marginBottom: '1rem' }}
+                value={getInTouch?.name}
+                name="Nome *"
+                onChange={e =>
+                  setGetInTouch({ ...getInTouch, name: e.target.value })
+                }
+              />
+              <FormInput
+                style={{ marginBottom: '1rem' }}
+                value={getInTouch?.email}
+                name="E-mail *"
+                onChange={e =>
+                  setGetInTouch({ ...getInTouch, email: e.target.value })
+                }
+              />
+              <FormInput
+                style={{ marginBottom: '1rem' }}
+                value={getInTouch?.subject}
+                name="Assunto *"
+                onChange={e =>
+                  setGetInTouch({ ...getInTouch, subject: e.target.value })
+                }
+              />
+              <FormButton
+                title="Enviar"
+                onClick={handleTalkToDirector}
+              />
+            </form>
           </Fragment>
         </Feed>
       </Content>
     </Container>
+  );
+};
+
+const LinkAluno: React.FC<{ href: string }> = ({ href, children }) => {
+  return (
+    <a href={href} target="_blank" className="alunos-link">
+      {children}
+    </a>
   );
 };

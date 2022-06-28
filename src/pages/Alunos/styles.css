@@ -1,61 +1,9 @@
-.professores-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: var(--bg-color);
+.alunos-link {
+  text-decoration: none;
+  color: var(--title-color);
 }
 
-.filtro {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 3rem 0;
-}
-
-.filtro .filtro__item {
-  padding: 1px 1rem;
-  background-color: var(--white);
-  width: 30%;
-  height: 3rem;
-  border-radius: 2.5rem;
-  display: flex;
-  align-items: center;
-  border: 1px solid #0003;
-  transition: .5s ease-in-out;
-}
-
-.filtro .filtro__item > input {
-  flex: 1;
-  height: 100%;
-  border: none;
-  outline: none;
-  padding-left: .5rem;
-  font-size: 1rem;
-  color: var(--title-color)
-}
-
-.filtro .filtro__item > select {
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  padding-left: .5rem;
-  font-size: 1rem;
-  color: var(--title-color)
-}
-
-.filtro .filtro__item:hover {
-  border: 1.4px solid #0006;
-}
-
-.filtro .filtro__item:focus-within {
-  border: 1.4px solid var(--secondary-text-color);
-}
-
-.professores__list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-  margin-top: 2rem;
+.alunos-link:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
 }
