@@ -11,7 +11,7 @@ import { proffessorsService } from "../../../../services";
 import { DbProffessor } from "../../../../types/IProfessor";
 import { ProffessorParams } from "..";
 
-import'./styles.css';
+import './styles.css';
 
 export const ProffessorDetails: React.FC = () => {
   const [proffessor, setProffessor] = useState<DbProffessor>();
@@ -75,25 +75,15 @@ export const ProffessorDetails: React.FC = () => {
               <ListItem
                 title="Lattes"
                 description={proffessor.lattes}
-                isLink
               />
               <ListItem
                 title="Cursos"
                 description={getClasses()}
               />
               <ListItem
-                title="Whatsapp"
-                description={proffessor.whatsapp}
-              />
-              <ListItem
                 title="Linkedin"
                 description={proffessor.linkedin}
                 isLink={!!proffessor.linkedin}
-              />
-              <ListItem
-                title="Gitbub"
-                description={proffessor.github}
-                isLink={!!proffessor.github}
               />
 
               <div className="buttons">
