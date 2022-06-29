@@ -28,6 +28,13 @@ export const NewsDetail = () => {
     return setCourseName(course?.name || "");
   };
 
+  const handlePostContent = () => {
+    const postContent = document.getElementById("post-content");
+    if (postContent) {
+      postContent.innerHTML = event?.post.replace(/\n/g, "<br />") || '';
+    }
+  };
+
   useLayoutEffect(() => {
     getCourseName();
     showLoading();
@@ -37,6 +44,8 @@ export const NewsDetail = () => {
       .finally(() => hideLoading());
 
   }, [noticiaId]);
+
+  useLayoutEffect(handlePostContent, [event]);
 
   return (
     <Container>
@@ -62,7 +71,7 @@ export const NewsDetail = () => {
                   atualizado em {firebaseTimestampToDate(event?.updatedAt)}
                 </span>
               )}
-              <p>{event?.post}</p>
+              <p id="post-content"></p>
             </div>
           </div>
         </Feed>

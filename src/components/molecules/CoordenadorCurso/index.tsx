@@ -25,7 +25,7 @@ export const CoordenadorCurso: React.FC<Props> = ({ data }) => {
         <LabelText bold>
           Coordenador do Curso
         </LabelText>
-        <p>{title} {name}</p>
+        <LabelText color="secondary">{title} {name}</LabelText>
         <p>
           <a href={lattes} target="_blank" rel="noreferrer" >
             Ver perfil no lattes

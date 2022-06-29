@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { colors } from "../../../config/styles";
 import { proffessorsService } from "../../../services";
 import { CourseTechnicalDetailsProps } from "../../../types/ICurso";
 import { DbProffessor } from "../../../types/IProfessor";
@@ -74,11 +75,17 @@ const Item: React.FC<ItemProps> = ({ title, description, link, url }) => (
     >
       {title}
     </LabelText>
-    <p className="description">
+    <LabelText color="secondary">
       {description}{' '}
       {!!link && (
-        <a href={url} target="_blank">{link}</a>
+        <a
+          style={{ color: colors.primaryColor }}
+          href={url}
+          target="_blank"
+        >
+          {link}
+        </a>
       )}
-    </p>
+    </LabelText>
   </div>
 )
