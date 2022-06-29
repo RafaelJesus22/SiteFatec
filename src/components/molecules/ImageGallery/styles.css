@@ -16,6 +16,7 @@
   width: 100%;
   max-width: 256px;
   opacity: 75%;
+  transition: .2s ease-in-out;
 }
 
 .internships .internship .internship-image:hover {
