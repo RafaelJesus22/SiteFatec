@@ -48,7 +48,7 @@ export const PerguntasFrequentes: React.FC = () => {
           </p>
           <p>Dúvidas sobre vestibular?</p>
           <p>
-            Fale com a Coordenadora do nosso Vestibular, Ana Paula Freitas de Lima Gomes.
+            Fale com o Coordenador do nosso Vestibular.
           </p>
           <p>
             E-mail: <a href={EMAIL_VESTIBULAR_FATEC}>{EMAIL_VESTIBULAR_FATEC}</a>
