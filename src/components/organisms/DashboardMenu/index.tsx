@@ -78,8 +78,8 @@ export const DashboardMenu: React.FC = () => {
                 className={activeItem === label ? 'active' : ''}
                 onClick={() => setActiveItem(label)}
               >
-                {icon}
                 <p>{label}</p>
+                {icon}
               </Link>
             </div>
           ))}
