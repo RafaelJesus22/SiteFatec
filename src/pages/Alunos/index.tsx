@@ -16,7 +16,7 @@ type GetInTouch = {
 const SIGA_ALUNOS_LINK = 'https://siga.cps.sp.gov.br/aluno/login.aspx?';
 const CPS_LINK = 'www.cps.sp.gov.br';
 const VESTIBULAR_FATEC_LINK = 'www.vestibularfatec.com.br';
-const BIBLIOTECA_CPS_LINK = 'biblio.cps.sp.gov.br/';
+const BIBLIOTECA_CPS_LINK = 'http://biblio.cps.sp.gov.br/';
 
 export const Alunos: React.FC = () => {
   const [getInTouch, setGetInTouch] = useState<GetInTouch>({} as GetInTouch);
@@ -50,7 +50,7 @@ export const Alunos: React.FC = () => {
               </LinkAluno>
             </LabelText>
           </Fragment>
-          
+
           <Fragment>
             <LabelText
               bold
@@ -60,7 +60,7 @@ export const Alunos: React.FC = () => {
               BIBLIOTECA VIRTUAL
             </LabelText>
             <LabelText color="secondary" size="default">
-              <LinkAluno href={SIGA_ALUNOS_LINK}>
+              <LinkAluno href={BIBLIOTECA_CPS_LINK}>
                 Clique <strong>aqui</strong> para acessar a Biblioteca virtual do Centro Paula Souza
               </LinkAluno>
             </LabelText>
@@ -98,6 +98,9 @@ export const Alunos: React.FC = () => {
               spacing={{ marginBottom: 12, marginTop: '2rem' }}
             >
               FALE COM O DIRETOR
+            </LabelText>
+            <LabelText color="secondary" size="default">
+              Abaixo há um formulário para falar com diretor. Caso deseja mandar uma sugestão, reclamação ou elogio sobre a Fatec, basta preencher e clicar em enviar.
             </LabelText>
             <form style={{ marginTop: '2rem', marginBottom: '2rem' }}>
               <FormInput
