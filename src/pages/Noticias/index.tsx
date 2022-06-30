@@ -67,7 +67,6 @@ export const Noticias: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log(selectedOption, defaultOption, (selectedOption.label === defaultOption.label));
     if (selectedOption.label === defaultOption.label) {
       return setFilteredEvents(events);
     }
@@ -82,7 +81,7 @@ export const Noticias: React.FC = () => {
   const handelEmpty = (events: DbEvent[]) => {
     if (events.length === 0) {
       return (
-        <LabelText size="large" bold>
+        <LabelText size="large" bold align="center" spacing={{marginTop: '5rem'}}>
           Nenhum evento encontrado
         </LabelText>
       );
