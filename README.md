@@ -24,8 +24,17 @@ No diretório raiz você precisa criar um arquivo `.env` e adicionar as variavé
 ### Rodando o projeto
 
 É simplesmente executar o comando `yarn start` ou `npm start`
+<<<<<<< Updated upstream
 
 🇺🇸
+=======
+<br>
+
+---
+
+🇺🇸
+<br>
+>>>>>>> Stashed changes
 
 This is my System's Development and Analysis College final graduation project
 
