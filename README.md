@@ -1,6 +1,7 @@
 # Fatec Santana de Parnaíba Web Site
 
 ![App home page](https://github.com/RafaelJesus22/SiteFatec/blob/master/public/site-fatec-home.png)
+[Ver em produção](https://fatecsdp.vercel.app/)
 
 🇧🇷
 
@@ -34,6 +35,7 @@ No diretório raiz você precisa criar um arquivo `.env` e adicionar as variavé
 This is my System's Development and Analysis College final graduation project
 
 I made this project with my big friend [Matheus Lima](https://www.linkedin.com/in/matheuslimar/)
+[See in production](https://fatecsdp.vercel.app/)
 
 ### Installation
 
