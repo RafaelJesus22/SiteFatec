@@ -1,9 +1,9 @@
 {
   "name": "fatec",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": ">=16.x"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
