@@ -109,22 +109,17 @@ export class DocumentService {
       return this.files;
     }
 
-    let directories = await this.getDirectories();
+    const directories = await this.getDirectories();
+    const hiddenDirectories = ['Eventos', 'thumb_curso', 'estagios']
 
-    directories = directories.filter(d => {
-      return (
-        d.name !== 'Eventos' && 
-        d.name !== 'thumb_curso' &&
-        d.name !== 'estagios'
-      )
-    });
+    const filteredDirectories = directories.filter(d => !hiddenDirectories.includes(d.name));
 
-    if (directories.length === 0) {
+    if (filteredDirectories.length === 0) {
       return [];
     }
 
     const files = await Promise.all(
-      directories.map(async (directory) => {
+      filteredDirectories.map(async (directory) => {
         const files = await this.getFilesByPath(directory.path);
 
         return files.map(file => {
